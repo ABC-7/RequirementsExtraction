@@ -1,0 +1,62 @@
+The wipers are active while it rains .
+%%%
+The parking sensors beep while an obstacle is detected .
+%%%
+The fuel display blinks while the fuel level is low .
+%%%
+The fuel display blinks as long as the fuel level is low .
+%%%
+The wipers are active for a maximum of 10 seconds while it rains .
+%%%
+The parking sensors beep for a maximum of 10 seconds while an obstacle is detected .
+%%%
+The fuel display blinks for a maximum of 10 seconds as long as the fuel level is low .
+%%%
+If a crash is detected , then an emergency signal is sent within 10 ms .
+%%%
+If a crash is detected , then an emergency signal is sent continuously within 10 ms .
+%%%
+If a crash is detected , then an emergency signal is sent continuously .
+%%%
+If it rains and the wipers are active , then the wipers are active for 30 seconds .
+%%%
+If it rains and the wipers are active , then the wipers are active within 30 seconds .
+%%%
+If it rains , then the wipers are [on] for 30 seconds .
+%%%
+If it rains , then the wipers are [on] within 30 seconds .
+%%%
+If it rains , then the wipers are [on] exactly after 30 seconds .
+%%%
+If it rains for 1 minute , then the wipers are activated .
+%%%
+If it rains for 1 minute , then the wipers are activated within 30 seconds .
+%%%
+If it rains for 1 minute , then the wipers are activated within 30 seconds until the windscreen is dry .
+%%%
+If it rains for 1 minute , then the wipers are active for 30 seconds within 1 minute .
+%%%
+If it rains for 1 minute , then the wipers are active continuously within 1 minute .
+%%%
+If it rains for 1 minute , then the wipers are active for 30 seconds exactly within 1 minute .
+%%%
+The electricity circuit is active .
+%%%
+The light is [on] .
+%%%
+The display elements glow .
+%%%
+The motor is [on] within 1 second .
+%%%
+The radio is powered continuously within 5 seconds .
+%%%
+The airbag is activated only after a crash is detected .
+%%%
+The airbag is not activated before a crash is detected .
+%%%
+If the vehicle in front decelerates, the vehicle decelerates before the safety distance is restored for at most 2 seconds.
+%%%
+If it is dark, the lights are on before it is bright for at most 10 minutes.
+%%%
+If a crash is detected, the airbag is activated within 5 ms, after an emergency signal is sent for 10 seconds.
+%%%

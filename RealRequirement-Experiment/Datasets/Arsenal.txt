@@ -1,0 +1,40 @@
+If the  regulator mode equals [INIT] , the output regulator status shall be set to [Init] .
+%%%
+If the  regulator mode equals [INIT] , the output regulator status shall be set to [Init] .
+%%%
+If the regulator mode equals [NORMAL] , the output regulator status shall be set to [Status_On] .
+%%%
+If the regulator mode equals [FAILED], when the signal is [ok], the output regulator status shall be set to [Failed] .
+%%%
+If the regulator mode equals [FAILED] , the heat control shall be set to [Control_Off] .
+%%%
+If the manage monitor interface mode equals [INIT] , the output monitor status shall be set to [Init] .
+%%%
+If the manage monitor interface mode equals [NORMAL] , the output monitor status shall be set to [Status_On] .
+%%%
+If the manage monitor interface mode equals [FAILED] , the output monitor status shall be set to [Failed] .
+%%%
+If the monitor mode equals [INIT] , the alarm control shall be set to [Control_Off] .
+%%%
+the manage monitor interface mode shall be set to the monitor mode .
+%%%
+the regulator mode shall be initialized to [INIT] .
+%%%
+If the regulator status equals [True] , the regulator init timeout shall be set to [False] .
+%%%
+If the regulator status equals [False] , the regulator init timeout shall be set to [True] .
+%%%
+the monitor mode shall be initialized to [INIT] .
+%%%
+If the monitor status equals [True] , the monitor init timeout shall be set to [False] .
+%%%
+If the monitor status equals [False] , the monitor init timeout shall be set to [True] .
+%%%
+If the regulator mode equals [FAILED] , the regulator mode shall never be set to [NORMAL] .
+%%%
+If the monitor mode equals [FAILED] , the regulator mode shall never be set to [NORMAL] .
+%%%
+when the Reset equals [True] , the regulator mode shall be set to [INIT] .
+%%%
+When the regulator mode equals [INIT] , the Reset shall be set to [True] .
+%%%

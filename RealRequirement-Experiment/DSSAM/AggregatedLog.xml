@@ -1,0 +1,3363 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+File Measures: 
+	Number of req in file = 58
+	Number of succeded requirements = 43
+	Number of failed requirements = 15
+<FailedRequirement>
+	TempReqId-46:while moving the window up, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+
+	TempReqId-34:if an obstacle is detected at least for 50 milliseconds, the window down signal must be activated for minimum time frame of 1 second .
+
+	TempReqId-10:if the RCMTECHTERM_personal_code is valid, RCMVAR_simplemat accepts the card .
+
+	TempReqId-3:timer equals to previous timer #Plus# 1 .
+
+	TempReqId-2:if timer greater than timeout then heater_command equal to error .
+
+	TempReqId-47:after transmission, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+
+	TempReqId-35:if an obstacle is detected for at least 50 milliseconds, the window down signal must be activated for at least 1 second .
+
+	TempReqId-45:while moving, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+
+	TempReqId-11:if the RCMTECHTERM_personal_code is not valid, RCMVAR_simplemat rejects the card .
+
+	TempReqId-33:while in a RCMVAL_fullup configuration, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+
+	TempReqId-31:when the RCMTECHTERM_engine_control_system changes operational mode, the RCMTECHTERM_engine_control_system shall maintain the engine within RCMTECHTERM_approved_operational_limits .
+
+	TempReqId-41:the safeguard of a RCMTECHTERM_level_crossing is terminated, after the RCMTECHTERM_railroad_crossing has been completely vacated if the train had passed .
+
+	TempReqId-4:when RCMTECHTERM_object_proximity_sensor is activated then the RCMTECHTERM_automatic_door_controller shall open door .
+
+	TempReqId-6:when RCMTECHTERM_door_closing_limit_sensor is activated then the RCMTECHTERM_automatic_door_controller shall stop door .
+
+	TempReqId-48: after the door is open, if the door is still not locked within 15 minutes, trigger alarm.
+</FailedRequirement>
+<SucceededRequirement>
+	<Requirement>
+		ID: [TempReqId-1:]
+		text: when the monitor does not receive for 5 time intervals status signal RCMVAR_e, it sends a request RCMVAR_req to the station .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when the monitor does not receive for 5 time intervals status signal RCMVAR_e, it sends a request RCMVAR_req to the station .
+				<ExtractedComponents>
+					[1]: when the monitor does not receive for 5 time intervals RCMVAR_e
+					[2]: it sends a request RCMVAR_req to the station
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when the monitor does not receive for 5 time intervals RCMVAR_e
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= it sends a request RCMVAR_req to the station
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when the monitor does not receive for 5 time intervals RCMVAR_e
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the monitor
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: 5 time intervals RCMVAR_e
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:does receive for
+						</Operator>
+						Has scope:  false
+						Is negatted = true
+					</Trigger>
+					<Action>
+						Text = it sends a request RCMVAR_req to the station
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: it
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: the station
+							</ArgDetails>
+							Arg[2]
+							<ArgDetails>
+								Mentioned text: a request RCMVAR_req to
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:sends
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-18:]
+		text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0 .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0 .
+				<ExtractedComponents>
+					[1]: when emergency button is pressed
+					[2]: the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when emergency button is pressed
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when emergency button is pressed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: emergency button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is pressed
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAR_valve_0
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall close
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-28:]
+		text: while the aircraft is RCMVAL_onground, when RCMTECHTERM_reverse_thrust is commanded, the control system shall enable deployment of the thrust reverser .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: while the aircraft is RCMVAL_onground, when RCMTECHTERM_reverse_thrust is commanded, the control system shall enable deployment of the thrust reverser .
+				<ExtractedComponents>
+					[1]: while the aircraft is RCMVAL_onground
+					[2]: when RCMTECHTERM_reverse_thrust is commanded
+					[3]: the control system shall enable deployment of the thrust reverser
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: ReqScope 
+						SlotType= ConditionalScope|| Text= while the aircraft is RCMVAL_onground
+					C[2]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when RCMTECHTERM_reverse_thrust is commanded
+					C[3]==>	Type: Action 
+						SlotType= MainSlot|| Text= the control system shall enable deployment of the thrust reverser
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when RCMTECHTERM_reverse_thrust is commanded
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: RCMTECHTERM_reverse_thrust
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is commanded
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the control system shall enable deployment of the thrust reverser
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: deployment of the thrust reverser
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall enable
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<PreconditionalScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while the aircraft is RCMVAL_onground
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: the aircraft
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Mentioned text: RCMVAL_onground
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is
+										</Operator>
+										Has scope:  false
+										Is negatted = false
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while the aircraft is RCMVAL_onground
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: the aircraft
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Mentioned text: RCMVAL_onground
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-16:]
+		text: when RCMTECHTERM_liquid_level_2 is reached, the 60 second timer shall start .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_liquid_level_2 is reached, the 60 second timer shall start .
+				<ExtractedComponents>
+					[1]: when RCMTECHTERM_liquid_level_2 is reached
+					[2]: the 60 second timer shall start
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when RCMTECHTERM_liquid_level_2 is reached
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the 60 second timer shall start
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when RCMTECHTERM_liquid_level_2 is reached
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: RCMTECHTERM_liquid_level_2
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is reached
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the 60 second timer shall start
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the 60 second timer
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall start
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-38:]
+		text: the coffee machine shall produce hot drink every 10 seconds .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the coffee machine shall produce hot drink every 10 seconds .
+				<ExtractedComponents>
+					[1]: the coffee machine shall produce hot drink every 10 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Action 
+						SlotType= MainSlot|| Text= the coffee machine shall produce hot drink
+						SlotType= TimeScope|| Text= every 10 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the coffee machine shall produce hot drink
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the coffee machine
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: hot drink
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall produce
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = true
+						<InBetweenTime>
+							TimeType = InBetween
+							Value = 10
+							Unit = seconds
+							QPRelation = equal
+						</InBetweenTime>
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-26:]
+		text:  while  thrust reverser door translation, the control system shall limit thrust to minimum idle .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  while  thrust reverser door translation, the control system shall limit thrust to minimum idle .
+				<ExtractedComponents>
+					[1]: while thrust reverser door translation
+					[2]: the control system shall limit thrust to minimum idle
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= while thrust reverser door translation
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the control system shall limit thrust to minimum idle
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the control system shall limit thrust to minimum idle
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: minimum idle
+							</ArgDetails>
+							Arg[2]
+							<ArgDetails>
+								Mentioned text: thrust to
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall limit
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while thrust reverser door translation
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: thrust reverser door translation
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Mentioned text: RCMVAL_True
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:equals
+										</Operator>
+										Has scope:  false
+										Is negatted = false
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while thrust reverser door translation
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: thrust reverser door translation
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Mentioned text: RCMVAL_True
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:equals
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-14:]
+		text: while RCMTECHTERM_liquid_level_2 is not reached, when RCMTECHTERM_liquid_level_1 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_1 before emergency button is pressed .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: while RCMTECHTERM_liquid_level_2 is not reached, when RCMTECHTERM_liquid_level_1 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_1 before emergency button is pressed .
+				<ExtractedComponents>
+					[1]: while RCMTECHTERM_liquid_level_2 is not reached
+					[2]: when RCMTECHTERM_liquid_level_1 is reached
+					[3]: the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_1
+					[4]: before emergency button is pressed
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: ReqScope 
+						SlotType= ConditionalScope|| Text= while RCMTECHTERM_liquid_level_2 is not reached
+					C[2]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when RCMTECHTERM_liquid_level_1 is reached
+					C[3]==>	Type: Action 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_1
+					C[4]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= before emergency button is pressed
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when RCMTECHTERM_liquid_level_1 is reached
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: RCMTECHTERM_liquid_level_1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is reached
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAR_valve_1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall open
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before emergency button is pressed
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Mentioned text: emergency button
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is pressed
+									</Operator>
+									Has scope:  false
+									Is negatted = false
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+						<PreconditionalScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while RCMTECHTERM_liquid_level_2 is not reached
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: RCMTECHTERM_liquid_level_2
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is reached
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while RCMTECHTERM_liquid_level_2 is not reached
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: RCMTECHTERM_liquid_level_2
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is reached
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-36:]
+		text: while serve sea conditions, when radar is sighting, the weapon operator shall fire a missile within 3 seconds .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: while serve sea conditions, when radar is sighting, the weapon operator shall fire a missile within 3 seconds .
+				<ExtractedComponents>
+					[1]: while serve sea conditions
+					[2]: when radar is sighting
+					[3]: the weapon operator shall fire a missile within 3 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: ReqScope 
+						SlotType= ConditionalScope|| Text= while serve sea conditions
+					C[2]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when radar is sighting
+					C[3]==>	Type: ActionScope 
+						SlotType= TimeScope|| Text= within 3 seconds
+					C[3]==>	Type: Action 
+						SlotType= MainSlot|| Text= the weapon operator shall fire a missile
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when radar is sighting
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: radar
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is sighting
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the weapon operator shall fire a missile
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the weapon operator
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: a missile
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall fire
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<PreElapsedTime>
+								TimeType = PreElapsed
+								Value = 3
+								Unit = seconds
+								QPRelation = equal
+							</PreElapsedTime>
+						</ActionScope>
+						<PreconditionalScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while serve sea conditions
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: sea conditions
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:serve
+										</Operator>
+										Has scope:  false
+										Is negatted = false
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while serve sea conditions
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: sea conditions
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:serve
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-24:]
+		text: if the computed airspeed fault flag is set, the control system shall use modelled airspeed .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the computed airspeed fault flag is set, the control system shall use modelled airspeed .
+				<ExtractedComponents>
+					[1]: if the computed airspeed fault flag is set
+					[2]: the control system shall use modelled airspeed
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the computed airspeed fault flag is set
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the control system shall use modelled airspeed
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the computed airspeed fault flag is set
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the computed airspeed fault flag
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is set
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the control system shall use modelled airspeed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: modelled airspeed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall use
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-12:]
+		text: while RCMTECHTERM_liquid_level_1 is not reached, when start button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall open the RCMVAR_valve_0 before the emergency button is pressed .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: while RCMTECHTERM_liquid_level_1 is not reached, when start button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall open the RCMVAR_valve_0 before the emergency button is pressed .
+				<ExtractedComponents>
+					[1]: while RCMTECHTERM_liquid_level_1 is not reached
+					[2]: when start button is pressed
+					[3]: the RCMTECHTERM_liquid_open_mixer_controller shall open the RCMVAR_valve_0
+					[4]: before the emergency button is pressed
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: ReqScope 
+						SlotType= ConditionalScope|| Text= while RCMTECHTERM_liquid_level_1 is not reached
+					C[2]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when start button is pressed
+					C[3]==>	Type: Action 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall open the RCMVAR_valve_0
+					C[4]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= before the emergency button is pressed
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when start button is pressed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: start button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is pressed
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall open the RCMVAR_valve_0
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: the RCMVAR_valve_0
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall open
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before the emergency button is pressed
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Mentioned text: the emergency button
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is pressed
+									</Operator>
+									Has scope:  false
+									Is negatted = false
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+						<PreconditionalScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while RCMTECHTERM_liquid_level_1 is not reached
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: RCMTECHTERM_liquid_level_1
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is reached
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while RCMTECHTERM_liquid_level_1 is not reached
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: RCMTECHTERM_liquid_level_1
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is reached
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-22:]
+		text: the control system shall prevent engine overspeed .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the control system shall prevent engine overspeed .
+				<ExtractedComponents>
+					[1]: the control system shall prevent engine overspeed
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: FactualRule 
+						SlotType= MainSlot|| Text= the control system shall prevent engine overspeed
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the control system shall prevent engine overspeed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: engine overspeed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall prevent
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-44:]
+		text: the gates must be in the RCMTECHTERM_closed_state for 6 seconds before the RCMTECHTERM_railroad_crossing is safeguarded .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the gates must be in the RCMTECHTERM_closed_state for 6 seconds before the RCMTECHTERM_railroad_crossing is safeguarded .
+				<ExtractedComponents>
+					[1]: the gates must be in the RCMTECHTERM_closed_state for 6 seconds
+					[2]: before the RCMTECHTERM_railroad_crossing is safeguarded
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Action 
+						SlotType= MainSlot|| Text= the gates must be in the RCMTECHTERM_closed_state
+						SlotType= TimeScope|| Text= for 6 seconds
+					C[2]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= before the RCMTECHTERM_railroad_crossing is safeguarded
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the gates must be in the RCMTECHTERM_closed_state
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the gates
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: the#$@$#RCMTECHTERM_closed_state
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:must be in
+						</Operator>
+						Has scope:  true
+						<TimeScope>
+							TimeType = Scope
+							Value = 6
+							Unit = seconds
+							QPRelation = equal
+						</TimeScope>
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before the RCMTECHTERM_railroad_crossing is safeguarded
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Mentioned text: the RCMTECHTERM_railroad_crossing
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is safeguarded
+									</Operator>
+									Has scope:  false
+									Is negatted = false
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-32:]
+		text: if a single failure leads to RCMTECHTERM_deficient_aircraft_supplied_data, the RCMTECHTERM_engine_control_system shall not cause a hazardous engine effect .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if a single failure leads to RCMTECHTERM_deficient_aircraft_supplied_data, the RCMTECHTERM_engine_control_system shall not cause a hazardous engine effect .
+				<ExtractedComponents>
+					[1]: if a single failure leads to RCMTECHTERM_deficient_aircraft_supplied_data
+					[2]: the RCMTECHTERM_engine_control_system shall not cause a hazardous engine effect
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if a single failure leads to RCMTECHTERM_deficient_aircraft_supplied_data
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_engine_control_system shall not cause a hazardous engine effect
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if a single failure leads to RCMTECHTERM_deficient_aircraft_supplied_data
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: a single failure
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMTECHTERM_deficient_aircraft_supplied_data
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:leads to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the RCMTECHTERM_engine_control_system shall not cause a hazardous engine effect
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the RCMTECHTERM_engine_control_system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: a hazardous engine effect
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall cause
+						</Operator>
+						Has scope:  false
+						Is negatted = true
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-20:]
+		text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_2 .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_2 .
+				<ExtractedComponents>
+					[1]: when emergency button is pressed
+					[2]: the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_2
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when emergency button is pressed
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_2
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when emergency button is pressed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: emergency button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is pressed
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_2
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAR_valve_2
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall close
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-42:]
+		text: the inflow must be opened before the temperature sensor has relayed the value 400 .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the inflow must be opened before the temperature sensor has relayed the value 400 .
+				<ExtractedComponents>
+					[1]: the inflow must be opened
+					[2]: before the temperature sensor has relayed the value 400
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Action 
+						SlotType= MainSlot|| Text= the inflow must be opened
+					C[2]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= before the temperature sensor has relayed the value 400
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the inflow must be opened
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the inflow
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:must be opened
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before the temperature sensor has relayed the value 400
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Mentioned text: the temperature sensor
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Mentioned text: the value 400
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:has relayed
+									</Operator>
+									Has scope:  false
+									Is negatted = false
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-30:]
+		text: when selecting idle setting, if aircraft data is unavailable, the control system shall select idle approach .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when selecting idle setting, if aircraft data is unavailable, the control system shall select idle approach .
+				<ExtractedComponents>
+					[1]: when selecting idle setting
+					[2]: if aircraft data is unavailable
+					[3]: the control system shall select idle approach
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when selecting idle setting
+					C[2]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if aircraft data is unavailable
+					C[3]==>	Type: Action 
+						SlotType= MainSlot|| Text= the control system shall select idle approach
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if aircraft data is unavailable
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: aircraft data
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: unavailable
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Trigger>
+						Keyword: when
+						Text = when selecting idle setting
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: idle setting
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:selecting
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the control system shall select idle approach
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: idle approach
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall select
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-40:]
+		text: if a defect is detected at a certain valve, the RCMTECHTERM_software_control_system must be switched off for 2 seconds . after the RCMTECHTERM_software_control_system is switched off, the RCMTECHTERM_redundant_pneumatic_control must be switched on .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if a defect is detected at a certain valve, the RCMTECHTERM_software_control_system must be switched off for 2 seconds .
+				<ExtractedComponents>
+					[1]: if a defect is detected at a certain valve
+					[2]: the RCMTECHTERM_software_control_system must be switched off for 2 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if a defect is detected at a certain valve
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_software_control_system must be switched off
+						SlotType= TimeScope|| Text= for 2 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if a defect is detected at a certain valve
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: a defect
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: a certain valve
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is detected at
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the RCMTECHTERM_software_control_system must be switched off
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the RCMTECHTERM_software_control_system
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:must be switched off
+						</Operator>
+						Has scope:  true
+						<TimeScope>
+							TimeType = Scope
+							Value = 2
+							Unit = seconds
+							QPRelation = equal
+						</TimeScope>
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+			<PR>
+				Id: [2]
+				text:  after the RCMTECHTERM_software_control_system is switched off, the RCMTECHTERM_redundant_pneumatic_control must be switched on .
+				<ExtractedComponents>
+					[1]: after the RCMTECHTERM_software_control_system is switched off
+					[2]: the RCMTECHTERM_redundant_pneumatic_control must be switched on
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= after the RCMTECHTERM_software_control_system is switched off
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_redundant_pneumatic_control must be switched on
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the RCMTECHTERM_redundant_pneumatic_control must be switched on
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the RCMTECHTERM_redundant_pneumatic_control
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:must be switched on
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after the RCMTECHTERM_software_control_system is switched off
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Mentioned text: the RCMTECHTERM_software_control_system
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is switched off
+									</Operator>
+									Has scope:  false
+									Is negatted = false
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-5:]
+		text: when countdown timer expires then the RCMTECHTERM_automatic_door_controller shall close door .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when countdown timer expires then the RCMTECHTERM_automatic_door_controller shall close door .
+				<ExtractedComponents>
+					[1]: when countdown timer expires then
+					[2]: the RCMTECHTERM_automatic_door_controller shall close door
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when countdown timer expires then
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_automatic_door_controller shall close door
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when countdown timer expires then
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: countdown timer
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:expires then
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_automatic_door_controller shall close door
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the RCMTECHTERM_automatic_door_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: door
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall close
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-7:]
+		text: when RCMTECHTERM_object_proximity_sensor is activated , the RCMTECHTERM_automatic_door_controller shall open door .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_object_proximity_sensor is activated , the RCMTECHTERM_automatic_door_controller shall open door .
+				<ExtractedComponents>
+					[1]: when RCMTECHTERM_object_proximity_sensor is activated
+					[2]: the RCMTECHTERM_automatic_door_controller shall open door
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when RCMTECHTERM_object_proximity_sensor is activated
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_automatic_door_controller shall open door
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when RCMTECHTERM_object_proximity_sensor is activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: RCMTECHTERM_object_proximity_sensor
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is activated
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_automatic_door_controller shall open door
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the RCMTECHTERM_automatic_door_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: door
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall open
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-9:]
+		text: RCMVAR_simplemat checks the RCMTECHTERM_personal_code .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: RCMVAR_simplemat checks the RCMTECHTERM_personal_code .
+				<ExtractedComponents>
+				</ExtractedComponents>
+				<ClassifiedComponents>
+				</ClassifiedComponents>
+				<RCMDetails>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-19:]
+		text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1 .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1 .
+				<ExtractedComponents>
+					[1]: when emergency button is pressed
+					[2]: the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when emergency button is pressed
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when emergency button is pressed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: emergency button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is pressed
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAR_valve_1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall close
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-29:]
+		text: while the aircraft is RCMVAL_inflight, if RCMTECHTERM_reverse_thrust is commanded, the control system shall inhibit RCMTECHTERM_thrust_reverser_deployment .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: while the aircraft is RCMVAL_inflight, if RCMTECHTERM_reverse_thrust is commanded, the control system shall inhibit RCMTECHTERM_thrust_reverser_deployment .
+				<ExtractedComponents>
+					[1]: while the aircraft is RCMVAL_inflight if RCMTECHTERM_reverse_thrust is commanded
+					[2]: the control system shall inhibit RCMTECHTERM_thrust_reverser_deployment
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= while the aircraft is
+					C[1]==>	Type: Action 
+						SlotType= MainSlot|| Text= RCMVAL_inflight if RCMTECHTERM_reverse_thrust is commanded
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the control system shall inhibit RCMTECHTERM_thrust_reverser_deployment
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the control system shall inhibit RCMTECHTERM_thrust_reverser_deployment
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMTECHTERM_thrust_reverser_deployment
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall inhibit
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while the aircraft is
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: the aircraft
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is
+										</Operator>
+										Has scope:  false
+										Is negatted = false
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while the aircraft is
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: the aircraft
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-17:]
+		text: when 60 second timer expires, the 120 second timer shall start .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when 60 second timer expires, the 120 second timer shall start .
+				<ExtractedComponents>
+					[1]: the 120 second timer shall start
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: FactualRule 
+						SlotType= MainSlot|| Text= the 120 second timer shall start
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the 120 second timer shall start
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the 120 second timer
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall start
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-39:]
+		text: after the train has passed the RCMTECHTERM_railroad_crossing, the gates can be opened .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: after the train has passed the RCMTECHTERM_railroad_crossing, the gates can be opened .
+				<ExtractedComponents>
+					[1]: after the train has passed the RCMTECHTERM_railroad_crossing
+					[2]: the gates can be opened
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= after the train has passed the RCMTECHTERM_railroad_crossing
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the gates can be opened
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the gates can be opened
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the gates
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:can be opened
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after the train has passed the RCMTECHTERM_railroad_crossing
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Mentioned text: the train
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Mentioned text: the RCMTECHTERM_railroad_crossing
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:has passed
+									</Operator>
+									Has scope:  false
+									Is negatted = false
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-27:]
+		text: when the control system includes an overspeed protection function, the control system shall test the availability of the overspeed protection function before aircraft dispatch .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when the control system includes an overspeed protection function, the control system shall test the availability of the overspeed protection function before aircraft dispatch .
+				<ExtractedComponents>
+					[1]: when the control system includes an overspeed protection function
+					[2]: the control system shall test the availability of the overspeed protection function before aircraft dispatch
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when the control system includes an overspeed protection function
+					C[2]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= before aircraft dispatch
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the control system shall test the availability of the overspeed protection function
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when the control system includes an overspeed protection function
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: an overspeed protection function
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:includes
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the control system shall test the availability of the overspeed protection function
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: the availability of the overspeed protection function
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall test
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before aircraft dispatch
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Mentioned text: aircraft dispatch
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Mentioned text: RCMVAL_True
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:equals
+									</Operator>
+									Has scope:  false
+									Is negatted = false
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-15:]
+		text: when RCMTECHTERM_liquid_level_2 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1 .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_liquid_level_2 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1 .
+				<ExtractedComponents>
+					[1]: when RCMTECHTERM_liquid_level_2 is reached
+					[2]: the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when RCMTECHTERM_liquid_level_2 is reached
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when RCMTECHTERM_liquid_level_2 is reached
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: RCMTECHTERM_liquid_level_2
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is reached
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAR_valve_1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall close
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-37:]
+		text: the communication system shall sustain telephone contact with 10 callers while the absence of external power .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the communication system shall sustain telephone contact with 10 callers while the absence of external power .
+				<ExtractedComponents>
+					[1]: the communication system shall sustain telephone contact with 10 callers while the absence of external power
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= while the absence of external power
+					C[1]==>	Type: Action 
+						SlotType= MainSlot|| Text= the communication system shall sustain telephone contact with 10 callers
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the communication system shall sustain telephone contact with 10 callers
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the communication system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: 10 callers
+							</ArgDetails>
+							Arg[2]
+							<ArgDetails>
+								Mentioned text: telephone contact with
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall sustain
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while the absence of external power
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: the absence of external power
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Mentioned text: RCMVAL_True
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:equals
+										</Operator>
+										Has scope:  false
+										Is negatted = false
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while the absence of external power
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: the absence of external power
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Mentioned text: RCMVAL_True
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:equals
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-25:]
+		text: while the aircraft is RCMVAL_inflight, the control system shall maintain engine fuel flow above xx .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: while the aircraft is RCMVAL_inflight, the control system shall maintain engine fuel flow above xx .
+				<ExtractedComponents>
+					[1]: while the aircraft is RCMVAL_inflight
+					[2]: the control system shall maintain engine fuel flow above xx
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= while the aircraft is RCMVAL_inflight
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the control system shall maintain engine fuel flow above xx
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the control system shall maintain engine fuel flow above xx
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: engine fuel flow above xx
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall maintain
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while the aircraft is RCMVAL_inflight
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: the aircraft
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Mentioned text: RCMVAL_inflight
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is
+										</Operator>
+										Has scope:  false
+										Is negatted = false
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while the aircraft is RCMVAL_inflight
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: the aircraft
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Mentioned text: RCMVAL_inflight
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-13:]
+		text: when RCMTECHTERM_liquid_level_1 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0 .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_liquid_level_1 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0 .
+				<ExtractedComponents>
+					[1]: when RCMTECHTERM_liquid_level_1 is reached
+					[2]: the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when RCMTECHTERM_liquid_level_1 is reached
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when RCMTECHTERM_liquid_level_1 is reached
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: RCMTECHTERM_liquid_level_1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is reached
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAR_valve_0
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall close
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-23:]
+		text: when continuous ignition is commanded by the aircraft, the control system shall switch on continuous ignition .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when continuous ignition is commanded by the aircraft, the control system shall switch on continuous ignition .
+				<ExtractedComponents>
+					[1]: when continuous ignition is commanded by the aircraft
+					[2]: the control system shall switch on continuous ignition
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when continuous ignition is commanded by the aircraft
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the control system shall switch on continuous ignition
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when continuous ignition is commanded by the aircraft
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: continuous ignition
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: the aircraft
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is commanded by
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the control system shall switch on continuous ignition
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: continuous ignition
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall switch on
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-21:]
+		text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall stop stirring motor .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall stop stirring motor .
+				<ExtractedComponents>
+					[1]: when emergency button is pressed
+					[2]: the RCMTECHTERM_liquid_open_mixer_controller shall stop stirring motor
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when emergency button is pressed
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall stop stirring motor
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when emergency button is pressed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: emergency button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is pressed
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall stop stirring motor
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall stop stirring
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-43:]
+		text: after the temperature sensor has relayed the value 350, the inflow is opened if the level of the tank is less than the minimum value .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: after the temperature sensor has relayed the value 350, the inflow is opened if the level of the tank is less than the minimum value .
+				<ExtractedComponents>
+					[1]: after the temperature sensor has relayed the value 350
+					[2]: the inflow is opened
+					[3]: if the level of the tank is less than the minimum value
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= after the temperature sensor has relayed the value 350
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the inflow is opened
+					C[3]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the level of the tank is less than the minimum value
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the level of the tank is less than the minimum value
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the level of the tank
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: the#$@$#minimum#$@$#value
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is less than
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the inflow is opened
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the inflow
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is opened
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after the temperature sensor has relayed the value 350
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Mentioned text: the temperature sensor
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Mentioned text: the value 350
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:has relayed
+									</Operator>
+									Has scope:  false
+									Is negatted = false
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-8:]
+		text: when RCMTECHTERM_door_closing_limit_sensor is activated , the RCMTECHTERM_automatic_door_controller shall stop door .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_door_closing_limit_sensor is activated , the RCMTECHTERM_automatic_door_controller shall stop door .
+				<ExtractedComponents>
+					[1]: when RCMTECHTERM_door_closing_limit_sensor is activated
+					[2]: the RCMTECHTERM_automatic_door_controller shall stop door
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when RCMTECHTERM_door_closing_limit_sensor is activated
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_automatic_door_controller shall stop door
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when RCMTECHTERM_door_closing_limit_sensor is activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: RCMTECHTERM_door_closing_limit_sensor
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is activated
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_automatic_door_controller shall stop door
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the RCMTECHTERM_automatic_door_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: door
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall stop
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-49:]
+		text: when blood pressure is monitored every 2 hours, if the blood pressure is higher than 200 for more than 4 hours, notify the medical staff.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when blood pressure is monitored every 2 hours, if the blood pressure is higher than 200 for more than 4 hours, notify the medical staff.
+				<ExtractedComponents>
+					[1]: when blood pressure is monitored every 2 hours 
+					[2]: if the blood pressure is higher than 200 for more than 4 hours
+					[3]: notify the medical staff
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when blood pressure is monitored notify the medical staff
+						SlotType= TimeScope|| Text= every 2 hours
+					C[2]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the blood pressure is higher than 200
+						SlotType= TimeScope|| Text= for more than 4 hours
+					C[3]==>	Type: act 
+						SlotType= MainSlot|| Text= notify the medical staff
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the blood pressure is higher than 200
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the blood pressure
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 200
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is higher than
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 4
+							Unit: hours
+							QPRelation: more than 
+						<ValidTime>
+						Is negatted: false
+					</Condition>
+					<Trigger>
+						Keyword: when
+						Text = when blood pressure is monitored notify the medical staff
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: blood pressure
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is monitoredify
+						</Operator>
+						Has valid-time:  false
+						Is negatted: true
+						is repeated = true
+						<InBetweenTime>
+							TimeType: InBetween
+							Value: 2
+							Unit: hours
+							QPRelation: 
+						<InBetweenTime>
+					</Trigger>
+					<Action>
+						Text =notify the medical staff
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the medical staff
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation: notify
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-50:]
+		text: every animal RCMVAR_a eats all animals RCMVAR_b that are smaller than RCMVAR_a.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: every animal RCMVAR_a eats all animals RCMVAR_b that are smaller than RCMVAR_a.
+				<ExtractedComponents>
+					[1]: every animal RCMVAR_a eats all animals RCMVAR_b that are smaller than RCMVAR_a
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= every animal RCMVAR_a eats all animals RCMVAR_b
+						SlotType= HiddenConstraint|| Text= all animals RCMVAR_b that are smaller than RCMVAR_a
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = every animal RCMVAR_a eats all animals RCMVAR_b
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: every animal RCMVAR_a
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: all animals RCMVAR_b
+							</ArgDetails>
+							<HiddenConstraint>
+							<Condition>
+								Keyword: null
+								Text = null
+								<Operands>
+									Arg[0]
+									<ArgDetails>
+										Text: all animals RCMVAR_b
+									</ArgDetails>
+									Arg[1]
+									<ArgDetails>
+										Text: RCMVAR_a
+									</ArgDetails>
+								</Operands>
+								<Operator>
+									relation:are smaller than
+								</Operator>
+								Has valid-time:  false
+								Is negatted: false
+							</Condition>
+							</HiddenConstraint>
+						</Operands>
+						<Operator>
+							relation:eats
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-51:]
+		text: the wolf catches a bird that is yellow.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the wolf catches a bird that is yellow.
+				<ExtractedComponents>
+					[1]: the wolf catches a bird that is yellow
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the wolf catches a bird
+						SlotType= HiddenConstraint|| Text= a bird that is yellow
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the wolf catches a bird
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the wolf
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: a bird
+							</ArgDetails>
+							<HiddenConstraint>
+							<Condition>
+								Keyword: null
+								Text = null
+								<Operands>
+									Arg[0]
+									<ArgDetails>
+										Text: a bird
+									</ArgDetails>
+									Arg[1]
+									<ArgDetails>
+										Text: yellow
+									</ArgDetails>
+								</Operands>
+								<Operator>
+									relation:is
+								</Operator>
+								Has valid-time:  false
+								Is negatted: false
+							</Condition>
+							</HiddenConstraint>
+						</Operands>
+						<Operator>
+							relation:catches
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+		<Requirement>
+		ID: [TempReqId-52:]
+		text: after RCMVAR_x is RCMVAL_true for 2 seconds if RCMVAR_z exceeds RCMVAR_m, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: after RCMVAR_x is RCMVAL_true for 2 seconds if RCMVAR_z exceeds RCMVAR_m, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+				<ExtractedComponents>
+					[1]: after RCMVAR_x is RCMVAL_true for 2 seconds
+					[2]: if RCMVAR_z exceeds RCMVAR_m
+					[3]: RCMVAR_y shall be set to RCMVAL_true every 2 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: preScope 
+						SlotType= ConditionalScope|| Text= after RCMVAR_x is RCMVAL_true
+						SlotType= TimeScope|| Text= for 2 seconds
+					C[2]==>	Type: cond 
+						SlotType= MainSlot|| Text= if RCMVAR_z exceeds RCMVAR_m
+					C[3]==>	Type: act 
+						SlotType= MainSlot|| Text= RCMVAR_y shall be set to RCMVAL_true
+						SlotType= TimeScope|| Text= every 2 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if RCMVAR_z exceeds RCMVAR_m
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_z
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAR_m
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:exceeds
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+					</Condition>
+					<Action>
+						Text = RCMVAR_y shall be set to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_y
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						is repeated = true
+						<InBetweenTime>
+							TimeType: InBetween
+							Value: 2
+							Unit: seconds
+							QPRelation: 
+						<InBetweenTime>
+					</Action>
+					<RequirementScope>
+						<PreconditionalScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after RCMVAR_x is RCMVAL_true
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: RCMVAR_x
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: RCMVAL_true
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is
+									</Operator>
+									Has valid-time:  true
+									<ValidTime>
+										TimeType: Scope
+										Value: 2
+										Unit: seconds
+										QPRelation: 
+									<ValidTime>
+									Is negatted: false
+								</Condition>
+							</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-53:]
+		text: after RCMVAR_x is RCMVAL_true for 2 seconds, the entry whose index is larger than 2 shall be set to 1.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: after RCMVAR_x is RCMVAL_true for 2 seconds, the entry whose index is larger than 2 shall be set to 1.
+				<ExtractedComponents>
+					[1]: after RCMVAR_x is RCMVAL_true for 2 seconds
+					[2]: the entry whose index is larger than 2 shall be set to 1
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= after RCMVAR_x is RCMVAL_true
+						SlotType= TimeScope|| Text= for 2 seconds
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the entry shall be set to 1
+						SlotType= HiddenConstraint|| Text= the entry whose index is larger than 2
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the entry shall be set to 1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the entry
+							</ArgDetails>
+							<HiddenConstraint>
+							<Condition>
+								Keyword: null
+								Text = the entry whose index is larger than 2
+								<Operands>
+									Arg[0]
+									<ArgDetails>
+										Text: index
+									</ArgDetails>
+									Arg[1]
+									<ArgDetails>
+										Text: 2
+									</ArgDetails>
+								</Operands>
+								<Operator>
+									relation:is larger than
+								</Operator>
+								Has valid-time:  false
+								Is negatted: false
+							</Condition>
+							</HiddenConstraint>
+							Arg[1]
+							<ArgDetails>
+								Text: 1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after RCMVAR_x is RCMVAL_true
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: RCMVAR_x
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: RCMVAL_true
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is
+									</Operator>
+									Has valid-time:  true
+									<ValidTime>
+										TimeType: Scope
+										Value: 2
+										Unit: seconds
+										QPRelation: 
+									<ValidTime>
+									Is negatted: false
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-54:]
+		text: before RCMVAR_x is RCMVAL_true for 2 seconds, when RCMVAR_z is turned to 1 for 1 second, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: before RCMVAR_x is RCMVAL_true for 2 seconds, when RCMVAR_z is turned to 1 for 1 second, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+				<ExtractedComponents>
+					[1]: before RCMVAR_x is RCMVAL_true for 2 seconds
+					[2]: when RCMVAR_z is turned to 1 for 1 second
+					[3]: RCMVAR_y shall be set to RCMVAL_true every 2 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: preScope 
+						SlotType= ConditionalScope|| Text= before RCMVAR_x is RCMVAL_true
+						SlotType= TimeScope|| Text= for 2 seconds
+					C[2]==>	Type: trig 
+						SlotType= MainSlot|| Text= when RCMVAR_z is turned to 1
+						SlotType= TimeScope|| Text= for 1 second
+					C[3]==>	Type: act 
+						SlotType= MainSlot|| Text= RCMVAR_y shall be set to RCMVAL_true
+						SlotType= TimeScope|| Text= every 2 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when RCMVAR_z is turned to 1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_z
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is turned to
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 1
+							Unit: second
+							QPRelation: 
+						<ValidTime>
+						Is negatted: false
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = RCMVAR_y shall be set to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_y
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						is repeated = true
+						<InBetweenTime>
+							TimeType: InBetween
+							Value: 2
+							Unit: seconds
+							QPRelation: 
+						<InBetweenTime>
+					</Action>
+					<RequirementScope>
+						<PreconditionalScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before RCMVAR_x is RCMVAL_true
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: RCMVAR_x
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: RCMVAL_true
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is
+									</Operator>
+									Has valid-time:   true
+									<ValidTime>
+									  TimeType: Scope
+									  Value: 2
+									  Unit: second
+									  QPRelation: 
+									  <ValidTime>
+									Is negatted: false
+								</Condition>
+							</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	      </Requirement>
+
+	      <Requirement>
+		ID: [TempReqId-55:]
+		text: RCMVAR_y shall be set to RCMVAL_true, when RCMVAR_z is turned to 1 every 1 second before RCMVAR_x is turned to 0 for at most 1 second.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: RCMVAR_y shall be set to RCMVAL_true, when RCMVAR_z is turned to 1 every 1 second before RCMVAR_x is turned to 0 for at most 1 second.
+				<ExtractedComponents>
+					[1]: RCMVAR_y shall be set to RCMVAL_true
+					[2]: when RCMVAR_z is turned to 1 every 1 second
+					[3]: before RCMVAR_x is turned to 0 for at most 1 second
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= RCMVAR_y shall be set to RCMVAL_true
+					C[2]==>	Type: trig 
+						SlotType= MainSlot|| Text= when RCMVAR_z is turned to 1
+						SlotType= TimeScope|| Text= every 1 seconds
+					C[3]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= before RCMVAR_x is turned to 0
+						SlotType= TimeScope|| Text= for at  most 1 second
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when RCMVAR_z is turned to 1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_z
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is turned
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						is repeated = true
+						<InBetweenTime>
+							TimeType: InBetween
+							Value: 1
+							Unit: seconds
+							QPRelation: null
+						</InBetweenTime>
+					</Trigger>
+					<Action>
+						Text = RCMVAR_y shall be set to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_y
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before RCMVAR_x is turned to 0
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: RCMVAR_x
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: 0
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is turned
+									</Operator>
+									Has valid-time:  true
+									<ValidTime>
+										TimeType: Scope
+										Value: 1
+										Unit: second
+										QPRelation: at  most
+									<ValidTime>
+									Is negatted: false
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+	      
+	      <Requirement>
+		ID: [TempReqId-56:]
+		text: after RCMVAR_x is RCMVAL_true for 2 seconds, when RCMVAR_z is turned to 1 for 1 second, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: after RCMVAR_x is RCMVAL_true for 2 seconds, when RCMVAR_z is turned to 1 for 1 second, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+				<ExtractedComponents>
+					[1]: after RCMVAR_x is RCMVAL_true for 2 seconds 
+					[2]: when RCMVAR_z is turned to 1 for 1 second
+					[3]: RCMVAR_y shall be set to RCMVAL_true every 2 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: preScope 
+						SlotType= ConditionalScope|| Text= after RCMVAR_x is RCMVAL_true
+						SlotType= TimeScope|| Text= for 2 seconds
+					C[2]==>	Type: trig 
+						SlotType= MainSlot|| Text= when RCMVAR_z is turned to 1
+						SlotType= TimeScope|| Text= for 1 second
+					C[3]==>	Type: act 
+						SlotType= MainSlot|| Text= RCMVAR_y shall be set to RCMVAL_true
+						SlotType= TimeScope|| Text= every 2 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when RCMVAR_z is turned to 1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_z
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is turned to
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 1
+							Unit: second
+							QPRelation: 
+						<ValidTime>
+						Is negatted: false
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = RCMVAR_y shall be set to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_y
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						is repeated = true
+						<InBetweenTime>
+							TimeType: InBetween
+							Value: 2
+							Unit: seconds
+							QPRelation: 
+						<InBetweenTime>
+					</Action>
+					<RequirementScope>
+						<PreconditionalScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after RCMVAR_x is RCMVAL_true
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: RCMVAR_x
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: RCMVAL_true
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is
+									</Operator>
+									Has valid-time:  true
+									<ValidTime>
+									  TimeType: Scope
+									  Value: 2
+									  Unit: second
+									  QPRelation: 
+									  <ValidTime>
+									Is negatted: false
+								</Condition>
+							</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	      </Requirement>
+
+	      <Requirement>
+		ID: [TempReqId-57:]
+		text: when the button is pressed, if RCMVAR_x is RCMVAL_on within 10 seconds, turn RCMVAR_y to RCMVAL_true.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when the button is pressed, if RCMVAR_x is RCMVAL_on within 10 seconds, turn RCMVAR_y to RCMVAL_true.
+				<ExtractedComponents>
+					[1]: when the button is pressed
+					[2]: if RCMVAR_x is RCMVAL_on within 10 seconds
+					[3]: turn RCMVAR_y to RCMVAL_true.
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the button is pressed
+					C[2]==>	Type: cond 
+						SlotType= MainSlot|| Text= if RCMVAR_x is RCMVAL_on
+						SlotType= TimeScope|| Text= within 10 seconds
+					C[3]==>	Type: act 
+						SlotType= MainSlot|| Text= turn RCMVAR_y to RCMVAL_true.
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if RCMVAR_x is RCMVAL_on
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_x
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_on
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<PreElapsedTime>
+							TimeType: PreElapsed
+							Value: 10
+							Unit: seconds
+							QPRelation: 
+						<PreElapsedTime>
+					</Condition>
+					<Trigger>
+						Keyword: when
+						Text = when the button is pressed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the button
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: presses
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = RCMVAR_y shall be turned to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_y
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be turned
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	    </Requirement>
+
+	    
+	      
+</SucceededRequirement>
+</log>

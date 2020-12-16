@@ -1,0 +1,1665 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+File Measures: 
+	Number of req in file = 31
+	Number of prim req in file = 31
+	Number of succeded prim requirements = 22
+	Number of failed prim requirements = 9
+<FailedRequirement>
+	<Requirement>
+		ID: [TempReqId-12:]
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if it rains and the wipers are active , the wipers are active within 30 seconds .
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+	<Requirement>
+		ID: [TempReqId-11:]
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if it rains and the wipers are active , the wipers are active for 30 seconds .
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+	<Requirement>
+		ID: [TempReqId-10:]
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if a crash is detected , an emergency signal is sent continuously .
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+	<Requirement>
+		ID: [TempReqId-21:]
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if it rains for 1 minute , the wipers are active for 30 seconds exactly within 1 minute .
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+	<Requirement>
+		ID: [TempReqId-20:]
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if it rains for 1 minute , the wipers are active continuously within 1 minute .
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+	<Requirement>
+		ID: [TempReqId-27:]
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the airbag is activated only after a crash is detected .
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+	<Requirement>
+		ID: [TempReqId-26:]
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the radio is powered continuously within 5 seconds .
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+	<Requirement>
+		ID: [TempReqId-15:]
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if it rains , the wipers are RCMVAL_on exactly after 30 seconds .
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+	<Requirement>
+		ID: [TempReqId-9:]
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if a crash is detected , an emergency signal is sent continuously within 10 ms .
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+</FailedRequirement>
+<SucceededRequirement>
+	<Requirement>
+		ID: [TempReqId-1:]
+		text: the wipers are active while it rains .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the wipers are active while it rains .
+				<ExtractedComponents>
+					[1]: the wipers are active while it rains
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Action 
+						SlotType= MainSlot|| Text= the wipers are active
+					C[1]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= while it rains
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the wipers are active
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the wipers
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: active
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:are
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while it rains
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: it
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:rains
+										</Operator>
+										Has scope:  false
+										Is negatted = false
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while it rains
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: it
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:rains
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-18:]
+		text: if it rains for 1 minute , the wipers are activated within 30 seconds before the windscreen is dry .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if it rains for 1 minute , the wipers are activated within 30 seconds before the windscreen is dry .
+				<ExtractedComponents>
+					[1]: if it rains for 1 minute
+					[2]: the wipers are activated within 30 seconds
+					[3]: before the windscreen is dry
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if it rains
+						SlotType= TimeScope|| Text= for 1 minute
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the wipers are activated
+					C[2]==>	Type: ActionScope 
+						SlotType= TimeScope|| Text= within 30 seconds
+					C[3]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= before the windscreen is dry
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if it rains
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: it
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:rains
+						</Operator>
+						Has scope:  true
+						<TimeScope>
+							TimeType = Scope
+							Value = 1
+							Unit = minute
+							QPRelation = equal
+						</TimeScope>
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the wipers are activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the wipers
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:are activated
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<PreElapsedTime>
+								TimeType = PreElapsed
+								Value = 30
+								Unit = seconds
+								QPRelation = equal
+							</PreElapsedTime>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: null
+										Text = before the windscreen is dry
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: the windscreen
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Mentioned text: dry
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is
+										</Operator>
+										Has scope:  false
+										Is negatted = false
+									</Condition>
+								</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-28:]
+		text: the airbag is not activated before a crash is detected .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the airbag is not activated before a crash is detected .
+				<ExtractedComponents>
+					[1]: the airbag is not activated
+					[2]: before a crash is detected
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Action 
+						SlotType= MainSlot|| Text= the airbag is not activated
+					C[2]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= before a crash is detected
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the airbag is not activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the airbag
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is activated
+						</Operator>
+						Has scope:  false
+						Is negatted = true
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before a crash is detected
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Mentioned text: a crash
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is detected
+									</Operator>
+									Has scope:  false
+									Is negatted = false
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-16:]
+		text: if it rains for 1 minute , the wipers are activated .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if it rains for 1 minute , the wipers are activated .
+				<ExtractedComponents>
+					[1]: if it rains for 1 minute
+					[2]: the wipers are activated
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if it rains
+						SlotType= TimeScope|| Text= for 1 minute
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the wipers are activated
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if it rains
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: it
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:rains
+						</Operator>
+						Has scope:  true
+						<TimeScope>
+							TimeType = Scope
+							Value = 1
+							Unit = minute
+							QPRelation = equal
+						</TimeScope>
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the wipers are activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the wipers
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:are activated
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-14:]
+		text: if it rains , the wipers are RCMVAL_on within 30 seconds .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if it rains , the wipers are RCMVAL_on within 30 seconds .
+				<ExtractedComponents>
+					[1]: if it rains
+					[2]: the wipers are RCMVAL_on within 30 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if it rains
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the wipers are RCMVAL_on
+					C[2]==>	Type: ActionScope 
+						SlotType= TimeScope|| Text= within 30 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if it rains
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: it
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:rains
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the wipers are RCMVAL_on
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the wipers
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_on
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:are
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<PreElapsedTime>
+								TimeType = PreElapsed
+								Value = 30
+								Unit = seconds
+								QPRelation = equal
+							</PreElapsedTime>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-24:]
+		text: the display elements glow .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the display elements glow .
+				<ExtractedComponents>
+				</ExtractedComponents>
+				<ClassifiedComponents>
+				</ClassifiedComponents>
+				<RCMDetails>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-22:]
+		text: the electricity circuit is active .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the electricity circuit is active .
+				<ExtractedComponents>
+					[1]: the electricity circuit is active
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: FactualRule 
+						SlotType= MainSlot|| Text= the electricity circuit is active
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the electricity circuit is active
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the electricity circuit
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: active
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-3:]
+		text: the fuel display blinks while the fuel level is low .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the fuel display blinks while the fuel level is low .
+				<ExtractedComponents>
+					[1]: the fuel display blinks
+					[2]: while the fuel level is low
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Action 
+						SlotType= MainSlot|| Text= the fuel display blinks
+					C[2]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= while the fuel level is low
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the fuel display blinks
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the fuel display
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:blinks
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while the fuel level is low
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: the fuel level
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Mentioned text: low
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is
+										</Operator>
+										Has scope:  false
+										Is negatted = false
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while the fuel level is low
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: the fuel level
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Mentioned text: low
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-5:]
+		text: the wipers are active for at most 10 seconds while it rains .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the wipers are active for at most 10 seconds while it rains .
+				<ExtractedComponents>
+					[1]: the wipers are active for at most 10 seconds while it rains
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Action 
+						SlotType= MainSlot|| Text= the wipers are active
+						SlotType= TimeScope|| Text= for at most 10 seconds
+					C[1]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= while it rains
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the wipers are active
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the wipers
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: active
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:are
+						</Operator>
+						Has scope:  true
+						<TimeScope>
+							TimeType = Scope
+							Value = 10
+							Unit = seconds
+							QPRelation = QP at most
+						</TimeScope>
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while it rains
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: it
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:rains
+										</Operator>
+										Has scope:  false
+										Is negatted = false
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while it rains
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: it
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:rains
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-7:]
+		text: the fuel display blinks for at most 10 seconds if the fuel level is low .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the fuel display blinks for at most 10 seconds if the fuel level is low .
+				<ExtractedComponents>
+					[1]: the fuel display blinks for at most 10 seconds
+					[2]: if the fuel level is low
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Action 
+						SlotType= MainSlot|| Text= the fuel display blinks
+						SlotType= TimeScope|| Text= for at most 10 seconds
+					C[2]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the fuel level is low
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the fuel level is low
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the fuel level
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: low
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the fuel display blinks
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the fuel display
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:blinks
+						</Operator>
+						Has scope:  true
+						<TimeScope>
+							TimeType = Scope
+							Value = 10
+							Unit = seconds
+							QPRelation = QP at most
+						</TimeScope>
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-2:]
+		text: the parking sensors beep while an obstacle is detected .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the parking sensors beep while an obstacle is detected .
+				<ExtractedComponents>
+					[1]: the parking sensors beep
+					[2]: while an obstacle is detected
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Action 
+						SlotType= MainSlot|| Text= the parking sensors beep
+					C[2]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= while an obstacle is detected
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the parking sensors beep
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the parking sensors beep
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_True
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while an obstacle is detected
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: an obstacle
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is detected
+										</Operator>
+										Has scope:  false
+										Is negatted = false
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while an obstacle is detected
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: an obstacle
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is detected
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-19:]
+		text: if it rains for 1 minute , the wipers are active for 30 seconds within 1 minute .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if it rains for 1 minute , the wipers are active for 30 seconds within 1 minute .
+				<ExtractedComponents>
+					[1]: if it rains for 1 minute
+					[2]: the wipers are active for 30 seconds within 1 minute
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if it rains
+						SlotType= TimeScope|| Text= for 1 minute
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the wipers are active
+						SlotType= TimeScope|| Text= for 30 seconds
+					C[2]==>	Type: ActionScope 
+						SlotType= TimeScope|| Text= within 1 minute
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if it rains
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: it
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:rains
+						</Operator>
+						Has scope:  true
+						<TimeScope>
+							TimeType = Scope
+							Value = 1
+							Unit = minute
+							QPRelation = equal
+						</TimeScope>
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the wipers are active
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the wipers
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: active
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:are
+						</Operator>
+						Has scope:  true
+						<TimeScope>
+							TimeType = Scope
+							Value = 30
+							Unit = seconds
+							QPRelation = equal
+						</TimeScope>
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<PreElapsedTime>
+								TimeType = PreElapsed
+								Value = 1
+								Unit = minute
+								QPRelation = equal
+							</PreElapsedTime>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-17:]
+		text: if it rains for 1 minute , the wipers are activated within 30 seconds .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if it rains for 1 minute , the wipers are activated within 30 seconds .
+				<ExtractedComponents>
+					[1]: if it rains for 1 minute
+					[2]: the wipers are activated within 30 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if it rains
+						SlotType= TimeScope|| Text= for 1 minute
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the wipers are activated
+					C[2]==>	Type: ActionScope 
+						SlotType= TimeScope|| Text= within 30 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if it rains
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: it
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:rains
+						</Operator>
+						Has scope:  true
+						<TimeScope>
+							TimeType = Scope
+							Value = 1
+							Unit = minute
+							QPRelation = equal
+						</TimeScope>
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the wipers are activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the wipers
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:are activated
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<PreElapsedTime>
+								TimeType = PreElapsed
+								Value = 30
+								Unit = seconds
+								QPRelation = equal
+							</PreElapsedTime>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-25:]
+		text: the motor is RCMVAL_on within 1 second .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the motor is RCMVAL_on within 1 second .
+				<ExtractedComponents>
+					[1]: the motor is RCMVAL_on within 1 second
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Action 
+						SlotType= MainSlot|| Text= the motor is RCMVAL_on
+					C[1]==>	Type: ActionScope 
+						SlotType= TimeScope|| Text= within 1 second
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the motor is RCMVAL_on
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the motor
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_on
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<PreElapsedTime>
+								TimeType = PreElapsed
+								Value = 1
+								Unit = second
+								QPRelation = equal
+							</PreElapsedTime>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-13:]
+		text: if it rains , the wipers are RCMVAL_on for 30 seconds .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if it rains , the wipers are RCMVAL_on for 30 seconds .
+				<ExtractedComponents>
+					[1]: if it rains
+					[2]: the wipers are RCMVAL_on for 30 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if it rains
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the wipers are RCMVAL_on
+						SlotType= TimeScope|| Text= for 30 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if it rains
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: it
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:rains
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the wipers are RCMVAL_on
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the wipers
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_on
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:are
+						</Operator>
+						Has scope:  true
+						<TimeScope>
+							TimeType = Scope
+							Value = 30
+							Unit = seconds
+							QPRelation = equal
+						</TimeScope>
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-23:]
+		text: the light is RCMVAL_on .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the light is RCMVAL_on .
+				<ExtractedComponents>
+					[1]: the light is RCMVAL_on
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: FactualRule 
+						SlotType= MainSlot|| Text= the light is RCMVAL_on
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the light is RCMVAL_on
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the light
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_on
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-4:]
+		text: the fuel display blinks if the fuel level is low .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the fuel display blinks if the fuel level is low .
+				<ExtractedComponents>
+					[1]: the fuel display blinks
+					[2]: if the fuel level is low
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Action 
+						SlotType= MainSlot|| Text= the fuel display blinks
+					C[2]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the fuel level is low
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the fuel level is low
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the fuel level
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: low
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the fuel display blinks
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the fuel display
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:blinks
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-6:]
+		text: the parking sensors beep for at most 10 seconds while an obstacle is detected .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the parking sensors beep for at most 10 seconds while an obstacle is detected .
+				<ExtractedComponents>
+					[1]: while an obstacle is detected
+				</ExtractedComponents>
+				<ClassifiedComponents>
+				</ClassifiedComponents>
+				<RCMDetails>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-8:]
+		text: if a crash is detected , an emergency signal is sent within 10 ms .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if a crash is detected , an emergency signal is sent within 10 ms .
+				<ExtractedComponents>
+					[1]: if a crash is detected
+					[2]: an emergency signal is sent within 10 ms
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if a crash is detected
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= an emergency signal is sent
+					C[2]==>	Type: ActionScope 
+						SlotType= TimeScope|| Text= within 10 ms
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if a crash is detected
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: a crash
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is detected
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = an emergency signal is sent
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: an emergency signal
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is sent
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<PreElapsedTime>
+								TimeType = PreElapsed
+								Value = 10
+								Unit = ms
+								QPRelation = equal
+							</PreElapsedTime>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+	<Requirement>
+		ID: [TempReqId_29:]
+		text: if the front vehicle decelerates, the vehicle decelerates before the safety_distance is restored for at most 2 seconds.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the front vehicle decelerates, the vehicle decelerates before the safety_distance is restored for at most 2 seconds.
+				<ExtractedComponents>
+					[1]: if the front vehicle decelerates
+					[2]: the vehicle decelerates
+					[3]: before the safety_distance is restored for at most 2 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the front vehicle decelerates
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the vehicle decelerates
+					C[3]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= before the safety_distance is restored
+						SlotType= TimeScope|| Text= for at most 2 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the front vehicle decelerates
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the front vehicle
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: decelerates
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+					</Condition>
+					<Action>
+						Text = the vehicle decelerates
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the vehicle
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: decelerates
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before the safety_distance is restored
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: the safety_distance
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: restores
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is
+									</Operator>
+									Has valid-time:  true
+									<ValidTime>
+										TimeType: Scope
+										Value: 2
+										Unit: seconds
+										QPRelation: at most 
+									<FormalSemantic>
+										TechnicalOperator: <=
+										Value: 2
+										</FormalSemantic>
+									<ValidTime>
+									Is negatted: false
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	      </Requirement>
+	      <Requirement>
+		ID: [TempReqId_30:]
+		text: if it is dark, the lights are RCMVAL_on before it is bright for at most 10 minutes.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if it is dark, the lights are RCMVAL_on before it is bright for at most 10 minutes.
+				<ExtractedComponents>
+					[1]: if it is dark
+					[2]: the lights are RCMVAL_on before it is bright for at most 10 minutes
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if it is dark
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the lights are RCMVAL_on
+						SlotType= TimeScope|| Text= for at most 10 minutes
+					C[2]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= before it is bright
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if it is dark
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: it
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: dark
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+					</Condition>
+					<Action>
+						Text = the lights are RCMVAL_on
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the lights
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_on
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:are
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 10
+							Unit: minutes
+							QPRelation: at most 
+						<FormalSemantic>
+							TechnicalOperator: <=
+							Value: 10
+							</FormalSemantic>
+						<ValidTime>
+						Is negatted: false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before it is bright
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: it
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: bright
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	      </Requirement>
+	      	<Requirement>
+		ID: [TempReqId_31:]
+		text: if a crash is detected, the airbag is activated within 5 ms, after
+an emergency signal is sent for 10 seconds.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if a crash is detected, the airbag is activated within 5 ms, after an emergency signal is sent for 10 seconds..
+				<ExtractedComponents>
+					[1]: if a crash is detected
+					[2]: the airbag is activated within 5 ms
+					[3]: after an emergency signal is sent for 10 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if a crash is detected
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the airbag is activated
+						SlotType= TimeScope|| Text= within 5 ms
+					C[3]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= after an emergency signal is sent
+						SlotType= TimeScope|| Text= for 10 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if a crash is detected
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: a crash
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: detects
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+					</Condition>
+					<Action>
+						Text = the airbag is activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the airbag
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: activates
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						is repeated = false
+						<PreElapsedTime>
+							TimeType: PreElapsed
+							Value: 5
+							Unit: ms
+							QPRelation: 
+						<FormalSemantic>
+							TechnicalOperator: NONE
+							Value: 5
+							</FormalSemantic>
+						<PreElapsedTime>
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after an emergency signal is sent
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: an emergency signal
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: sends
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is
+									</Operator>
+									Has valid-time:  true
+									<ValidTime>
+										TimeType: Scope
+										Value: 10
+										Unit: seconds
+										QPRelation: 
+									<FormalSemantic>
+										TechnicalOperator: NONE
+										Value: 10
+										</FormalSemantic>
+									<ValidTime>
+									Is negatted: false
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+</SucceededRequirement>
+</log>

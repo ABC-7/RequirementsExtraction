@@ -1,0 +1,1577 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+File Measures: 
+	Number of req in file = 20
+	Number of prim req in file = 20
+<FailedRequirement>
+</FailedRequirement>
+<SucceededRequirement>
+	<Requirement>
+		ID: [TempReqId-2:]
+		text: if the regulator mode equals RCMVAL_init , the output regulator status shall be set to RCMVAL_init .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator mode equals RCMVAL_init , the output regulator status shall be set to RCMVAL_init .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the regulator mode = RCMVAL_init)] ==> [(the output regulator status = RCMVAL_init)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the regulator mode equals RCMVAL_init
+					[2]: the output regulator status shall be set to RCMVAL_init
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the regulator mode equals RCMVAL_init
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the output regulator status shall be set to RCMVAL_init
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the regulator mode equals RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the regulator mode = RCMVAL_init
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the output regulator status shall be set to RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the output regulator status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the output regulator status = RCMVAL_init
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-1:]
+		text: if the regulator mode equals RCMVAL_init , the output regulator status shall be set to RCMVAL_init .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator mode equals RCMVAL_init , the output regulator status shall be set to RCMVAL_init .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the regulator mode = RCMVAL_init)] ==> [(the output regulator status = RCMVAL_init)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the regulator mode equals RCMVAL_init
+					[2]: the output regulator status shall be set to RCMVAL_init
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the regulator mode equals RCMVAL_init
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the output regulator status shall be set to RCMVAL_init
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the regulator mode equals RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the regulator mode = RCMVAL_init
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the output regulator status shall be set to RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the output regulator status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the output regulator status = RCMVAL_init
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-19:]
+		text: when the reset equals RCMVAL_true , the regulator mode shall be set to RCMVAL_init .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when the reset equals RCMVAL_true , the regulator mode shall be set to RCMVAL_init .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the reset = RCMVAL_true)] ==> [(the regulator mode = RCMVAL_init)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when the reset equals RCMVAL_true
+					[2]: the regulator mode shall be set to RCMVAL_init
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the reset equals RCMVAL_true
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the regulator mode shall be set to RCMVAL_init
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when the reset equals RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the reset
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the reset = RCMVAL_true
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the regulator mode shall be set to RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the regulator mode = RCMVAL_init
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-18:]
+		text: if the monitor mode equals RCMVAL_failed , the regulator mode shall never be set to RCMVAL_normal .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the monitor mode equals RCMVAL_failed , the regulator mode shall never be set to RCMVAL_normal .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the monitor mode = RCMVAL_failed)] ==> [(the regulator mode = RCMVAL_normal)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the monitor mode equals RCMVAL_failed
+					[2]: the regulator mode shall never be set to RCMVAL_normal
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the monitor mode equals RCMVAL_failed
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the regulator mode shall never be set to RCMVAL_normal
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the monitor mode equals RCMVAL_failed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the monitor mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_failed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the monitor mode = RCMVAL_failed
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the regulator mode shall never be set to RCMVAL_normal
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_normal
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall never be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the regulator mode = RCMVAL_normal
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-17:]
+		text: if the regulator mode equals RCMVAL_failed , the regulator mode shall never be set to RCMVAL_normal .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator mode equals RCMVAL_failed , the regulator mode shall never be set to RCMVAL_normal .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the regulator mode = RCMVAL_failed)] ==> [(the regulator mode = RCMVAL_normal)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the regulator mode equals RCMVAL_failed
+					[2]: the regulator mode shall never be set to RCMVAL_normal
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the regulator mode equals RCMVAL_failed
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the regulator mode shall never be set to RCMVAL_normal
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the regulator mode equals RCMVAL_failed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_failed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the regulator mode = RCMVAL_failed
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the regulator mode shall never be set to RCMVAL_normal
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_normal
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall never be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the regulator mode = RCMVAL_normal
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-16:]
+		text: if the monitor status equals RCMVAL_false , the monitor init timeout shall be set to RCMVAL_true .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the monitor status equals RCMVAL_false , the monitor init timeout shall be set to RCMVAL_true .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the monitor status = RCMVAL_false)] ==> [(the monitor init timeout = RCMVAL_true)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the monitor status equals RCMVAL_false
+					[2]: the monitor init timeout shall be set to RCMVAL_true
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the monitor status equals RCMVAL_false
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the monitor init timeout shall be set to RCMVAL_true
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the monitor status equals RCMVAL_false
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the monitor status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_false
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the monitor status = RCMVAL_false
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the monitor init timeout shall be set to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the monitor init timeout
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the monitor init timeout = RCMVAL_true
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-15:]
+		text: if the monitor status equals RCMVAL_true , the monitor init timeout shall be set to RCMVAL_false .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the monitor status equals RCMVAL_true , the monitor init timeout shall be set to RCMVAL_false .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the monitor status = RCMVAL_true)] ==> [(the monitor init timeout = RCMVAL_false)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the monitor status equals RCMVAL_true
+					[2]: the monitor init timeout shall be set to RCMVAL_false
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the monitor status equals RCMVAL_true
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the monitor init timeout shall be set to RCMVAL_false
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the monitor status equals RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the monitor status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the monitor status = RCMVAL_true
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the monitor init timeout shall be set to RCMVAL_false
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the monitor init timeout
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_false
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the monitor init timeout = RCMVAL_false
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-14:]
+		text: the monitor mode shall be initialized to RCMVAL_init .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the monitor mode shall be initialized to RCMVAL_init .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(the monitor mode.crrValue = RCMVAL_init)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the monitor mode shall be initialized to RCMVAL_init
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the monitor mode shall be initialized to RCMVAL_init
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the monitor mode shall be initialized to RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the monitor mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be initialized
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrValue
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the monitor mode.crrValue = RCMVAL_init
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-13:]
+		text: if the regulator status equals RCMVAL_false , the regulator init timeout shall be set to RCMVAL_true .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator status equals RCMVAL_false , the regulator init timeout shall be set to RCMVAL_true .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the regulator status = RCMVAL_false)] ==> [(the regulator init timeout = RCMVAL_true)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the regulator status equals RCMVAL_false
+					[2]: the regulator init timeout shall be set to RCMVAL_true
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the regulator status equals RCMVAL_false
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the regulator init timeout shall be set to RCMVAL_true
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the regulator status equals RCMVAL_false
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the regulator status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_false
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the regulator status = RCMVAL_false
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the regulator init timeout shall be set to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the regulator init timeout
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the regulator init timeout = RCMVAL_true
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-12:]
+		text: if the regulator status equals RCMVAL_true , the regulator init timeout shall be set to RCMVAL_false .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator status equals RCMVAL_true , the regulator init timeout shall be set to RCMVAL_false .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the regulator status = RCMVAL_true)] ==> [(the regulator init timeout = RCMVAL_false)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the regulator status equals RCMVAL_true
+					[2]: the regulator init timeout shall be set to RCMVAL_false
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the regulator status equals RCMVAL_true
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the regulator init timeout shall be set to RCMVAL_false
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the regulator status equals RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the regulator status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the regulator status = RCMVAL_true
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the regulator init timeout shall be set to RCMVAL_false
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the regulator init timeout
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_false
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the regulator init timeout = RCMVAL_false
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-11:]
+		text: the regulator mode shall be initialized to RCMVAL_init .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the regulator mode shall be initialized to RCMVAL_init .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(the regulator mode = RCMVAL_init)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the regulator mode shall be initialized to RCMVAL_init
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the regulator mode shall be initialized to RCMVAL_init
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the regulator mode shall be initialized to RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be initialized
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the regulator mode = RCMVAL_init
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-10:]
+		text: the manage monitor interface mode shall be set to the monitor mode .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the manage monitor interface mode shall be set to the monitor mode .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(the manage monitor interface mode = the monitor mode)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the manage monitor interface mode shall be set to the monitor mode
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the manage monitor interface mode shall be set to the monitor mode
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the manage monitor interface mode shall be set to the monitor mode
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the manage monitor interface mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the monitor mode
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the manage monitor interface mode = the monitor mode
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-20:]
+		text: when the regulator mode equals RCMVAL_init , the reset shall be set to RCMVAL_true .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when the regulator mode equals RCMVAL_init , the reset shall be set to RCMVAL_true .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the regulator mode = RCMVAL_init)] ==> [(the reset = RCMVAL_true)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when the regulator mode equals RCMVAL_init
+					[2]: the reset shall be set to RCMVAL_true
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the regulator mode equals RCMVAL_init
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the reset shall be set to RCMVAL_true
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when the regulator mode equals RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the regulator mode = RCMVAL_init
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the reset shall be set to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the reset
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the reset = RCMVAL_true
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-4:]
+		text: if the regulator mode equals RCMVAL_failed, when the signal is RCMVAL_ok, the output regulator status shall be set to RCMVAL_failed .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator mode equals RCMVAL_failed, when the signal is RCMVAL_ok, the output regulator status shall be set to RCMVAL_failed .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [([(P)] ==> [(Q)])] ==> [(R)] )
+					MTL-Formula: G( [([(the signal = RCMVAL_ok)] ==> [(the regulator mode = RCMVAL_failed)])] ==> [(the output regulator status = RCMVAL_failed)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the regulator mode equals RCMVAL_failed when the signal is RCMVAL_ok
+					[2]: the output regulator status shall be set to RCMVAL_failed
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the regulator mode equals RCMVAL_failed
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the signal is RCMVAL_ok
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the output regulator status shall be set to RCMVAL_failed
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the regulator mode equals RCMVAL_failed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_failed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the regulator mode = RCMVAL_failed
+						</FormalSemantic>
+					</Condition>
+					<Trigger>
+						Keyword: when
+						Text = when the signal is RCMVAL_ok
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the signal
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_ok
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the signal = RCMVAL_ok
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the output regulator status shall be set to RCMVAL_failed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the output regulator status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_failed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the output regulator status = RCMVAL_failed
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-3:]
+		text: if the regulator mode equals RCMVAL_normal , the output regulator status shall be set to RCMVAL_status_on .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator mode equals RCMVAL_normal , the output regulator status shall be set to RCMVAL_status_on .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the regulator mode = RCMVAL_normal)] ==> [(the output regulator status = RCMVAL_status_on)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the regulator mode equals RCMVAL_normal
+					[2]: the output regulator status shall be set to RCMVAL_status_on
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the regulator mode equals RCMVAL_normal
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the output regulator status shall be set to RCMVAL_status_on
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the regulator mode equals RCMVAL_normal
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_normal
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the regulator mode = RCMVAL_normal
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the output regulator status shall be set to RCMVAL_status_on
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the output regulator status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_status_on
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the output regulator status = RCMVAL_status_on
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-6:]
+		text: if the manage monitor interface mode equals RCMVAL_init , the output monitor status shall be set to RCMVAL_init .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the manage monitor interface mode equals RCMVAL_init , the output monitor status shall be set to RCMVAL_init .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the manage monitor interface mode = RCMVAL_init)] ==> [(the output monitor status = RCMVAL_init)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the manage monitor interface mode equals RCMVAL_init
+					[2]: the output monitor status shall be set to RCMVAL_init
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the manage monitor interface mode equals RCMVAL_init
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the output monitor status shall be set to RCMVAL_init
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the manage monitor interface mode equals RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the manage monitor interface mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the manage monitor interface mode = RCMVAL_init
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the output monitor status shall be set to RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the output monitor status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the output monitor status = RCMVAL_init
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-5:]
+		text: if the regulator mode equals RCMVAL_failed , the heat control shall be set to RCMVAL_control_off .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator mode equals RCMVAL_failed , the heat control shall be set to RCMVAL_control_off .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the regulator mode = RCMVAL_failed)] ==> [(the heat control = RCMVAL_control_off)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the regulator mode equals RCMVAL_failed
+					[2]: the heat control shall be set to RCMVAL_control_off
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the regulator mode equals RCMVAL_failed
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the heat control shall be set to RCMVAL_control_off
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the regulator mode equals RCMVAL_failed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_failed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the regulator mode = RCMVAL_failed
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the heat control shall be set to RCMVAL_control_off
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the heat control
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_control_off
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the heat control = RCMVAL_control_off
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-8:]
+		text: if the manage monitor interface mode equals RCMVAL_failed , the output monitor status shall be set to RCMVAL_failed .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the manage monitor interface mode equals RCMVAL_failed , the output monitor status shall be set to RCMVAL_failed .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the manage monitor interface mode = RCMVAL_failed)] ==> [(the output monitor status = RCMVAL_failed)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the manage monitor interface mode equals RCMVAL_failed
+					[2]: the output monitor status shall be set to RCMVAL_failed
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the manage monitor interface mode equals RCMVAL_failed
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the output monitor status shall be set to RCMVAL_failed
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the manage monitor interface mode equals RCMVAL_failed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the manage monitor interface mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_failed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the manage monitor interface mode = RCMVAL_failed
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the output monitor status shall be set to RCMVAL_failed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the output monitor status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_failed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the output monitor status = RCMVAL_failed
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-7:]
+		text: if the manage monitor interface mode equals RCMVAL_normal , the output monitor status shall be set to RCMVAL_status_on .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the manage monitor interface mode equals RCMVAL_normal , the output monitor status shall be set to RCMVAL_status_on .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the manage monitor interface mode = RCMVAL_normal)] ==> [(the output monitor status = RCMVAL_status_on)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the manage monitor interface mode equals RCMVAL_normal
+					[2]: the output monitor status shall be set to RCMVAL_status_on
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the manage monitor interface mode equals RCMVAL_normal
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the output monitor status shall be set to RCMVAL_status_on
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the manage monitor interface mode equals RCMVAL_normal
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the manage monitor interface mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_normal
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the manage monitor interface mode = RCMVAL_normal
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the output monitor status shall be set to RCMVAL_status_on
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the output monitor status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_status_on
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the output monitor status = RCMVAL_status_on
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-9:]
+		text: if the monitor mode equals RCMVAL_init , the alarm control shall be set to RCMVAL_control_off .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the monitor mode equals RCMVAL_init , the alarm control shall be set to RCMVAL_control_off .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the monitor mode = RCMVAL_init)] ==> [(the alarm control = RCMVAL_control_off)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the monitor mode equals RCMVAL_init
+					[2]: the alarm control shall be set to RCMVAL_control_off
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the monitor mode equals RCMVAL_init
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the alarm control shall be set to RCMVAL_control_off
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the monitor mode equals RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the monitor mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the monitor mode = RCMVAL_init
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the alarm control shall be set to RCMVAL_control_off
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the alarm control
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_control_off
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the alarm control = RCMVAL_control_off
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+</SucceededRequirement>
+</log>

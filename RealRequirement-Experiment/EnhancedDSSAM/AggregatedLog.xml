@@ -1,0 +1,5488 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+File Measures: 
+	Number of req in file = 57
+	Number of prim req in file = 58
+<FailedRequirement>
+</FailedRequirement>
+<SucceededRequirement>
+	<Requirement>
+		ID: [TempReqId-1:]
+		text: when the monitor does not receive for 5 time intervals status signal RCMVAR_e, it sends a request RCMVAR_req to the station .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when the monitor does not receive for 5 time intervals status signal RCMVAR_e, it sends a request RCMVAR_req to the station .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(G{t=5}(¬P))] ==> [(Q)] )
+					MTL-Formula: G( [(G{t=5}(¬the monitor.crrStatus = receive))] ==> [(send_to(it, a request RCMVAR_req, the station))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when the monitor does not receive for 5 time intervals
+					[2]: it sends a request RCMVAR_req to the station
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the monitor does not receive
+						SlotType= TimeScope|| Text= for 5 time intervals
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= it sends a request RCMVAR_req to the station
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when the monitor does not receive
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the monitor
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:does receive
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 5
+							Unit: time intervals
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 5
+							</FormalSemantic>
+						<ValidTime>
+						Is negatted: true
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: receive
+							TechnicalOperator: =
+							PredicateFormal: the monitor.crrStatus = receive
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = it sends a request RCMVAR_req to the station
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: it
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: a request RCMVAR_req
+							</ArgDetails>
+							Arg[2]
+							<ArgDetails>
+								Text: the station
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:sends
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: send_to
+							OperandList: {Arg[1], Arg[2], Arg[3]}
+							PredicateFormal: send_to(it, a request RCMVAR_req, the station)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-28:]
+		text: while the aircraft is RCMVAL_onground, when the RCMTECHTERM_reverse_thrust is commanded, the control system shall enable deployment of the thrust reverser .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: while the aircraft is RCMVAL_onground, when the RCMTECHTERM_reverse_thrust is commanded, the control system shall enable deployment of the thrust reverser .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [G( (((P)) ∧ ¬ ((¬Q)) ∧ F((¬Q))) ==> (F((R) || ((¬Q)) ) U ((¬Q))) )] ==> [(S)] )
+					MTL-Formula: G( [G( (((the aircraft = RCMVAL_onground)) ∧ ¬ ((¬the aircraft = RCMVAL_onground)) ∧ F((¬the aircraft = RCMVAL_onground))) ==> (F((the RCMTECHTERM_reverse_thrust.crrStatus = command) || ((¬the aircraft = RCMVAL_onground)) ) U ((¬the aircraft = RCMVAL_onground))) )] ==> [(enable(the control system, deployment of the thrust reverser))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: while the aircraft is RCMVAL_onground
+					[2]: when the RCMTECHTERM_reverse_thrust is commanded
+					[3]: the control system shall enable deployment of the thrust reverser
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: preScope 
+						SlotType= ConditionalScope|| Text= while the aircraft is RCMVAL_onground
+					C[2]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the RCMTECHTERM_reverse_thrust is commanded
+					C[3]==>	Type: act 
+						SlotType= MainSlot|| Text= the control system shall enable deployment of the thrust reverser
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when the RCMTECHTERM_reverse_thrust is commanded
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_reverse_thrust
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is commanded
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: command
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_reverse_thrust.crrStatus = command
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the control system shall enable deployment of the thrust reverser
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: deployment of the thrust reverser
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall enable
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: enable
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: enable(the control system, deployment of the thrust reverser)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<PreconditionalScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while the aircraft is RCMVAL_onground
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: the aircraft
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Text: RCMVAL_onground
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is
+										</Operator>
+										Has valid-time:  false
+										Is negatted: false
+										<FormalSemantic>
+											LHS: Arg[0]
+											RHS: Arg[1]
+											TechnicalOperator: =
+											PredicateFormal: the aircraft = RCMVAL_onground
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while the aircraft is RCMVAL_onground
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: the aircraft
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Text: RCMVAL_onground
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is
+										</Operator>
+										Has valid-time:  false
+										Is negatted: true
+										<FormalSemantic>
+											LHS: Arg[0]
+											RHS: Arg[1]
+											TechnicalOperator: =
+											PredicateFormal: the aircraft = RCMVAL_onground
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-16:]
+		text: when RCMTECHTERM_liquid_level_2 is reached, the 60 second timer shall start .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_liquid_level_2 is reached, the 60 second timer shall start .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(RCMTECHTERM_liquid_level_2.crrStatus = reach)] ==> [(start(the 60 second timer))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when RCMTECHTERM_liquid_level_2 is reached
+					[2]: the 60 second timer shall start
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when RCMTECHTERM_liquid_level_2 is reached
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the 60 second timer shall start
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when RCMTECHTERM_liquid_level_2 is reached
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMTECHTERM_liquid_level_2
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is reached
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: reach
+							TechnicalOperator: =
+							PredicateFormal: RCMTECHTERM_liquid_level_2.crrStatus = reach
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the 60 second timer shall start
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the 60 second timer
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall start
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: start
+							OperandList: {Arg[1]}
+							PredicateFormal: start(the 60 second timer)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-48:]
+		text: after the door is open, if the door is still not locked within 15 minutes, trigger alarm.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: after the door is open, if the door is still not locked within 15 minutes, trigger alarm.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: 
+					MTL-Formula: 
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: after the door is open
+					[2]: if the door is still not locked within 15 minutes
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: preScope 
+						SlotType= ConditionalScope|| Text= after the door is open
+					C[2]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the door is not locked
+						SlotType= TimeScope|| Text= within 15 minutes
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the door is not locked
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the door
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is locked
+						</Operator>
+						Has valid-time:  false
+						Is negatted: true
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: lock
+							TechnicalOperator: =
+							PredicateFormal: the door.crrStatus = lock
+						</FormalSemantic>
+						<PreElapsedTime>
+							TimeType: PreElapsed
+							Value: 15
+							Unit: minutes
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 15
+							</FormalSemantic>
+						<PreElapsedTime>
+					</Condition>
+					<RequirementScope>
+						<PreconditionalScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after the door is open
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: the door
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: open
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0]
+										RHS: Arg[1]
+										TechnicalOperator: =
+										PredicateFormal: the door = open
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-36:]
+		text: while the sea conditions, when radar is sighting, the weapon operator shall fire a missile within 3 seconds .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: while the sea conditions, when radar is sighting, the weapon operator shall fire a missile within 3 seconds .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: 
+					MTL-Formula: 
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: while the sea conditions the weapon operator shall fire a missile within 3 seconds
+					[2]: when radar is sighting
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: preScope 
+						SlotType= ConditionalScope|| Text= while the sea conditions shall fire a missile
+						SlotType= TimeScope|| Text= within 3 seconds
+					C[2]==>	Type: trig 
+						SlotType= MainSlot|| Text= when radar is sighting
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when radar is sighting
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: radar
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is sighting
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: sighting
+							TechnicalOperator: =
+							PredicateFormal: radar.crrStatus = sighting
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<RequirementScope>
+						<PreconditionalScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while the sea conditions shall fire a missile
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: the sea conditions
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Text: a missile
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:shall fire
+										</Operator>
+										Has valid-time:  false
+										Is negatted: false
+										<FormalSemantic>
+											ProcessName: fire
+											OperandList: {Arg[1], Arg[2]}
+											PredicateFormal: fire(the sea conditions, a missile)
+										</FormalSemantic>
+										<PreElapsedTime>
+											TimeType: PreElapsed
+											Value: 3
+											Unit: seconds
+											QPRelation: null
+										<FormalSemantic>
+											TechnicalOperator: =
+											Value: 3
+											</FormalSemantic>
+										<PreElapsedTime>
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while the sea conditions shall fire a missile
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: the sea conditions
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Text: a missile
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:shall fire
+										</Operator>
+										Has valid-time:  false
+										Is negatted: true
+										<FormalSemantic>
+											ProcessName: fire
+											OperandList: {Arg[1], Arg[2]}
+											PredicateFormal: fire(the sea conditions, a missile)
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-24:]
+		text: if the computed airspeed fault flag is set, the control system shall use the modelled airspeed .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the computed airspeed fault flag is set, the control system shall use the modelled airspeed .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the computed airspeed fault flag.crrStatus = set)] ==> [(use(the control system, the modelled airspeed))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the computed airspeed fault flag is set
+					[2]: the control system shall use the modelled airspeed
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the computed airspeed fault flag is set
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the control system shall use the modelled airspeed
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the computed airspeed fault flag is set
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the computed airspeed fault flag
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: set
+							TechnicalOperator: =
+							PredicateFormal: the computed airspeed fault flag.crrStatus = set
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the control system shall use the modelled airspeed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the modelled airspeed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall use
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: use
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: use(the control system, the modelled airspeed)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-12:]
+		text: while RCMTECHTERM_liquid_level_1 is not reached, when the start button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall open the RCMVAR_valve_0 before the emergency button is pressed .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: while RCMTECHTERM_liquid_level_1 is not reached, when the start button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall open the RCMVAR_valve_0 before the emergency button is pressed .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [G( (((¬P)) ∧ ¬ ((¬Q)) ∧ F((¬Q))) ==> (F((R) || ((¬Q)) ) U ((¬Q))) )] ==> [F(T) ==> (F((S) || (T) ) U (T))] )
+					MTL-Formula: G( [G( (((¬RCMTECHTERM_liquid_level_1.crrStatus = reach)) ∧ ¬ ((¬RCMTECHTERM_liquid_level_1.crrStatus = reach)) ∧ F((¬RCMTECHTERM_liquid_level_1.crrStatus = reach))) ==> (F((the start button.crrStatus = press) || ((¬RCMTECHTERM_liquid_level_1.crrStatus = reach)) ) U ((¬RCMTECHTERM_liquid_level_1.crrStatus = reach))) )] ==> [F(the emergency button.crrStatus = press) ==> (F((open(the RCMTECHTERM_liquid_open_mixer_controller, the RCMVAR_valve_0)) || (the emergency button.crrStatus = press) ) U (the emergency button.crrStatus = press))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: while RCMTECHTERM_liquid_level_1 is not reached
+					[2]: when the start button is pressed
+					[3]: the RCMTECHTERM_liquid_open_mixer_controller shall open the RCMVAR_valve_0
+					[4]: before the emergency button is pressed
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: preScope 
+						SlotType= ConditionalScope|| Text= while RCMTECHTERM_liquid_level_1 is not reached
+					C[2]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the start button is pressed
+					C[3]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall open the RCMVAR_valve_0
+					C[4]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= before the emergency button is pressed
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when the start button is pressed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the start button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is pressed
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: press
+							TechnicalOperator: =
+							PredicateFormal: the start button.crrStatus = press
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall open the RCMVAR_valve_0
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the RCMVAR_valve_0
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall open
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: open
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: open(the RCMTECHTERM_liquid_open_mixer_controller, the RCMVAR_valve_0)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before the emergency button is pressed
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: the emergency button
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is pressed
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0].crrStatus
+										RHS: press
+										TechnicalOperator: =
+										PredicateFormal: the emergency button.crrStatus = press
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+						<PreconditionalScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while RCMTECHTERM_liquid_level_1 is not reached
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: RCMTECHTERM_liquid_level_1
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is reached
+										</Operator>
+										Has valid-time:  false
+										Is negatted: true
+										<FormalSemantic>
+											LHS: Arg[0].crrStatus
+											RHS: reach
+											TechnicalOperator: =
+											PredicateFormal: RCMTECHTERM_liquid_level_1.crrStatus = reach
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while RCMTECHTERM_liquid_level_1 is not reached
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: RCMTECHTERM_liquid_level_1
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is reached
+										</Operator>
+										Has valid-time:  false
+										Is negatted: true
+										<FormalSemantic>
+											LHS: Arg[0].crrStatus
+											RHS: reach
+											TechnicalOperator: =
+											PredicateFormal: RCMTECHTERM_liquid_level_1.crrStatus = reach
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-56:]
+		text: after RCMVAR_x is RCMVAL_true for 2 seconds, when RCMVAR_z is turned to 1 for 1 second, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: after RCMVAR_x is RCMVAL_true for 2 seconds, when RCMVAR_z is turned to 1 for 1 second, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(G{t=2}(P) ==> (G{t=1}(Q)))] ==> [G(F{t=2}( (R))] )
+					MTL-Formula: G( [(G{t=2}(RCMVAR_x = RCMVAL_true) ==> (G{t=1}(RCMVAR_z = 1)))] ==> [G(F{t=2}((RCMVAR_y = RCMVAL_true)))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: after RCMVAR_x is RCMVAL_true for 2 seconds
+					[2]: when RCMVAR_z is turned to 1 for 1 second
+					[3]: RCMVAR_y shall be set to RCMVAL_true every 2 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: preScope 
+						SlotType=ConditionalScope||Text=after RCMVAR_x  is RCMVAL_true
+						SlotType= TimeScope|| Text= for 2 second
+					C[2]==>	Type: trig 
+						SlotType= MainSlot|| Text= when RCMVAR_z is turned to 1
+						SlotType= TimeScope|| Text= for 1 seconds
+					C[3]==>	Type: act 
+						SlotType= MainSlot|| Text= RCMVAR_y shall be set to RCMVAL_true
+						SlotType= TimeScope|| Text= every 2 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when RCMVAR_z is turned to 1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_z
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is turned
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 1
+							Unit: seconds
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 1
+							</FormalSemantic>
+						<ValidTime>
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: RCMVAR_z = 1
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = RCMVAR_y shall be set to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_y
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: RCMVAR_y = RCMVAL_true
+						</FormalSemantic>
+						is repeated = true
+						<InBetweenTime>
+							TimeType: InBetween
+							Value: 2
+							Unit: seconds
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 2
+							</FormalSemantic>
+						<InBetweenTime>
+					</Action>
+					<RequirementScope>
+						<PreconditionalScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after RCMVAR_x is RCMVAL_true
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: RCMVAR_x
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: RCMVAL_true
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is
+									</Operator>
+									Has valid-time:  true
+									<ValidTime>
+									  TimeType: Scope
+									  Value: 2
+									  Unit: seconds
+									  QPRelation: null
+									  <FormalSemantic>
+									    TechnicalOperator: =
+									    Value: 2
+									  </FormalSemantic>
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0]
+										RHS: Arg[1]
+										TechnicalOperator: =
+										PredicateFormal: RCMVAR_x = RCMVAL_true
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-44:]
+		text: the gates must be in the RCMTECHTERM_closed_state for 6 seconds before the RCMTECHTERM_railroad_crossing is safeguarded .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the gates must be in the RCMTECHTERM_closed_state for 6 seconds before the RCMTECHTERM_railroad_crossing is safeguarded .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [F(Q) ==> (F((G{t=6}(P)) || (Q) ) U (Q))] )
+					MTL-Formula: G( [F(the RCMTECHTERM_railroad_crossing.crrStatus = safeguard) ==> (F((G{t=6}(the gates = the RCMTECHTERM_closed_state)) || (the RCMTECHTERM_railroad_crossing.crrStatus = safeguard) ) U (the RCMTECHTERM_railroad_crossing.crrStatus = safeguard))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the gates must be in the RCMTECHTERM_closed_state for 6 seconds
+					[2]: before the RCMTECHTERM_railroad_crossing is safeguarded
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the gates must be in the RCMTECHTERM_closed_state
+						SlotType= TimeScope|| Text= for 6 seconds
+					C[2]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= before the RCMTECHTERM_railroad_crossing is safeguarded
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the gates must be in the RCMTECHTERM_closed_state
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the gates
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the RCMTECHTERM_closed_state
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:must be
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 6
+							Unit: seconds
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 6
+							</FormalSemantic>
+						<ValidTime>
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the gates = the RCMTECHTERM_closed_state
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before the RCMTECHTERM_railroad_crossing is safeguarded
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: the RCMTECHTERM_railroad_crossing
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is safeguarded
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0].crrStatus
+										RHS: safeguard
+										TechnicalOperator: =
+										PredicateFormal: the RCMTECHTERM_railroad_crossing.crrStatus = safeguard
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-32:]
+		text: if a single failure leads to RCMTECHTERM_deficient_aircraft_supplied_data, the RCMTECHTERM_engine_control_system shall not cause a hazardous engine effect .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if a single failure leads to RCMTECHTERM_deficient_aircraft_supplied_data, the RCMTECHTERM_engine_control_system shall not cause a hazardous engine effect .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(¬Q)] )
+					MTL-Formula: G( [(lead_to(a single failure, RCMTECHTERM_deficient_aircraft_supplied_data))] ==> [(¬cause(the RCMTECHTERM_engine_control_system, a hazardous engine effect))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if a single failure leads to RCMTECHTERM_deficient_aircraft_supplied_data
+					[2]: the RCMTECHTERM_engine_control_system shall not cause a hazardous engine effect
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if a single failure leads to RCMTECHTERM_deficient_aircraft_supplied_data
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_engine_control_system shall not cause a hazardous engine effect
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if a single failure leads to RCMTECHTERM_deficient_aircraft_supplied_data
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: a single failure
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMTECHTERM_deficient_aircraft_supplied_data
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:leads
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: lead_to
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: lead_to(a single failure, RCMTECHTERM_deficient_aircraft_supplied_data)
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the RCMTECHTERM_engine_control_system shall not cause a hazardous engine effect
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_engine_control_system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: a hazardous engine effect
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall cause
+						</Operator>
+						Has valid-time:  false
+						Is negatted: true
+						<FormalSemantic>
+							ProcessName: cause
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: cause(the RCMTECHTERM_engine_control_system, a hazardous engine effect)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-20:]
+		text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_2 .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_2 .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(emergency button.crrStatus = press)] ==> [(close(the RCMTECHTERM_liquid_open_mixer_controller, RCMVAR_valve_2))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when emergency button is pressed
+					[2]: the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_2
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when emergency button is pressed
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_2
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when emergency button is pressed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: emergency button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is pressed
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: press
+							TechnicalOperator: =
+							PredicateFormal: emergency button.crrStatus = press
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_2
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAR_valve_2
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall close
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: close
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: close(the RCMTECHTERM_liquid_open_mixer_controller, RCMVAR_valve_2)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-52:]
+		text: after RCMVAR_x is RCMVAL_true for 2 seconds if RCMVAR_z exceeds RCMVAR_m, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: after RCMVAR_x is RCMVAL_true for 2 seconds if RCMVAR_z exceeds RCMVAR_m, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(G{t=2}(P) ==> ((Q)))] ==> [G(F{t=2}( (R))] )
+					MTL-Formula: G( [(G{t=2}(RCMVAR_x = RCMVAL_true) ==> ((RCMVAR_z > RCMVAR_m)))] ==> [G(F{t=2}((RCMVAR_y = RCMVAL_true)))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: after RCMVAR_x is RCMVAL_true for 2 seconds
+					[2]: if RCMVAR_z exceeds RCMVAR_m
+					[3]: RCMVAR_y shall be set to RCMVAL_true every 2 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: preScope 
+						SlotType= ConditionalScope|| Text= after RCMVAR_x is RCMVAL_true
+						SlotType= TimeScope|| Text= for 2 seconds
+					C[2]==>	Type: cond 
+						SlotType= MainSlot|| Text= if RCMVAR_z exceeds RCMVAR_m
+					C[3]==>	Type: act 
+						SlotType= MainSlot|| Text= RCMVAR_y shall be set to RCMVAL_true
+						SlotType= TimeScope|| Text= every 2 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if RCMVAR_z exceeds RCMVAR_m
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_z
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAR_m
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:exceeds
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: >
+							PredicateFormal: RCMVAR_z > RCMVAR_m
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = RCMVAR_y shall be set to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_y
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: RCMVAR_y = RCMVAL_true
+						</FormalSemantic>
+						is repeated = true
+						<InBetweenTime>
+							TimeType: InBetween
+							Value: 2
+							Unit: seconds
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 2
+							</FormalSemantic>
+						<InBetweenTime>
+					</Action>
+					<RequirementScope>
+						<PreconditionalScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after RCMVAR_x is RCMVAL_true
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: RCMVAR_x
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: RCMVAL_true
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is
+									</Operator>
+									Has valid-time:  true
+									<ValidTime>
+										TimeType: Scope
+										Value: 2
+										Unit: seconds
+										QPRelation: null
+									<FormalSemantic>
+										TechnicalOperator: =
+										Value: 2
+										</FormalSemantic>
+									<ValidTime>
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0]
+										RHS: Arg[1]
+										TechnicalOperator: =
+										PredicateFormal: RCMVAR_x = RCMVAL_true
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-40:]
+		text: if a defect is detected at a certain valve, the RCMTECHTERM_software_control_system must be switched off for 2 seconds . after the RCMTECHTERM_software_control_system is switched off, the RCMTECHTERM_redundant_pneumatic_control must be switched on .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if a defect is detected at a certain valve, the RCMTECHTERM_software_control_system must be switched off for 2 seconds .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(G{t=2}(Q))] )
+					MTL-Formula: G( [(detect_at(a defect, a certain valve))] ==> [(G{t=2}(the RCMTECHTERM_software_control_system.crrStatus = switch))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if a defect is detected at a certain valve
+					[2]: the RCMTECHTERM_software_control_system must be switched off for 2 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if a defect is detected at a certain valve
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_software_control_system must be switched off
+						SlotType= TimeScope|| Text= for 2 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if a defect is detected at a certain valve
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: a defect
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: a certain valve
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is detected
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: detect_at
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: detect_at(a defect, a certain valve)
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the RCMTECHTERM_software_control_system must be switched off
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_software_control_system
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:must be switched
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 2
+							Unit: seconds
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 2
+							</FormalSemantic>
+						<ValidTime>
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: switch
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_software_control_system.crrStatus = switch
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+			<PR>
+				Id: [2]
+				text:  after the RCMTECHTERM_software_control_system is switched off, the RCMTECHTERM_redundant_pneumatic_control must be switched on .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [((Q) ==> (P))] )
+					MTL-Formula: G( [((the RCMTECHTERM_software_control_system.crrStatus = switch) ==> (the RCMTECHTERM_redundant_pneumatic_control.crrStatus = switch))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: after the RCMTECHTERM_software_control_system is switched off
+					[2]: the RCMTECHTERM_redundant_pneumatic_control must be switched on
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= after the RCMTECHTERM_software_control_system is switched off
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_redundant_pneumatic_control must be switched on
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the RCMTECHTERM_redundant_pneumatic_control must be switched on
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_redundant_pneumatic_control
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:must be switched
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: switch
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_redundant_pneumatic_control.crrStatus = switch
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after the RCMTECHTERM_software_control_system is switched off
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: the RCMTECHTERM_software_control_system
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is switched
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0].crrStatus
+										RHS: switch
+										TechnicalOperator: =
+										PredicateFormal: the RCMTECHTERM_software_control_system.crrStatus = switch
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-5:]
+		text: when countdown timer expires then the RCMTECHTERM_automatic_door_controller shall close the door .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when countdown timer expires then the RCMTECHTERM_automatic_door_controller shall close the door .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(countdown timer.crrStatus = expire)] ==> [(close(the RCMTECHTERM_automatic_door_controller))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when countdown timer expires then
+					[2]: the RCMTECHTERM_automatic_door_controller shall close
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when countdown timer expires
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_automatic_door_controller shall close
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when countdown timer expires
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: countdown timer
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:expires
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: expire
+							TechnicalOperator: =
+							PredicateFormal: countdown timer.crrStatus = expire
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_automatic_door_controller shall close
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_automatic_door_controller
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall close
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: close
+							OperandList: {Arg[1]}
+							PredicateFormal: close(the RCMTECHTERM_automatic_door_controller)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-9:]
+		text: RCMVAR_simplemat checks the RCMTECHTERM_personal_code .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: RCMVAR_simplemat checks the RCMTECHTERM_personal_code .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: 
+					MTL-Formula: 
+				</Formal-Representation>
+				<ExtractedComponents>
+				</ExtractedComponents>
+				<ClassifiedComponents>
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-19:]
+		text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1 .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1 .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(emergency button.crrStatus = press)] ==> [(close(the RCMTECHTERM_liquid_open_mixer_controller, RCMVAR_valve_1))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when emergency button is pressed
+					[2]: the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when emergency button is pressed
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when emergency button is pressed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: emergency button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is pressed
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: press
+							TechnicalOperator: =
+							PredicateFormal: emergency button.crrStatus = press
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAR_valve_1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall close
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: close
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: close(the RCMTECHTERM_liquid_open_mixer_controller, RCMVAR_valve_1)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-39:]
+		text: after the train has passed the RCMTECHTERM_railroad_crossing, the gates can be opened .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: after the train has passed the RCMTECHTERM_railroad_crossing, the gates can be opened .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [((Q) ==> (P))] )
+					MTL-Formula: G( [((pass(the train, the RCMTECHTERM_railroad_crossing)) ==> (the gates.crrStatus = open))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: after the train has passed the RCMTECHTERM_railroad_crossing
+					[2]: the gates can be opened
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= after the train has passed the RCMTECHTERM_railroad_crossing
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the gates can be opened
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the gates can be opened
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the gates
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:can be opened
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: open
+							TechnicalOperator: =
+							PredicateFormal: the gates.crrStatus = open
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after the train has passed the RCMTECHTERM_railroad_crossing
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: the train
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: the RCMTECHTERM_railroad_crossing
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:has passed
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										ProcessName: pass
+										OperandList: {Arg[1], Arg[2]}
+										PredicateFormal: pass(the train, the RCMTECHTERM_railroad_crossing)
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-27:]
+		text: when the control system includes an overspeed protection function, the control system shall test the availability of the overspeed protection function before aircraft dispatch .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when the control system includes an overspeed protection function, the control system shall test the availability of the overspeed protection function before aircraft dispatch .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [F(R) ==> (F((Q) || (R) ) U (R))] )
+					MTL-Formula: G( [(include(the control system, an overspeed protection function))] ==> [F(aircraft dispatch = RCMVAL_True) ==> (F((test(the control system, the availability of the overspeed protection function)) || (aircraft dispatch = RCMVAL_True) ) U (aircraft dispatch = RCMVAL_True))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when the control system includes an overspeed protection function
+					[2]: the control system shall test the availability of the overspeed protection function before aircraft dispatch
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the control system includes an overspeed protection function
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the control system shall test the availability of the overspeed protection function
+					C[2]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= before aircraft dispatch
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when the control system includes an overspeed protection function
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: an overspeed protection function
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:includes
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: include
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: include(the control system, an overspeed protection function)
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the control system shall test the availability of the overspeed protection function
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the availability of the overspeed protection function
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall test
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: test
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: test(the control system, the availability of the overspeed protection function)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before aircraft dispatch
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: aircraft dispatch
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: RCMVAL_True
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:equals
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0]
+										RHS: Arg[1]
+										TechnicalOperator: =
+										PredicateFormal: aircraft dispatch = RCMVAL_True
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-15:]
+		text: when RCMTECHTERM_liquid_level_2 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1 .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_liquid_level_2 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1 .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(RCMTECHTERM_liquid_level_2.crrStatus = reach)] ==> [(close(the RCMTECHTERM_liquid_open_mixer_controller, RCMVAR_valve_1))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when RCMTECHTERM_liquid_level_2 is reached
+					[2]: the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when RCMTECHTERM_liquid_level_2 is reached
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when RCMTECHTERM_liquid_level_2 is reached
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMTECHTERM_liquid_level_2
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is reached
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: reach
+							TechnicalOperator: =
+							PredicateFormal: RCMTECHTERM_liquid_level_2.crrStatus = reach
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAR_valve_1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall close
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: close
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: close(the RCMTECHTERM_liquid_open_mixer_controller, RCMVAR_valve_1)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-47:]
+		text: after transmission, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: after transmission, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [((Q) ==> (P))] )
+					MTL-Formula: G( [((transmission = RCMVAL_True) ==> (the RCMTECHTERM_engine_control_system = RCMTECHTERM_single_fault_tolerant with respect))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: after transmission the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_engine_control_system shall be RCMTECHTERM_single_fault_tolerant with respect
+					C[1]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= after transmission
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the RCMTECHTERM_engine_control_system shall be RCMTECHTERM_single_fault_tolerant with respect
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_engine_control_system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMTECHTERM_single_fault_tolerant with respect
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_engine_control_system = RCMTECHTERM_single_fault_tolerant with respect
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after transmission
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: transmission
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: RCMVAL_True
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:equals
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0]
+										RHS: Arg[1]
+										TechnicalOperator: =
+										PredicateFormal: transmission = RCMVAL_True
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-35:]
+		text: if an obstacle is detected for at least 50 milliseconds, the window down signal must be activated for at least 1 second .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if an obstacle is detected for at least 50 milliseconds, the window down signal must be activated for at least 1 second .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(G{t>=50}(P))] ==> [(G{t>=1}(Q))] )
+					MTL-Formula: G( [(G{t>=50}(an obstacle.crrStatus = detect))] ==> [(G{t>=1}(the window down signal.crrStatus = activate))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if an obstacle is detected for at least 50 milliseconds
+					[2]: the window down signal must be activated for at least 1 second
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if an obstacle is detected
+						SlotType= TimeScope|| Text= for at  least 50 milliseconds
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the window down signal must be activated
+						SlotType= TimeScope|| Text= for at  least 1 second
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if an obstacle is detected
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: an obstacle
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is detected
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 50
+							Unit: milliseconds
+							QPRelation: at  least
+						<FormalSemantic>
+							TechnicalOperator: >=
+							Value: 50
+							</FormalSemantic>
+						<ValidTime>
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: detect
+							TechnicalOperator: =
+							PredicateFormal: an obstacle.crrStatus = detect
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the window down signal must be activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the window down signal
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:must be activated
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 1
+							Unit: second
+							QPRelation: at  least
+						<FormalSemantic>
+							TechnicalOperator: >=
+							Value: 1
+							</FormalSemantic>
+						<ValidTime>
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: the window down signal.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-23:]
+		text: when continuous ignition is commanded by the aircraft, the control system shall switch on continuous ignition .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when continuous ignition is commanded by the aircraft, the control system shall switch on continuous ignition .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(command_by(continuous ignition, the aircraft))] ==> [(the control system.crrStatus = switch)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when continuous ignition is commanded by the aircraft
+					[2]: the control system shall switch on
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when continuous ignition is commanded by the aircraft
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the control system shall switch on
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when continuous ignition is commanded by the aircraft
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: continuous ignition
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the aircraft
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is commanded
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: command_by
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: command_by(continuous ignition, the aircraft)
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the control system shall switch on
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the control system
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall switch
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: switch
+							TechnicalOperator: =
+							PredicateFormal: the control system.crrStatus = switch
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-11:]
+		text: if the RCMTECHTERM_personal_code is not valid, the RCMVAR_simplemat rejects the card .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the RCMTECHTERM_personal_code is not valid, the RCMVAR_simplemat rejects the card .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(¬P)] ==> [(Q)] )
+					MTL-Formula: G( [(¬the RCMTECHTERM_personal_code = valid)] ==> [(reject(the RCMVAR_simplemat, the card))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the RCMTECHTERM_personal_code is not valid
+					[2]: the RCMVAR_simplemat rejects the card
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the RCMTECHTERM_personal_code is not valid
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMVAR_simplemat rejects the card
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the RCMTECHTERM_personal_code is not valid
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_personal_code
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: valid
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: true
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_personal_code = valid
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the RCMVAR_simplemat rejects the card
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMVAR_simplemat
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the card
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:rejects
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: reject
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: reject(the RCMVAR_simplemat, the card)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-55:]
+		text: RCMVAR_y shall be set to RCMVAL_true, when RCMVAR_z is turned to 1 every 1 second before RCMVAR_x is turned to 0 for at most 1 second.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: RCMVAR_y shall be set to RCMVAL_true, when RCMVAR_z is turned to 1 every 1 second before RCMVAR_x is turned to 0 for at most 1 second.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [G(F{t=1}(P))] ==> [F(R) ==> (F((G{t<=1}(Q)) || (R) ) U (R))] )
+					MTL-Formula: G( [G(F{t=1} (RCMVAR_z = 1))] ==> [F(RCMVAR_x = 0) ==> (F((G{t<=1}(RCMVAR_y = RCMVAL_True)) || (F(RCMVAR_x = 0) ) U (F(RCMVAR_x = 0))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: RCMVAR_y shall be set to RCMVAL_true
+					[2]: when RCMVAR_z is turned to 1 every 1 second
+					[3]: before RCMVAR_x is turned to 0 for at most 1 second
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= RCMVAR_y shall be set to RCMVAL_true
+					C[2]==>	Type: trig 
+						SlotType= MainSlot|| Text= when RCMVAR_z is turned to 1
+						SlotType= TimeScope|| Text= every 1 seconds
+					C[3]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= before RCMVAR_x is turned to 0
+						SlotType= TimeScope|| Text= for at  most 1 second
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when RCMVAR_z is turned to 1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_z
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is turned
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						is repeated = true
+						<InBetweenTime>
+							TimeType: InBetween
+							Value: 1
+							Unit: seconds
+							QPRelation: null
+							<FormalSemantic>
+							  TechnicalOperator: =
+							  Value: 1
+							</FormalSemantic>
+						</InBetweenTime>
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: RCMVAR_z = 1
+						</FormalSemantic>
+					</Trigger>
+					<Action>
+						Text = RCMVAR_y shall be set to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_y
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: RCMVAR_y = RCMVAL_true
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before RCMVAR_x is turned to 0
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: RCMVAR_x
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: 0
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is turned
+									</Operator>
+									Has valid-time:  true
+									<ValidTime>
+										TimeType: Scope
+										Value: 1
+										Unit: second
+										QPRelation: at  most
+									<FormalSemantic>
+										TechnicalOperator: <=
+										Value: 1
+										</FormalSemantic>
+									<ValidTime>
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0]
+										RHS: Arg[1]
+										TechnicalOperator: =
+										PredicateFormal: RCMVAR_x = 0
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-43:]
+		text: after the temperature sensor has relayed the value 350, the inflow is opened if the level of the tank is less than the minimum value .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: after the temperature sensor has relayed the value 350, the inflow is opened if the level of the tank is less than the minimum value .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [((R) ==> (Q))] )
+					MTL-Formula: G( [(the level of the tank < the minimum value)] ==> [((the temperature sensor > the value 350) ==> (the inflow.crrStatus = open))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: after the temperature sensor has relayed the value 350
+					[2]: the inflow is opened
+					[3]: if the level of the tank is less than the minimum value
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= after the temperature sensor has relayed the value 350
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the inflow is opened
+					C[3]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the level of the tank is less than the minimum value
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the level of the tank is less than the minimum value
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the level of the tank
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the minimum value
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: <
+							PredicateFormal: the level of the tank < the minimum value
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the inflow is opened
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the inflow
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is opened
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: open
+							TechnicalOperator: =
+							PredicateFormal: the inflow.crrStatus = open
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after the temperature sensor has relayed the value 350
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: the temperature sensor
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: the value 350
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:has relayed
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0]
+										RHS: Arg[1]
+										TechnicalOperator: >
+										PredicateFormal: the temperature sensor > the value 350
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-31:]
+		text: when the RCMTECHTERM_engine_control_system changes operational mode, the RCMTECHTERM_engine_control_system shall maintain the engine within RCMTECHTERM_approved_operational_limits .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when the RCMTECHTERM_engine_control_system changes operational mode, the RCMTECHTERM_engine_control_system shall maintain the engine within RCMTECHTERM_approved_operational_limits .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(change(the RCMTECHTERM_engine_control_system, operational mode))] ==> [(maintain_within(the RCMTECHTERM_engine_control_system, the engine, RCMTECHTERM_approved_operational_limits))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when the RCMTECHTERM_engine_control_system changes operational mode
+					[2]: the RCMTECHTERM_engine_control_system shall maintain the engine within RCMTECHTERM_approved_operational_limits
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the RCMTECHTERM_engine_control_system changes operational mode
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_engine_control_system shall maintain the engine within RCMTECHTERM_approved_operational_limits
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when the RCMTECHTERM_engine_control_system changes operational mode
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_engine_control_system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: operational mode
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:changes
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: change
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: change(the RCMTECHTERM_engine_control_system, operational mode)
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_engine_control_system shall maintain the engine within RCMTECHTERM_approved_operational_limits
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_engine_control_system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the engine
+							</ArgDetails>
+							Arg[2]
+							<ArgDetails>
+								Text: RCMTECHTERM_approved_operational_limits
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall maintain
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: maintain_within
+							OperandList: {Arg[1], Arg[2], Arg[3]}
+							PredicateFormal: maintain_within(the RCMTECHTERM_engine_control_system, the engine, RCMTECHTERM_approved_operational_limits)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-51:]
+		text: the wolf catches a bird that is yellow.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the wolf catches a bird that is yellow.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(catch(the wolf, a bird))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the wolf catches a bird that is yellow
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the wolf catches a bird
+						SlotType= HiddenConstraint|| Text= a bird that is yellow
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the wolf catches a bird
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the wolf
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: a bird
+							</ArgDetails>
+							<HiddenConstraint>
+							<Condition>
+								Keyword: null
+								Text = null
+								<Operands>
+									Arg[0]
+									<ArgDetails>
+										Text: a bird
+									</ArgDetails>
+									Arg[1]
+									<ArgDetails>
+										Text: yellow
+									</ArgDetails>
+								</Operands>
+								<Operator>
+									relation:is
+								</Operator>
+								Has valid-time:  false
+								Is negatted: false
+								<FormalSemantic>
+									LHS: Arg[0]
+									RHS: Arg[1]
+									TechnicalOperator: =
+									PredicateFormal: a bird = yellow
+								</FormalSemantic>
+							</Condition>
+							</HiddenConstraint>
+						</Operands>
+						<Operator>
+							relation:catches
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: catch
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: catch(the wolf, a bird)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-4:]
+		text: when RCMTECHTERM_object_proximity_sensor is activated, the RCMTECHTERM_automatic_door_controller shall open the door .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_object_proximity_sensor is activated, the RCMTECHTERM_automatic_door_controller shall open the door .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(RCMTECHTERM_object_proximity_sensor.crrStatus = activate)] ==> [(open(the RCMTECHTERM_automatic_door_controller, the door))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when RCMTECHTERM_object_proximity_sensor is activated
+					[2]: the RCMTECHTERM_automatic_door_controller shall open the door
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when RCMTECHTERM_object_proximity_sensor is activated
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_automatic_door_controller shall open the door
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when RCMTECHTERM_object_proximity_sensor is activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMTECHTERM_object_proximity_sensor
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: RCMTECHTERM_object_proximity_sensor.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_automatic_door_controller shall open the door
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_automatic_door_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the door
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall open
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: open
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: open(the RCMTECHTERM_automatic_door_controller, the door)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-8:]
+		text: when RCMTECHTERM_door_closing_limit_sensor is activated , the RCMTECHTERM_automatic_door_controller shall stop the door .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_door_closing_limit_sensor is activated , the RCMTECHTERM_automatic_door_controller shall stop the door .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(RCMTECHTERM_door_closing_limit_sensor.crrStatus = activate)] ==> [(stop(the RCMTECHTERM_automatic_door_controller, the door))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when RCMTECHTERM_door_closing_limit_sensor is activated
+					[2]: the RCMTECHTERM_automatic_door_controller shall stop the door
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when RCMTECHTERM_door_closing_limit_sensor is activated
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_automatic_door_controller shall stop the door
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when RCMTECHTERM_door_closing_limit_sensor is activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMTECHTERM_door_closing_limit_sensor
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: RCMTECHTERM_door_closing_limit_sensor.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_automatic_door_controller shall stop the door
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_automatic_door_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the door
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall stop
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: stop
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: stop(the RCMTECHTERM_automatic_door_controller, the door)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-18:]
+		text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0 .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0 .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(emergency button.crrStatus = press)] ==> [(close(the RCMTECHTERM_liquid_open_mixer_controller, RCMVAR_valve_0))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when emergency button is pressed
+					[2]: the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when emergency button is pressed
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when emergency button is pressed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: emergency button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is pressed
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: press
+							TechnicalOperator: =
+							PredicateFormal: emergency button.crrStatus = press
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAR_valve_0
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall close
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: close
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: close(the RCMTECHTERM_liquid_open_mixer_controller, RCMVAR_valve_0)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-38:]
+		text: the coffee machine shall produce hot drink every 10 seconds .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the coffee machine shall produce hot drink every 10 seconds .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(G(F{t=10}(P)))] )
+					MTL-Formula: G( [(G(F{t=10}(produce(the coffee machine, hot drink))))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the coffee machine shall produce hot drink every 10 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the coffee machine shall produce hot drink
+						SlotType= TimeScope|| Text= every 10 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the coffee machine shall produce hot drink
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the coffee machine
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: hot drink
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall produce
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: produce
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: produce(the coffee machine, hot drink)
+						</FormalSemantic>
+						is repeated = true
+						<InBetweenTime>
+							TimeType: InBetween
+							Value: 10
+							Unit: seconds
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 10
+							</FormalSemantic>
+						<InBetweenTime>
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-26:]
+		text:  while  the reverser door translation, the control system shall limit the thrust to minimum idle .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  while  the reverser door translation, the control system shall limit the thrust to minimum idle .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(limit_to(the control system, the thrust, minimum idle))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: while thrust reverser door translation
+					[2]: the control system shall limit thrust to minimum idle
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= while thrust reverser door translation
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the control system shall limit thrust to minimum idle
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the control system shall limit the thrust to minimum idle
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the thrust
+							</ArgDetails>
+							Arg[2]
+							<ArgDetails>
+								Text: minimum idle
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall limit
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: limit_to
+							OperandList: {Arg[1], Arg[2], Arg[3]}
+							PredicateFormal: limit_to(the control system, the thrust, minimum idle)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while thrust reverser door translation
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: thrust reverser door translation
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Mentioned text: RCMVAL_True
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:equals
+										</Operator>
+										Has scope:  false
+										Is negatted = false
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while thrust reverser door translation
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: thrust reverser door translation
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Mentioned text: RCMVAL_True
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:equals
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-14:]
+		text: while RCMTECHTERM_liquid_level_2 is not reached, when RCMTECHTERM_liquid_level_1 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_1 before emergency button is pressed .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: while RCMTECHTERM_liquid_level_2 is not reached, when RCMTECHTERM_liquid_level_1 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_1 before emergency button is pressed .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [G( (((¬P)) ∧ ¬ ((¬Q)) ∧ F((¬Q))) ==> (F((R) || ((¬Q)) ) U ((¬Q))) )] ==> [F(T) ==> (F((S) || (T) ) U (T))] )
+					MTL-Formula: G( [G( (((¬RCMTECHTERM_liquid_level_2.crrStatus = reach)) ∧ ¬ ((¬RCMTECHTERM_liquid_level_2.crrStatus = reach)) ∧ F((¬RCMTECHTERM_liquid_level_2.crrStatus = reach))) ==> (F((RCMTECHTERM_liquid_level_1.crrStatus = reach) || ((¬RCMTECHTERM_liquid_level_2.crrStatus = reach)) ) U ((¬RCMTECHTERM_liquid_level_2.crrStatus = reach))) )] ==> [F(emergency button.crrStatus = press) ==> (F((open(the RCMTECHTERM_liquid_open_mixer_controller, RCMVAR_valve_1)) || (emergency button.crrStatus = press) ) U (emergency button.crrStatus = press))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: while RCMTECHTERM_liquid_level_2 is not reached
+					[2]: when RCMTECHTERM_liquid_level_1 is reached
+					[3]: the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_1
+					[4]: before emergency button is pressed
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: preScope 
+						SlotType= ConditionalScope|| Text= while RCMTECHTERM_liquid_level_2 is not reached
+					C[2]==>	Type: trig 
+						SlotType= MainSlot|| Text= when RCMTECHTERM_liquid_level_1 is reached
+					C[3]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_1
+					C[4]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= before emergency button is pressed
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when RCMTECHTERM_liquid_level_1 is reached
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMTECHTERM_liquid_level_1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is reached
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: reach
+							TechnicalOperator: =
+							PredicateFormal: RCMTECHTERM_liquid_level_1.crrStatus = reach
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall open RCMVAR_valve_1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAR_valve_1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall open
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: open
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: open(the RCMTECHTERM_liquid_open_mixer_controller, RCMVAR_valve_1)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before emergency button is pressed
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: emergency button
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is pressed
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0].crrStatus
+										RHS: press
+										TechnicalOperator: =
+										PredicateFormal: emergency button.crrStatus = press
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+						<PreconditionalScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while RCMTECHTERM_liquid_level_2 is not reached
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: RCMTECHTERM_liquid_level_2
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is reached
+										</Operator>
+										Has valid-time:  false
+										Is negatted: true
+										<FormalSemantic>
+											LHS: Arg[0].crrStatus
+											RHS: reach
+											TechnicalOperator: =
+											PredicateFormal: RCMTECHTERM_liquid_level_2.crrStatus = reach
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while RCMTECHTERM_liquid_level_2 is not reached
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: RCMTECHTERM_liquid_level_2
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is reached
+										</Operator>
+										Has valid-time:  false
+										Is negatted: true
+										<FormalSemantic>
+											LHS: Arg[0].crrStatus
+											RHS: reach
+											TechnicalOperator: =
+											PredicateFormal: RCMTECHTERM_liquid_level_2.crrStatus = reach
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-46:]
+		text: while moving the window up, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: while moving the window up, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [G( (((R)) ∧ ¬ ((¬Q)) ∧ F((¬Q))) ==> (F((P) || ((¬Q)) ) U ((¬Q))) )] )
+					MTL-Formula: G( [G( (((the window.crrStatus = move)) ∧ ¬ ((¬the window.crrStatus = move)) ∧ F((¬the window.crrStatus = move))) ==> (F((the RCMTECHTERM_engine_control_system = RCMTECHTERM_single_fault_tolerant with respect) || ((¬the window.crrStatus = move)) ) U ((¬the window.crrStatus = move))) )] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: while moving the window up
+					[2]: the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= while moving up the window
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_engine_control_system shall be RCMTECHTERM_single_fault_tolerant with respect
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the RCMTECHTERM_engine_control_system shall be RCMTECHTERM_single_fault_tolerant with respect
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_engine_control_system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMTECHTERM_single_fault_tolerant with respect
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_engine_control_system = RCMTECHTERM_single_fault_tolerant with respect
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while moving up the window
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: the window
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:moving
+										</Operator>
+										Has valid-time:  false
+										Is negatted: false
+										<FormalSemantic>
+											LHS: Arg[0].crrStatus
+											RHS: move
+											TechnicalOperator: =
+											PredicateFormal: the window.crrStatus = move
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while moving up the window
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: the window
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:moving
+										</Operator>
+										Has valid-time:  false
+										Is negatted: true
+										<FormalSemantic>
+											LHS: Arg[0].crrStatus
+											RHS: move
+											TechnicalOperator: =
+											PredicateFormal: the window.crrStatus = move
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-34:]
+		text: if an obstacle is detected for at least 50 milliseconds, the window down signal must be activated for minimum time interval 1 second .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if an obstacle is detected for at least 50 milliseconds, the window down signal must be activated  for 1 minimum time frame of second .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(G{t>=50}(P))] ==> [(Q)] )
+					MTL-Formula: G( [(G{t>=50}(an obstacle.crrStatus = detect))]==> [(the window down signal.crrStatus = activate)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if an obstacle is detected for at least 50 milliseconds
+					[2]: the window down signal must be activated  for 1 minimum time frame of second
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if an obstacle is detected
+						SlotType= TimeScope|| Text= for at  least 50 milliseconds
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the window down signal must be activated
+						SlotType= TimeScope|| Text= for 1 minimum time frame of second
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if an obstacle is detected
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: an obstacle
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is detected
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 50
+							Unit: milliseconds
+							QPRelation: at  least
+						<FormalSemantic>
+							TechnicalOperator: >=
+							Value: 50
+							</FormalSemantic>
+						<ValidTime>
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: detect
+							TechnicalOperator: =
+							PredicateFormal: an obstacle.crrStatus = detect
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the window down signal must be activated 
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the window down signal
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:must be activated
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 1
+							Unit: minimum time frame of second
+							QPRelation: at  least
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 1
+							</FormalSemantic>
+						<ValidTime>
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: the window down signal.crrStatus =activate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-22:]
+		text: the control system shall prevent engine overspeed .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the control system shall prevent engine overspeed .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(prevent(the control system, engine overspeed))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the control system shall prevent engine
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the control system shall prevent engine overspeed
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the control system shall prevent engine overspeed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: engine overspeed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall prevent
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: prevent
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: prevent(the control system, engine overspeed)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-10:]
+		text: if the RCMTECHTERM_personal_code is valid, the RCMVAR_simplemat accepts the card .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the RCMTECHTERM_personal_code is valid, the RCMVAR_simplemat accepts the card .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the RCMTECHTERM_personal_code = valid)] ==> [(accept(the RCMVAR_simplemat, the card))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the RCMTECHTERM_personal_code is valid
+					[2]: the RCMVAR_simplemat accepts the card
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the RCMTECHTERM_personal_code is valid
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMVAR_simplemat accepts the card
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the RCMTECHTERM_personal_code is valid
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_personal_code
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: valid
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_personal_code = valid
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the RCMVAR_simplemat accepts the card
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMVAR_simplemat
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the card
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:accepts
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: accept
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: accept(the RCMVAR_simplemat, the card)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-54:]
+		text: before RCMVAR_x is RCMVAL_true for 2 seconds, when RCMVAR_z is turned to 1 for 1 second, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: before RCMVAR_x is RCMVAL_true for 2 seconds, when RCMVAR_z is turned to 1 for 1 second, RCMVAR_y shall be set to RCMVAL_true every 2 seconds.
+				<Formal-Representation>
+				        MTL-AbbrevatedFormula: G( [F (G{t=2} (P)) ==> (F((G{t=1}(Q)) || G{t=2} (P) ) U G{t=2} (P))] ==> [G(F{t=1}(R))] )
+					MTL-Formula: G( [F(G{t=2} (RCMVAR_x = RCMVAL_true)) ==> (F((G{t=1}(RCMVAR_z = 1)) || G{t=2} (RCMVAR_x = RCMVAL_true) ) U G{t=2} (RCMVAR_x = RCMVAL_true))] ==> [G(F{t=1} (RCMVAR_y = RCMVAL_true))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: before RCMVAR_x is RCMVAL_true for 2 seconds
+					[2]: when RCMVAR_z is turned to 1 for 1 second
+					[3]: RCMVAR_y shall be set to RCMVAL_true every 2 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: preScope 
+						SlotType= ConditionalScope|| Text= before RCMVAR_x is RCMVAL_true
+						SlotType= TimeScope|| Text= for 2 seconds
+					C[2]==>	Type: trig 
+						SlotType= MainSlot|| Text= when RCMVAR_z is turned to 1
+						SlotType= TimeScope|| Text= for 1 second
+					C[3]==>	Type: act 
+						SlotType= MainSlot|| Text= RCMVAR_y shall be set to RCMVAL_true
+						SlotType= TimeScope|| Text= every 2 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when RCMVAR_z is turned to 1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_z
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is turned
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 1
+							Unit: seconds
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 1
+							</FormalSemantic>
+						<ValidTime>
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: RCMVAR_z = 1
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = RCMVAR_y shall be set to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_y
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: RCMVAR_y = RCMVAL_true
+						</FormalSemantic>
+						is repeated = true
+						<InBetweenTime>
+							TimeType: InBetween
+							Value: 2
+							Unit: seconds
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 2
+							</FormalSemantic>
+						<InBetweenTime>
+					</Action>
+					<RequirementScope>
+						<PreconditionalScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before RCMVAR_x is RCMVAL_true
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: RCMVAR_x
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: RCMVAL_true
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is
+									</Operator>
+									Has valid-time:  true
+									<ValidTime>
+									  TimeType: Scope
+									  Value: 2
+									  Unit: seconds
+									  QPRelation: null
+									  <FormalSemantic>
+									    TechnicalOperator: =
+									    Value: 2
+									  </FormalSemantic>
+									  <ValidTime>
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0]
+										RHS: Arg[1]
+										TechnicalOperator: =
+										PredicateFormal: RCMVAR_x = RCMVAL_true
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-42:]
+		text: the inflow must be opened before the temperature sensor has relayed the value 400 .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the inflow must be opened before the temperature sensor has relayed the value 400 .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [F(Q) ==> (F((P) || (Q) ) U (Q))] )
+					MTL-Formula: G( [F(the temperature sensor > the value 400) ==> (F((the inflow.crrStatus = open) || (the temperature sensor > the value 400) ) U (the temperature sensor > the value 400))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the inflow must be opened
+					[2]: before the temperature sensor has relayed the value 400
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the inflow must be opened
+					C[2]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= before the temperature sensor has relayed the value 400
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the inflow must be opened
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the inflow
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:must be opened
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: open
+							TechnicalOperator: =
+							PredicateFormal: the inflow.crrStatus = open
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before the temperature sensor has relayed the value 400
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: the temperature sensor
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: the value 400
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:has relayed
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0]
+										RHS: Arg[1]
+										TechnicalOperator: >
+										PredicateFormal: the temperature sensor > the value 400
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-30:]
+		text: when selecting idle setting, if aircraft data is unavailable, the control system shall select idle approach .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when selecting idle setting, if aircraft data is unavailable, the control system shall select idle approach .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [([(P)] ==> [(Q)])] ==> [(R)] )
+					MTL-Formula: G( [([(idle setting.crrStatus = select)] ==> [(aircraft data = unavailable)])] ==> [(the control system.crrStatus = select)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when selecting idle setting
+					[2]: if aircraft data is unavailable
+					[3]: the control system shall select
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when selecting idle setting
+					C[2]==>	Type: cond 
+						SlotType= MainSlot|| Text= if aircraft data is unavailable
+					C[3]==>	Type: act 
+						SlotType= MainSlot|| Text= the control system shall select
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if aircraft data is unavailable
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: aircraft data
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: unavailable
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: aircraft data = unavailable
+						</FormalSemantic>
+					</Condition>
+					<Trigger>
+						Keyword: when
+						Text = when selecting idle setting
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: idle setting
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:selecting
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: select
+							TechnicalOperator: =
+							PredicateFormal: idle setting.crrStatus = select
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the control system shall select
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the control system
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall select
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: select
+							TechnicalOperator: =
+							PredicateFormal: the control system.crrStatus = select
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-50:]
+		text: every animal RCMVAR_a eats all animals RCMVAR_b that are smaller than RCMVAR_a.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: every animal RCMVAR_a eats all animals RCMVAR_b that are smaller than RCMVAR_a.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(eat(animal RCMVAR_a, all animals RCMVAR_b))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: every animal RCMVAR_a eats all animals RCMVAR_b that are smaller than RCMVAR_a
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= animal RCMVAR_a eats all animals RCMVAR_b
+						SlotType= HiddenConstraint|| Text= all animals RCMVAR_b that are smaller than RCMVAR_a
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = animal RCMVAR_a eats all animals RCMVAR_b
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: animal RCMVAR_a
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: all animals RCMVAR_b
+							</ArgDetails>
+							<HiddenConstraint>
+							<Condition>
+								Keyword: null
+								Text = null
+								<Operands>
+									Arg[0]
+									<ArgDetails>
+										Text: all animals RCMVAR_b
+									</ArgDetails>
+									Arg[1]
+									<ArgDetails>
+										Text: RCMVAR_a
+									</ArgDetails>
+								</Operands>
+								<Operator>
+									relation:are
+								</Operator>
+								Has valid-time:  false
+								Is negatted: false
+								<FormalSemantic>
+									LHS: Arg[0]
+									RHS: Arg[1]
+									TechnicalOperator: <
+									PredicateFormal: all animals RCMVAR_b < RCMVAR_a
+								</FormalSemantic>
+							</Condition>
+							</HiddenConstraint>
+						</Operands>
+						<Operator>
+							relation:eats
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: eat
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: eat(animal RCMVAR_a, all animals RCMVAR_b)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-3:]
+		text: timer equals previous timer #Plus# 1 .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: timer equals previous timer #Plus# 1 .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(timer = previous timer #Plus# 1)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: timer equals previous timer #Plus# 1
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= timer equals previous timer #Plus# 1
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = timer equals previous timer #Plus# 1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: timer
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: previous timer #Plus# 1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: timer = previous timer #Plus# 1
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-7:]
+		text: when RCMTECHTERM_object_proximity_sensor is activated , the RCMTECHTERM_automatic_door_controller shall open the door .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_object_proximity_sensor is activated , the RCMTECHTERM_automatic_door_controller shall open the door .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(RCMTECHTERM_object_proximity_sensor.crrStatus = activate)] ==> [(open(the RCMTECHTERM_automatic_door_controller, the door))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when RCMTECHTERM_object_proximity_sensor is activated
+					[2]: the RCMTECHTERM_automatic_door_controller shall open the door
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when RCMTECHTERM_object_proximity_sensor is activated
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_automatic_door_controller shall open the door
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when RCMTECHTERM_object_proximity_sensor is activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMTECHTERM_object_proximity_sensor
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: RCMTECHTERM_object_proximity_sensor.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_automatic_door_controller shall open the door
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_automatic_door_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the door
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall open
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: open
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: open(the RCMTECHTERM_automatic_door_controller, the door)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-2:]
+		text: if timer is greater than RCMVAR_timeout, the RCMVAR_heater_command equals RCMVAL_error .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if timer is greater than RCMVAR_timeout, the RCMVAR_heater_command equals RCMVAL_error .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(timer > RCMVAR_timeout)] ==> [(the RCMVAR_heater_command = RCMVAL_error)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if timer is greater than RCMVAR_timeout
+					[2]: the RCMVAR_heater_command equals RCMVAL_error
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if timer is greater than RCMVAR_timeout
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMVAR_heater_command equals RCMVAL_error
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if timer is greater than RCMVAR_timeout
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: timer
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAR_timeout
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: >
+							PredicateFormal: timer > RCMVAR_timeout
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the RCMVAR_heater_command equals RCMVAL_error
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMVAR_heater_command
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_error
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the RCMVAR_heater_command = RCMVAL_error
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-29:]
+		text: while the aircraft is RCMVAL_inflight, if the RCMTECHTERM_reverse_thrust is commanded, the control system shall inhibit RCMTECHTERM_thrust_reverser_deployment .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: while the aircraft is RCMVAL_inflight, if the RCMTECHTERM_reverse_thrust is commanded, the control system shall inhibit RCMTECHTERM_thrust_reverser_deployment .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [G( (((P)) ∧ ¬ ((¬Q)) ∧ F((¬Q))) ==> (F((R) || ((¬Q)) ) U ((¬Q))) )] ==> [(S)] )
+					MTL-Formula: G( [G( (((the aircraft = RCMVAL_inflight)) ∧ ¬ ((¬the aircraft = RCMVAL_inflight)) ∧ F((¬the aircraft = RCMVAL_inflight))) ==> (F((the RCMTECHTERM_reverse_thrust.crrStatus = command) || ((¬the aircraft = RCMVAL_inflight)) ) U ((¬the aircraft = RCMVAL_inflight))) )] ==> [(inhibit(the control system, RCMTECHTERM_thrust_reverser_deployment))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: while the aircraft is RCMVAL_inflight
+					[2]: if the RCMTECHTERM_reverse_thrust is commanded
+					[3]: the control system shall inhibit RCMTECHTERM_thrust_reverser_deployment
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: preScope 
+						SlotType= ConditionalScope|| Text= while the aircraft is RCMVAL_inflight
+					C[2]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the RCMTECHTERM_reverse_thrust is commanded
+					C[3]==>	Type: act 
+						SlotType= MainSlot|| Text= the control system shall inhibit RCMTECHTERM_thrust_reverser_deployment
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the RCMTECHTERM_reverse_thrust is commanded
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_reverse_thrust
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is commanded
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: command
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_reverse_thrust.crrStatus = command
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the control system shall inhibit RCMTECHTERM_thrust_reverser_deployment
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMTECHTERM_thrust_reverser_deployment
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall inhibit
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: inhibit
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: inhibit(the control system, RCMTECHTERM_thrust_reverser_deployment)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<PreconditionalScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while the aircraft is RCMVAL_inflight
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: the aircraft
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Text: RCMVAL_inflight
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is
+										</Operator>
+										Has valid-time:  false
+										Is negatted: false
+										<FormalSemantic>
+											LHS: Arg[0]
+											RHS: Arg[1]
+											TechnicalOperator: =
+											PredicateFormal: the aircraft = RCMVAL_inflight
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while the aircraft is RCMVAL_inflight
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: the aircraft
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Text: RCMVAL_inflight
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is
+										</Operator>
+										Has valid-time:  false
+										Is negatted: true
+										<FormalSemantic>
+											LHS: Arg[0]
+											RHS: Arg[1]
+											TechnicalOperator: =
+											PredicateFormal: the aircraft = RCMVAL_inflight
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-17:]
+		text: when 60 second timer expires, the 120 second timer shall start .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when 60 second timer expires, the 120 second timer shall start .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(60 second timer.crrStatus = expire)] ==> [(start(the 120 second timer))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when 60 second timer expires
+					[2]: the 120 second timer shall start
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when 60 second timer expires
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the 120 second timer shall start
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when 60 second timer expires
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: 60 second timer
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:expires
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: expire
+							TechnicalOperator: =
+							PredicateFormal: 60 second timer.crrStatus = expire
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the 120 second timer shall start
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the 120 second timer
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall start
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: start
+							OperandList: {Arg[1]}
+							PredicateFormal: start(the 120 second timer)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-49:]
+		text: when blood pressure is monitored every 2 hours, if the blood pressure is higher than 200 for more than 4 hours, notify the medical staff.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when blood pressure is monitored every 2 hours, if the blood pressure is higher than 200 for more than 4 hours, notify the medical staff.
+				<Formal-Representation>
+			        	MTL-AbbrevatedFormula: G( [([G(F{t=2}(P))] ∧ [(G{t>4}(Q))])] ==> [(R)] )
+					MTL-Formula: G( [([G(F{t=2 }(blood pressure.crrStatus = monitor))] ∧ [(G{t>4}(the blood pressure > 200))])] ==> [(notify(the medical staff))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when blood pressure is monitored every 2 hours
+					[2]: notify the medical staff
+					[3]: if the blood pressure is higher than 200 for more than 4 hours
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when blood pressure is monitored
+						SlotType= TimeScope|| Text= every 2 hours
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= notify the medical staff
+					C[3]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the blood pressure is higher than 200
+						SlotType= TimeScope|| Text= for more  than 4 hours
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the blood pressure is higher than 200
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the blood pressure
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 200
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 4
+							Unit: hours
+							QPRelation: more  than
+						<FormalSemantic>
+							TechnicalOperator: >
+							Value: 4
+							</FormalSemantic>
+						<ValidTime>
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: >
+							PredicateFormal: the blood pressure > 200
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text =notify the medical staff
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the medical staff
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation: notify
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: notify
+							OperandList: {Arg[0]}
+							PredicateFormal: notify(the medical staff)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<Trigger>
+						Keyword: when
+						Text = when blood pressure is monitored
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: blood pressure
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is monitored
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: monitor
+							TechnicalOperator: =
+							PredicateFormal: blood pressure.crrStatus = monitor
+						</FormalSemantic>
+						is repeated = true
+						<InBetweenTime>
+							TimeType: InBetween
+							Value: 2
+							Unit: hours
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 2
+							</FormalSemantic>
+						<InBetweenTime>
+					</Trigger>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-37:]
+		text: the communication system shall sustain telephone contact with 10 while the absence of external power .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the communication system shall sustain telephone contact with 10 while the absence of external power .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(sustain_with(the communication system, telephone contact, 10))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the communication system shall sustain telephone contact with 10
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the communication system shall sustain telephone contact with 10
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the communication system shall sustain telephone contact with 10
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the communication system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: telephone contact
+							</ArgDetails>
+							Arg[2]
+							<ArgDetails>
+								Text: 10
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall sustain
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: sustain_with
+							OperandList: {Arg[1], Arg[2], Arg[3]}
+							PredicateFormal: sustain_with(the communication system, telephone contact, 10)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-25:]
+		text: while the aircraft is RCMVAL_inflight, the control system shall maintain the engine fuel flow above RCMVAR_xx .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: while the aircraft is RCMVAL_inflight, the control system shall maintain the engine fuel flow above RCMVAR_xx .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [G( (((R)) ∧ ¬ ((¬Q)) ∧ F((¬Q))) ==> (F((P) || ((¬Q)) ) U ((¬Q))) )] )
+					MTL-Formula: G( [G( (((the aircraft = RCMVAL_inflight)) ∧ ¬ ((¬the aircraft = RCMVAL_inflight)) ∧ F((¬the aircraft = RCMVAL_inflight))) ==> (F((maintain_above(the control system, the engine fuel flow, RCMVAR_xx)) || ((¬the aircraft = RCMVAL_inflight)) ) U ((¬the aircraft = RCMVAL_inflight))) )] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: while the aircraft is RCMVAL_inflight
+					[2]: the control system shall maintain the engine fuel flow above RCMVAR_xx
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= while the aircraft is RCMVAL_inflight
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the control system shall maintain the engine fuel flow above RCMVAR_xx
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the control system shall maintain the engine fuel flow above RCMVAR_xx
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the control system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the engine fuel flow
+							</ArgDetails>
+							Arg[2]
+							<ArgDetails>
+								Text: RCMVAR_xx
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall maintain
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: maintain_above
+							OperandList: {Arg[1], Arg[2], Arg[3]}
+							PredicateFormal: maintain_above(the control system, the engine fuel flow, RCMVAR_xx)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while the aircraft is RCMVAL_inflight
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: the aircraft
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Text: RCMVAL_inflight
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is
+										</Operator>
+										Has valid-time:  false
+										Is negatted: false
+										<FormalSemantic>
+											LHS: Arg[0]
+											RHS: Arg[1]
+											TechnicalOperator: =
+											PredicateFormal: the aircraft = RCMVAL_inflight
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while the aircraft is RCMVAL_inflight
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: the aircraft
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Text: RCMVAL_inflight
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:is
+										</Operator>
+										Has valid-time:  false
+										Is negatted: true
+										<FormalSemantic>
+											LHS: Arg[0]
+											RHS: Arg[1]
+											TechnicalOperator: =
+											PredicateFormal: the aircraft = RCMVAL_inflight
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-13:]
+		text: when RCMTECHTERM_liquid_level_1 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0 .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_liquid_level_1 is reached, the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0 .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(RCMTECHTERM_liquid_level_1.crrStatus = reach)] ==> [(close(the RCMTECHTERM_liquid_open_mixer_controller, RCMVAR_valve_0))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when RCMTECHTERM_liquid_level_1 is reached
+					[2]: the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when RCMTECHTERM_liquid_level_1 is reached
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when RCMTECHTERM_liquid_level_1 is reached
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMTECHTERM_liquid_level_1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is reached
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: reach
+							TechnicalOperator: =
+							PredicateFormal: RCMTECHTERM_liquid_level_1.crrStatus = reach
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall close RCMVAR_valve_0
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAR_valve_0
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall close
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: close
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: close(the RCMTECHTERM_liquid_open_mixer_controller, RCMVAR_valve_0)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-57:]
+		text: when the button is pressed, if RCMVAR_x is RCMVAL_on within 10 seconds, turn RCMVAR_y to RCMVAL_true.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when the button is pressed, if RCMVAR_x is RCMVAL_on within 10 seconds, turn RCMVAR_y to RCMVAL_true.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [([(P)] ∧ [(F{t=10}(Q))])] ==> [(R)] )
+					MTL-Formula: G( [([(the button.crrStatus = press)] ∧ [(F{t=10}(RCMVAR_x = RCMVAL_on))])] ==> [(RCMVAR_y = RCMVAL_true)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when the button is pressed
+					[2]: if RCMVAR_x is RCMVAL_on within 10 seconds
+					[3]: turn RCMVAR_y to RCMVAL_true.
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the button is pressed
+					C[2]==>	Type: cond 
+						SlotType= MainSlot|| Text= if RCMVAR_x is RCMVAL_on
+						SlotType= TimeScope|| Text= within 10 seconds
+					C[3]==>	Type: act 
+						SlotType= MainSlot|| Text= turn RCMVAR_y to RCMVAL_true.
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if RCMVAR_x is RCMVAL_on
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_x
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_on
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: RCMVAR_x = RCMVAL_on
+						</FormalSemantic>
+						<PreElapsedTime>
+							TimeType: PreElapsed
+							Value: 10
+							Unit: seconds
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 10
+							</FormalSemantic>
+						<PreElapsedTime>
+					</Condition>
+					<Trigger>
+						Keyword: when
+						Text = when the button is pressed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is pressed
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: press
+							TechnicalOperator: =
+							PredicateFormal: the button.crrStatus = press
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = RCMVAR_y shall be turned to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMVAR_y
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be turned
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: RCMVAR_y = RCMVAL_true
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-45:]
+		text: while moving, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: while moving, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [G( (((R)) ∧ ¬ ((¬Q)) ∧ F((¬Q))) ==> (F((P) || ((¬Q)) ) U ((¬Q))) )] )
+					MTL-Formula: G( [G( (((moving = RCMVAL_True)) ∧ ¬ ((¬moving = RCMVAL_True)) ∧ F((¬moving = RCMVAL_True))) ==> (F((the RCMTECHTERM_engine_control_system = RCMTECHTERM_single_fault_tolerant with respect) || ((¬moving = RCMVAL_True)) ) U ((¬moving = RCMVAL_True))) )] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: while moving
+					[2]: the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= while moving
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_engine_control_system shall be RCMTECHTERM_single_fault_tolerant with respect
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the RCMTECHTERM_engine_control_system shall be RCMTECHTERM_single_fault_tolerant with respect
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_engine_control_system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMTECHTERM_single_fault_tolerant with respect
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_engine_control_system = RCMTECHTERM_single_fault_tolerant with respect
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while moving
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: moving
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Text: RCMVAL_True
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:equals
+										</Operator>
+										Has valid-time:  false
+										Is negatted: false
+										<FormalSemantic>
+											LHS: Arg[0]
+											RHS: Arg[1]
+											TechnicalOperator: =
+											PredicateFormal: moving = RCMVAL_True
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while moving
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: moving
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Text: RCMVAL_True
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:equals
+										</Operator>
+										Has valid-time:  false
+										Is negatted: true
+										<FormalSemantic>
+											LHS: Arg[0]
+											RHS: Arg[1]
+											TechnicalOperator: =
+											PredicateFormal: moving = RCMVAL_True
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-33:]
+		text: while in a RCMVAL_fullup configuration, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: while in a RCMVAL_fullup configuration, the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(the RCMTECHTERM_engine_control_system = RCMTECHTERM_single_fault_tolerant with respect)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+				  [1]: while in a RCMVAL_fullup configuration
+				  [2]: the RCMTECHTERM_engine_control_system shall be essentially RCMTECHTERM_single_fault_tolerant with respect to RCMVAR_lotc event
+				</ExtractedComponents>
+				<ClassifiedComponents>
+				  	C[1]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= while a RCMVAL_fullup configuration
+				        C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_engine_control_system shall be RCMTECHTERM_single_fault_tolerant with respect
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the RCMTECHTERM_engine_control_system shall be RCMTECHTERM_single_fault_tolerant with respect
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_engine_control_system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMTECHTERM_single_fault_tolerant with respect
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_engine_control_system = RCMTECHTERM_single_fault_tolerant with respect
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while a RCMVAL_fullup configuration
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: a RCMVAL_fullup configuration
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Mentioned text: RCMVAL_True
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:equals
+										</Operator>
+										Has scope:  false
+										Is negatted = false
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while a RCMVAL_fullup configuration
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Mentioned text: a RCMVAL_fullup configuration
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Mentioned text: RCMVAL_True
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:equals
+										</Operator>
+										Has scope:  false
+										Is negatted = true
+									</Condition>
+								</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-21:]
+		text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall stop stirring motor .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when emergency button is pressed, the RCMTECHTERM_liquid_open_mixer_controller shall stop stirring motor .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(emergency button.crrStatus = press)] ==> [(stop(the RCMTECHTERM_liquid_open_mixer_controller, stirring))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when emergency button is pressed
+					[2]: the RCMTECHTERM_liquid_open_mixer_controller shall stop stirring motor
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when emergency button is pressed
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_liquid_open_mixer_controller shall stop stirring
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when emergency button is pressed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: emergency button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is pressed
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: press
+							TechnicalOperator: =
+							PredicateFormal: emergency button.crrStatus = press
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_liquid_open_mixer_controller shall stop stirring
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_liquid_open_mixer_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: stirring
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall stop
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: stop
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: stop(the RCMTECHTERM_liquid_open_mixer_controller, stirring)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-53:]
+		text: after RCMVAR_x is RCMVAL_true for 2 seconds, the entry whose index is larger than 2 shall be set to 1.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: after RCMVAR_x is RCMVAL_true for 2 seconds, the entry whose index is larger than 2 shall be set to 1.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [((G{t=2}(Q)) ==> (P))] )
+					MTL-Formula: G( [((G{t=2}(RCMVAR_x = RCMVAL_true)) ==> (the entry = 1))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: after RCMVAR_x is RCMVAL_true for 2 seconds
+					[2]: the entry whose index is larger than 2 shall be set to 1
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= after RCMVAR_x is RCMVAL_true
+						SlotType= TimeScope|| Text= for 2 seconds
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the entry shall be set to 1
+						SlotType= HiddenConstraint|| Text= the entry whose index is larger than 2
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the entry shall be set to 1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the entry
+							</ArgDetails>
+							<HiddenConstraint>
+							<Condition>
+								Keyword: null
+								Text = the entry whose index is larger than 2
+								<Operands>
+									Arg[0]
+									<ArgDetails>
+										Text: index
+									</ArgDetails>
+									Arg[1]
+									<ArgDetails>
+										Text: 2
+									</ArgDetails>
+								</Operands>
+								<Operator>
+									relation:is
+								</Operator>
+								Has valid-time:  false
+								Is negatted: false
+								<FormalSemantic>
+									LHS: Arg[0]
+									RHS: Arg[1]
+									TechnicalOperator: >
+									PredicateFormal: index > 2
+								</FormalSemantic>
+							</Condition>
+							</HiddenConstraint>
+							Arg[1]
+							<ArgDetails>
+								Text: 1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the entry = 1
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after RCMVAR_x is RCMVAL_true
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: RCMVAR_x
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: RCMVAL_true
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is
+									</Operator>
+									Has valid-time:  true
+									<ValidTime>
+										TimeType: Scope
+										Value: 2
+										Unit: seconds
+										QPRelation: null
+									<FormalSemantic>
+										TechnicalOperator: =
+										Value: 2
+										</FormalSemantic>
+									<ValidTime>
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0]
+										RHS: Arg[1]
+										TechnicalOperator: =
+										PredicateFormal: RCMVAR_x = RCMVAL_true
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-41:]
+		text: the safeguard of a RCMTECHTERM_level_crossing is terminated, after the RCMTECHTERM_railroad_crossing has been completely vacated if the train had passed .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the safeguard of a RCMTECHTERM_level_crossing is terminated, after the RCMTECHTERM_railroad_crossing has been completely vacated if the train had passed .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [((P) ==> (Q))] ==> [(R)] )
+					MTL-Formula: G( [((the RCMTECHTERM_railroad_crossing.crrStatus = vacate) ==> (the train.crrStatus = pass))] ==> [(the safeguard of a RCMTECHTERM_level_crossing.crrStatus = terminate)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the safeguard of a RCMTECHTERM_level_crossing is terminated
+					[2]: after the RCMTECHTERM_railroad_crossing has been completely vacated
+					[3]: if the train had passed
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the safeguard of a RCMTECHTERM_level_crossing is terminated
+					C[2]==>	Type: preScope 
+						SlotType= ConditionalScope|| Text= after the RCMTECHTERM_railroad_crossing has been vacated
+					C[3]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the train had passed
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the train had passed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the train
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:had passed
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: pass
+							TechnicalOperator: =
+							PredicateFormal: the train.crrStatus = pass
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the safeguard of a RCMTECHTERM_level_crossing is terminated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the safeguard of a RCMTECHTERM_level_crossing
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is terminated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: terminate
+							TechnicalOperator: =
+							PredicateFormal: the safeguard of a RCMTECHTERM_level_crossing.crrStatus = terminate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<PreconditionalScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after the RCMTECHTERM_railroad_crossing has been vacated
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: the RCMTECHTERM_railroad_crossing
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:has been vacated
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0].crrStatus
+										RHS: vacate
+										TechnicalOperator: =
+										PredicateFormal: the RCMTECHTERM_railroad_crossing.crrStatus = vacate
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-6:]
+		text: when RCMTECHTERM_door_closing_limit_sensor is activated then the RCMTECHTERM_automatic_door_controller shall stop the door .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when RCMTECHTERM_door_closing_limit_sensor is activated then the RCMTECHTERM_automatic_door_controller shall stop the door .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(RCMTECHTERM_door_closing_limit_sensor.crrStatus = activate)] ==> [(the RCMTECHTERM_automatic_door_controller.crrStatus = stop the door)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when RCMTECHTERM_door_closing_limit_sensor is activated then
+					[2]: the RCMTECHTERM_automatic_door_controller shall stop the door
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when RCMTECHTERM_door_closing_limit_sensor is activated
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_automatic_door_controller shall stop the door
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when RCMTECHTERM_door_closing_limit_sensor is activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMTECHTERM_door_closing_limit_sensor
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: RCMTECHTERM_door_closing_limit_sensor.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the RCMTECHTERM_automatic_door_controller shall stop the door
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_automatic_door_controller
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the door
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall stop
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: stop the door
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_automatic_door_controller.crrStatus = stop the door
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+</SucceededRequirement>
+</log>

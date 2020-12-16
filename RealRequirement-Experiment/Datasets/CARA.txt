@@ -1,0 +1,16 @@
+Req-01: The CARA will be operational whenever the <LSTAT> is [poweredOn]. 
+%%%
+Req-08: If Air_Ok signal is Low, auto_control_mode is terminated  within 3  sec. 
+%%%
+Req-17C1: When auto_control_mode is running, the cuff  will be inflated.
+%%%
+Req-17C3: If alarm_reset_button  is pressed, the alarm is disabled. 
+%%%
+Req-28: If a valid blood_pressure is unavailable  after at least 180  sec, manual_mode should be triggered.
+%%%
+Req-34: When auto_control_mode is running, terminate_auto_control_button should be available.
+%%%
+Req-48C1: whenever termiante_auto_control_button is selected, a confirmation button is available.
+%%%
+Req-49: When a start_auto_control_button  is enabled,  the start_auto_control_button is enabled until it is pressed. 
+%%%

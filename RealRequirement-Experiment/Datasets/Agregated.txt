@@ -1,0 +1,113 @@
+When the monitor does not receive for 5 time intervals status signal <E>, it sends a request <req> to the station .
+%%%
+if timer is greater than <TIMEOUT>, the <heater_command> equals [ERROR] .
+%%%
+timer equals previous timer + 1 .
+%%%
+When object proximity sensor is activated, the automatic door controller shall open the door .
+%%%
+when countdown timer expires then the automatic door controller shall close the door .
+%%%
+when door closing limit sensor is activated then the automatic door controller shall stop the door .
+%%%
+When object proximity sensor is activated ,then the automatic door controller shall open the door .
+%%%
+when door closing limit sensor is activated ,then the automatic door controller shall stop the door .
+%%%
+<SimpleMat> checks the personal code .
+%%%
+If the personal code is valid, the <simplemat> accepts the card .
+%%%
+If the personal code is not valid, the <simplemat> rejects the card .
+%%%
+while liquid level 1 is not reached, when the start button is pressed, the liquid open mixer controller shall open the <valve 0> before the emergency button is pressed .
+%%%
+when liquid level 1 is reached, the liquid open mixer controller shall close <valve 0> .
+%%%
+while liquid level 2 is not reached, when liquid level 1 is reached, the liquid open mixer controller shall open <valve 1> until emergency button is pressed .
+%%%
+when liquid level 2 is reached, the liquid open mixer controller shall close <valve 1> .
+%%%
+when liquid level 2 is reached, the 60 second timer shall start .
+%%%
+when 60 second timer expires, the 120 second timer shall start .
+%%%
+when emergency button is pressed, the liquid open mixer controller shall close <valve 0> .
+%%%
+when emergency button is pressed, the liquid open mixer controller shall close <valve 1> .
+%%%
+when emergency button is pressed, the liquid open mixer controller shall close <valve 2> .
+%%%
+when emergency button is pressed, the liquid open mixer controller shall stop stirring motor .
+%%%
+The control system shall prevent engine overspeed .
+%%%
+When continuous ignition is commanded by the aircraft, the control system shall switch on continuous ignition .
+%%%
+If the computed airspeed fault flag is set, then the control system shall use the modelled airspeed .
+%%%
+While the aircraft is [Inflight], the control system shall maintain the engine fuel flow above <XX> .
+%%%
+During the reverser door translation, the control system shall limit the thrust to minimum idle .
+%%%
+When the control system includes an overspeed protection function, the control system shall test the availability of the overspeed protection function before aircraft dispatch .
+%%%
+While the aircraft is [Onground], when the reverse thrust is commanded, the control system shall enable deployment of the thrust reverser .
+%%%
+While the aircraft is [Inflight], if the reverse thrust is commanded, then the control system shall inhibit thrust reverser deployment .
+%%%
+When selecting idle setting, if aircraft data is unavailable, then the control system shall select Idle approach .
+%%%
+When the Engine Control System changes operational mode, the Engine Control System shall maintain the engine within approved operational limits .
+%%%
+If a single Failure leads to deficient Aircraft Supplied Data, then the Engine Control System shall not cause a Hazardous Engine Effect .
+%%%
+While in a [FullUp] Configuration, the Engine Control System shall be Essentially Single Fault Tolerant with respect to <LOTC> event .
+%%%
+If an obstacle is detected for at least 50 milliseconds, the window down signal must be activated for minimum time interval 1 second .
+%%%
+If an obstacle is detected for at least 50 milliseconds, the window down signal must be activated for at least 1 second .
+%%%
+while the sea conditions, when radar is sighting, the weapon operator shall fire a missile within 3 seconds .
+%%%
+the communication system shall sustain telephone contact with 10 while the absence of external power .
+%%%
+the coffee machine shall produce hot drink every 10 seconds .
+%%%
+after the train has passed the railroad crossing, the gates can be opened .
+%%%
+If a defect is detected at a certain valve, the software control system must be switched off for 2 seconds . after the software control system is switched off, the redundant pneumatic control must be switched on .
+%%%
+The safeguard of a level crossing is terminated, after the railroad crossing has been completely vacated if the train had passed .
+%%%
+The inflow must be opened until the temperature sensor has relayed the value 400 .
+%%%
+after the temperature sensor has relayed the value 350, the inflow is opened as long as the level of the tank is less than the minimum value .
+%%%
+The gates must be in the closed state for 6 seconds before the railroad crossing is safeguarded .
+%%%
+While moving, the Engine Control System shall be Essentially Single Fault Tolerant with respect to <LOTC> event .
+%%%
+While moving the window up, the Engine Control System shall be Essentially Single Fault Tolerant with respect to <LOTC> event .
+%%%
+After transmission, the Engine Control System shall be Essentially Single Fault Tolerant with respect to <LOTC> event .
+%%%
+after the door is open, If the door is still not locked within 15 minutes,  trigger alarm.
+%%%
+when blood pressure is monitored every 2 hours, If the Blood pressure is higher than 200 for more than 4 hours, notify the medical staff.
+%%% 
+Every animal <A> eats all animals <B> that are smaller than <A>.
+%%%
+The wolf catches a bird that is yellow.
+%%%
+after <X> is [true] for 2 seconds if <Z> exceeds <M>, <Y> shall be set to [true] every 2 seconds.
+%%%
+after <X> is [true] for 2 seconds, the entry whose index is larger than 2 shall be set to 1.
+%%%
+before <X> is [true] for 2 seconds, when <Z> is turned  to 1 for 1 second, <Y> shall be set to [true] every 2 seconds.
+%%%
+ <Y> shall be set to [true], when <Z> is turned  to 1 every 1 second until <X> is turned  to 0 for at most 1 second.
+%%%
+after <X> is [true] for 2 seconds, when <Z> is turned to 1 for 1 second, <Y> shall be set to [true] every 2 seconds.
+%%%
+when the button is pressed, if <X> is [On] within 10 seconds, turn <Y> to [true].

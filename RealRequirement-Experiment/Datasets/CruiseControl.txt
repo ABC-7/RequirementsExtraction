@@ -1,0 +1,108 @@
+FA-4: If the distance to the vehicle ahead falls below the specified speed dependent safety distance, the vehicle brakes are activated.
+%%%
+
+FA-5: If the maximum deceleration is [insufficient_to_stop] before a collision with the vehicle ahead, the vehicle warns the driver by acoustical signals for 1 seconds every 2 seconds. the maximum deceleration is 5.
+%%%
+
+FA-6: If the distance to the preceding vehicle increases above the speed-dependent safety distance, the vehicle accelerates within 2 seconds until the set speed is reached.
+%%%
+
+FA-99: If the speed of the preceding vehicle decreases below 20, the distance is set to 2.5. When both vehicles are standing, the absolute distance is regulated to 2m. When the preceding vehicle is accelerating, the distance is set to 3 until the vehicle speed exceeds 20 .
+%%%
+
+FA-86: When the velocity window is below 20, the distance to the vehicle ahead shall be calculated.
+%%%
+
+FA-81: The adaptive cruise control system issues Acoustic alarm if the calculated distance is less than (current speed / 3) * <t> . It issues Visual warning if the calculated distance is less than (current speed / 3) * <t2> . 
+%%%
+
+FA-19: The cruise control lever activates the cruise control.
+%%%
+
+FA-31: The current vehicle speed is adopted as speed limit. 
+%%%
+
+FA-32: As long as the speed limit function is activated, the current speed must not exceed the set speed limit.
+%%%
+
+FA-35: when pressing the gas pedal beyond 90, the speed limit is deactivated. 
+%%%
+
+FA-36: When the pressure on the gas pedal decreases below 90, the speed limit is activated. 
+%%%
+
+
+If the brake pedal exceeds the threshold value <M>, the braking force is strengthened to 100. 
+%%%
+
+AL-144: The maximum deviation of the pulse ratio should be below the cognitive threshold of a human observer. 
+%%%
+
+The cognitive threshold of a human observer shall be set to the deviation that is less than 5. 
+%%%
+
+AL-105: If the driver holds the pitman arm for at least 5 seconds to [tip_blinking left], a flashing is released for the left direction indicators until the pitman arm leaves [tip_blinking left].
+%%%
+
+
+As long as the hazard warning light switch is released, direction indicators flash synchronically. If the ignition key is in the ignition lock, the pulse ratio of bright to dark is 1. If the ignition key is not in the lock, the pulse ratio is 5.
+%%%
+
+in case of an emergency situation, the hazard warning light switch is active before the car battery is empty.
+%%%
+
+The duration of a flashing cycle is 1 second.
+%%%
+
+If tip blinking was activated shortly before the hazard warning light switch is deactivated, it shall not be activated during the deactivation of the hazard warning light switch.
+%%%
+
+If flashing cycles exceed 1000, the cumulated deviation must not exceed 5. 
+%%%
+
+The driver activates the low beam headlights when turning the light rotary switch to [exterior lights on].
+%%%
+
+If the daytime running light is activated, the low beam headlights are activated after starting the engine as long as the ignition key is in the ignition lock. When the ambient light is activated, the low beam headlights remain active 
+%%%
+
+If the light rotary switch is [automatic], the low beam headlights are activated for at least 3 seconds as soon as the exterior brightness is lower than a threshold <S1>. If the exterior brightness exceeds a threshold <S2> that exceeds <S1>, the low beam headlights are deactivated for at least 3 seconds. 
+%%%
+
+If the darkness switch is activated, the ambient lighting is not activated. 
+%%%
+
+If the darkness switch is activated, the cornering light is not activated.
+%%%
+
+If the light rotary switch is [auto], the adaptive high beam headlights are activated.
+%%%
+
+ 
+If the camera recognizes the lights of an advancing vehicle, the high beam headlight that is activated is reduced to low beam headlight within 5 seconds.
+%%%
+
+A subvoltage is present if the voltage in the vehicle electrical system is less than 8.5. 
+%%%
+
+If a subvoltage is present, the adaptive high beam headlight should not be available.
+%%%
+
+If a subvoltage is present, the ambient light should not be available. 
+%%%
+
+If a subvoltage is present, the cornering light should not be available. 
+%%%
+
+An overvoltage is present if the voltage in the vehicle electrical system is more than 14.
+%%%
+
+If an overvoltage is present, the headlight must be activated. 
+%%%
+
+If advancing vehicle is not recognized, the high beam illumination is restored within 2 seconds.
+%%%
+
+as long as the pitman arm is pulled, the high beam headlight is activated.
+%%%
+

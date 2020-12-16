@@ -1,0 +1,3552 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+File Measures: 
+	Number of req in file = 35
+	Number of prim req in file = 45
+<FailedRequirement>
+</FailedRequirement>
+<SucceededRequirement>
+	<Requirement>
+		ID: [fa_4:]
+		text:  if the distance to the RCMTECHTERM_vehicle_ahead falls below the specified speed dependent safety distance, the vehicle brakes are activated.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  if the distance to the RCMTECHTERM_vehicle_ahead falls below the specified speed dependent safety distance, the vehicle brakes are activated.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the distance to the RCMTECHTERM_vehicle_ahead < the specified speed dependent safety distance)] ==> [(the vehicle brakes.crrStatus = activate)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the distance to the RCMTECHTERM_vehicle_ahead falls below the specified speed dependent safety distance
+					[2]: the vehicle brakes are activated
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the distance to the RCMTECHTERM_vehicle_ahead falls below the specified speed dependent safety distance
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the vehicle brakes are activated
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the distance to the RCMTECHTERM_vehicle_ahead falls below the specified speed dependent safety distance
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the distance to the RCMTECHTERM_vehicle_ahead
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the specified speed dependent safety distance
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:falls
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: <
+							PredicateFormal: the distance to the RCMTECHTERM_vehicle_ahead < the specified speed dependent safety distance
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the vehicle brakes are activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the vehicle brakes
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:are activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: the vehicle brakes.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [al_105:]
+		text:  if the driver holds the RCMTECHTERM_pitman_arm for at least 5 seconds to RCMVAL_tip_blinking_left, a flashing is released for the left direction indicators before the RCMTECHTERM_pitman_arm leaves RCMVAL_tip_blinking_left.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  if the driver holds the RCMTECHTERM_pitman_arm for at least 5 seconds to RCMVAL_tip_blinking_left, a flashing is released for the left direction indicators before the RCMTECHTERM_pitman_arm leaves RCMVAL_tip_blinking_left.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(G{t>=5}(P))] ==> [F(R) ==> (F((Q) || (R) ) U (R))] )
+					MTL-Formula: G( [(G{t>=5}(hold_to(the driver, the RCMTECHTERM_pitman_arm, RCMVAL_tip_blinking_left)))] ==> [F(the RCMTECHTERM_pitman_arm leaves RCMVAL_tip_blinking_left = RCMVAL_True) ==> (F((release_for(a flashing, the left direction indicators)) || (the RCMTECHTERM_pitman_arm leaves RCMVAL_tip_blinking_left = RCMVAL_True) ) U (the RCMTECHTERM_pitman_arm leaves RCMVAL_tip_blinking_left = RCMVAL_True))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the driver holds the RCMTECHTERM_pitman_arm for at least 5 seconds to RCMVAL_tip_blinking_left
+					[2]: a flashing is released for the left direction indicators before the RCMTECHTERM_pitman_arm leaves RCMVAL_tip_blinking_left
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the driver holds the RCMTECHTERM_pitman_arm to RCMVAL_tip_blinking_left
+						SlotType= TimeScope|| Text= for at  least 5 seconds
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= a flashing is released for the left direction indicators
+					C[2]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= before the RCMTECHTERM_pitman_arm leaves RCMVAL_tip_blinking_left
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the driver holds the RCMTECHTERM_pitman_arm to RCMVAL_tip_blinking_left
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the driver
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the RCMTECHTERM_pitman_arm
+							</ArgDetails>
+							Arg[2]
+							<ArgDetails>
+								Text: RCMVAL_tip_blinking_left
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:holds
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 5
+							Unit: seconds
+							QPRelation: at  least
+						<FormalSemantic>
+							TechnicalOperator: >=
+							Value: 5
+							</FormalSemantic>
+						<ValidTime>
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: hold_to
+							OperandList: {Arg[1], Arg[2], Arg[3]}
+							PredicateFormal: hold_to(the driver, the RCMTECHTERM_pitman_arm, RCMVAL_tip_blinking_left)
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = a flashing is released for the left direction indicators
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: a flashing
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the left direction indicators
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is released
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: release_for
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: release_for(a flashing, the left direction indicators)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before the RCMTECHTERM_pitman_arm leaves RCMVAL_tip_blinking_left
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: the RCMTECHTERM_pitman_arm leaves RCMVAL_tip_blinking_left
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: RCMVAL_True
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:equals
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0]
+										RHS: Arg[1]
+										TechnicalOperator: =
+										PredicateFormal: the RCMTECHTERM_pitman_arm leaves RCMVAL_tip_blinking_left = RCMVAL_True
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [fa_6:]
+		text:  if the distance to the RCMTECHTERM_preceding_vehicle increases above the speed_dependent safety distance, the vehicle accelerates within 2 seconds before the set speed is reached.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  if the distance to the RCMTECHTERM_preceding_vehicle increases above the speed_dependent safety distance, the vehicle accelerates within 2 seconds before the set speed is reached.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [F(Q) ==> (F((F{t=2}(P)) || (Q) ) U (Q))] )
+					MTL-Formula: G( [F(the set speed.crrStatus = reach) ==> (F((F{t=2}(the vehicle.crrStatus = accelerate)) || (the set speed.crrStatus = reach) ) U (the set speed.crrStatus = reach))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+				        [1]: if the distance to the RCMTECHTERM_preceding_vehicle increases above the speed_dependent safety distance
+				        [2]: the vehicle accelerates within 2 seconds
+					[3]: before the set speed is reached
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the vehicle accelerates
+						SlotType= TimeScope|| Text= within 2 seconds
+					C[3]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= before the set speed is reached
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the vehicle accelerates
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the vehicle
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:accelerates
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: accelerate
+							TechnicalOperator: =
+							PredicateFormal: the vehicle.crrStatus = accelerate
+						</FormalSemantic>
+						is repeated = false
+						<PreElapsedTime>
+							TimeType: PreElapsed
+							Value: 2
+							Unit: seconds
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 2
+							</FormalSemantic>
+						<PreElapsedTime>
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before the set speed is reached
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: the set speed
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is reached
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0].crrStatus
+										RHS: reach
+										TechnicalOperator: =
+										PredicateFormal: the set speed.crrStatus = reach
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [fa_35:]
+		text:  when pressing the RCMTECHTERM_gas_pedal beyond 90, the speed limit is deactivated.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  when pressing the RCMTECHTERM_gas_pedal beyond 90, the speed limit is deactivated.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the RCMTECHTERM_gas_pedal > 90)] ==> [(the speed limit.crrStatus = deactivate)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when pressing the RCMTECHTERM_gas_pedal beyond 90
+					[2]: the speed limit is deactivated
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when pressing the RCMTECHTERM_gas_pedal beyond 90
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the speed limit is deactivated
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when pressing the RCMTECHTERM_gas_pedal beyond 90
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_gas_pedal
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 90
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:pressing
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: >
+							PredicateFormal: the RCMTECHTERM_gas_pedal > 90
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the speed limit is deactivated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the speed limit
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is deactivated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: deactivate
+							TechnicalOperator: =
+							PredicateFormal: the speed limit.crrStatus = deactivate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [fa_99:]
+		text:  if the speed of the RCMTECHTERM_preceding_vehicle decreases below 20, the distance is set to 2.5. when both vehicles are standing, the absolute distance is regulated to 2m. when the RCMTECHTERM_preceding_vehicle is accelerating, the distance is set to 3 before the vehicle speed exceeds 20 .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  if the speed of the RCMTECHTERM_preceding_vehicle decreases below 20, the distance is set to 2.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the speed of the RCMTECHTERM_preceding_vehicle < 20)] ==> [(the distance = 2)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the speed of the RCMTECHTERM_preceding_vehicle decreases below 20
+					[2]: the distance is set to 2
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the speed of the RCMTECHTERM_preceding_vehicle decreases below 20
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the distance is set to 2
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the speed of the RCMTECHTERM_preceding_vehicle decreases below 20
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the speed of the RCMTECHTERM_preceding_vehicle
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 20
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:decreases
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: <
+							PredicateFormal: the speed of the RCMTECHTERM_preceding_vehicle < 20
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the distance is set to 2
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the distance
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 2
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the distance = 2
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+			<PR>
+				Id: [2]
+				text: 5.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: 
+					MTL-Formula: 
+				</Formal-Representation>
+				<ExtractedComponents>
+				</ExtractedComponents>
+				<ClassifiedComponents>
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+			<PR>
+				Id: [3]
+				text:  when both vehicles are standing, the absolute distance is regulated to 2m.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(both vehicles.crrStatus = stand)] ==> [(regulate_to(the absolute distance, 2m))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when both vehicles are standing
+					[2]: the absolute distance is regulated to 2m
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when both vehicles are standing
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the absolute distance is regulated to 2m
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when both vehicles are standing
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: both vehicles
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:are standing
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: stand
+							TechnicalOperator: =
+							PredicateFormal: both vehicles.crrStatus = stand
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the absolute distance is regulated to 2m
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the absolute distance
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 2m
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is regulated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: regulate_to
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: regulate_to(the absolute distance, 2m)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+			<PR>
+				Id: [4]
+				text:  when the RCMTECHTERM_preceding_vehicle is accelerating, the distance is set to 3 before the vehicle speed exceeds 20 .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [F(R) ==> (F((Q) || (R) ) U (R))] )
+					MTL-Formula: G( [(the RCMTECHTERM_preceding_vehicle.crrStatus = accelerate)] ==> [F(the vehicle speed > 20) ==> (F((the distance = 3) || (the vehicle speed > 20) ) U (the vehicle speed > 20))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when the RCMTECHTERM_preceding_vehicle is accelerating
+					[2]: the distance is set to 3
+					[3]: before the vehicle speed exceeds 20
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the RCMTECHTERM_preceding_vehicle is accelerating
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the distance is set to 3
+					C[3]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= before the vehicle speed exceeds 20
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when the RCMTECHTERM_preceding_vehicle is accelerating
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_preceding_vehicle
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is accelerating
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: accelerate
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_preceding_vehicle.crrStatus = accelerate
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the distance is set to 3
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the distance
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 3
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the distance = 3
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before the vehicle speed exceeds 20
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: the vehicle speed
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: 20
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:exceeds
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0]
+										RHS: Arg[1]
+										TechnicalOperator: >
+										PredicateFormal: the vehicle speed > 20
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [fa_31:]
+		text:  the current vehicle speed is adopted as speed limit.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  the current vehicle speed is adopted as speed limit.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(the current vehicle speed = speed limit)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the current vehicle speed is adopted as speed limit
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the current vehicle speed is adopted as speed limit
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the current vehicle speed is adopted as speed limit
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the current vehicle speed
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: speed limit
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is adopted
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the current vehicle speed = speed limit
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-18:]
+		text: the duration of a flashing cycle is 1 second.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the duration of a flashing cycle is 1 second.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(the duration of a flashing cycle = 1 second)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the duration of a flashing cycle is 1 second
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the duration of a flashing cycle is 1 second
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the duration of a flashing cycle is 1 second
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the duration of a flashing cycle
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 1 second
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the duration of a flashing cycle = 1 second
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [fa_81:]
+		text:  the adaptive cruise control system issues acoustic alarm if the calculated distance is less than (current speed #Div# 3) #Mul# RCMVAR_t . it issues visual warning if the calculated distance is less than (current speed #Div# 3) #Mul# RCMVAR_t2 .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  the adaptive cruise control system issues acoustic alarm if the calculated distance is less than (current speed #Div# 3) #Mul# RCMVAR_t .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: 
+					MTL-Formula: 
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the adaptive cruise control system issues acoustic alarm
+					[2]: if the calculated distance is less than current speed #Div # 3 #Mul # RCMVAR_t
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[2]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the calculated distance is #Div
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the calculated distance is #Div
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the calculated distance
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: #Div
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the calculated distance = #Div
+						</FormalSemantic>
+					</Condition>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+			<PR>
+				Id: [2]
+				text:  it issues visual warning if the calculated distance is less than (current speed #Div# 3) #Mul# RCMVAR_t2 .
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the calculated distance = #Div)] ==> [(issue(it, visual warning))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: it issues visual warning
+					[2]: if the calculated distance is less than current speed #Div # 3 #Mul # RCMVAR_t2
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= it issues visual warning
+					C[2]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the calculated distance is #Div
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the calculated distance is #Div
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the calculated distance
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: #Div
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the calculated distance = #Div
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = it issues visual warning
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: it
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: visual warning
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:issues
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: issue
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: issue(it, visual warning)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-28:]
+		text: a subvoltage is present if the voltage in the vehicle electrical system is less than 8.5.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: a subvoltage is present if the voltage in the vehicle electrical system is less than 8.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the voltage in the vehicle electrical system < 8)] ==> [(a subvoltage = present)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: a subvoltage is present
+					[2]: if the voltage in the vehicle electrical system is less than 8
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= a subvoltage is present
+					C[2]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the voltage in the vehicle electrical system is less than 8
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the voltage in the vehicle electrical system is less than 8
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the voltage in the vehicle electrical system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 8
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: <
+							PredicateFormal: the voltage in the vehicle electrical system < 8
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = a subvoltage is present
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: a subvoltage
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: present
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: a subvoltage = present
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-16:]
+		text:  if  the RCMTECHTERM_hazard_warning_light_switch is released, direction indicators flash synchronically. if the ignition key is in the ignition lock, the pulse ratio of bright to dark is 1. if the ignition key is not in the lock, the pulse ratio is 5.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  if  the RCMTECHTERM_hazard_warning_light_switch is released, direction indicators flash synchronically.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the RCMTECHTERM_hazard_warning_light_switch.crrStatus = release)] ==> [(direction indicators.crrStatus = flash)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the RCMTECHTERM_hazard_warning_light_switch is released
+					[2]: direction indicators flash synchronically
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the RCMTECHTERM_hazard_warning_light_switch is released
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= direction indicators flash
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the RCMTECHTERM_hazard_warning_light_switch is released
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_hazard_warning_light_switch
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is released
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: release
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_hazard_warning_light_switch.crrStatus = release
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = direction indicators flash
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: direction indicators
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:flash
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: flash
+							TechnicalOperator: =
+							PredicateFormal: direction indicators.crrStatus = flash
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+			<PR>
+				Id: [2]
+				text:  if the ignition key is in the ignition lock, the pulse ratio of bright to dark is 1.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the ignition key = the ignition lock)] ==> [(the pulse ratio = 1)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the ignition key is in the ignition lock
+					[2]: the pulse ratio is 1
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the ignition key is in the ignition lock
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the pulse ratio is 1
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the ignition key is in the ignition lock
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the ignition key
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the ignition lock
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the ignition key = the ignition lock
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the pulse ratio is 1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the pulse ratio
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the pulse ratio = 1
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+			<PR>
+				Id: [3]
+				text:  if the ignition key is not in the lock, the pulse ratio is 5.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(¬P)] ==> [(Q)] )
+					MTL-Formula: G( [(¬the ignition key = the lock)] ==> [(the pulse ratio = 5)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the ignition key is not in the lock
+					[2]: the pulse ratio is 5
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the ignition key is not in the lock
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the pulse ratio is 5
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the ignition key is not in the lock
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the ignition key
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the lock
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: true
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the ignition key = the lock
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the pulse ratio is 5
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the pulse ratio
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 5
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the pulse ratio = 5
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-26:]
+		text: if the light rotary switch is RCMVAL_auto, the adaptive RCMTECHTERM_high_beam_headlights are activated.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the light rotary switch is RCMVAL_auto, the adaptive RCMTECHTERM_high_beam_headlights are activated.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the light rotary switch = RCMVAL_auto)] ==> [(the adaptive RCMTECHTERM_high_beam_headlights.crrStatus = activate)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the light rotary switch is RCMVAL_auto
+					[2]: the adaptive RCMTECHTERM_high_beam_headlights are activated
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the light rotary switch is RCMVAL_auto
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the adaptive RCMTECHTERM_high_beam_headlights are activated
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the light rotary switch is RCMVAL_auto
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the light rotary switch
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_auto
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the light rotary switch = RCMVAL_auto
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the adaptive RCMTECHTERM_high_beam_headlights are activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the adaptive RCMTECHTERM_high_beam_headlights
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:are activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: the adaptive RCMTECHTERM_high_beam_headlights.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-14:]
+		text: the cognitive threshold of a human observer shall be set to the deviation that is less than 5.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the cognitive threshold of a human observer shall be set to the deviation that is less than 5.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(the cognitive threshold of a human observer = the deviation)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the cognitive threshold of a human observer shall be set to the deviation that is less than 5
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the cognitive threshold of a human observer shall be set to the deviation
+						SlotType= HiddenConstraint|| Text= shall be set to the deviation that is less than 5
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the cognitive threshold of a human observer shall be set to the deviation
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the cognitive threshold of a human observer
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the deviation
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the cognitive threshold of a human observer = the deviation
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-24:]
+		text: if the darkness switch is activated, the ambient lighting is not activated.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the darkness switch is activated, the ambient lighting is not activated.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(¬Q)] )
+					MTL-Formula: G( [(the darkness switch.crrStatus = activate)] ==> [(¬the ambient lighting.crrStatus = activate)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the darkness switch is activated
+					[2]: the ambient lighting is not activated
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the darkness switch is activated
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the ambient lighting is not activated
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the darkness switch is activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the darkness switch
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: the darkness switch.crrStatus = activate
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the ambient lighting is not activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the ambient lighting
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: true
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: the ambient lighting.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-12:]
+		text: if the RCMTECHTERM_brake_pedal exceeds the threshold value RCMVAR_m, the RCMTECHTERM_braking_force is strengthened to 100.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the RCMTECHTERM_brake_pedal exceeds the threshold value RCMVAR_m, the RCMTECHTERM_braking_force is strengthened to 100.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the RCMTECHTERM_brake_pedal > the threshold value RCMVAR_m)] ==> [(the RCMTECHTERM_braking_force = 100)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the RCMTECHTERM_brake_pedal exceeds the threshold value RCMVAR_m
+					[2]: the RCMTECHTERM_braking_force is strengthened to 100
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the RCMTECHTERM_brake_pedal exceeds the threshold value RCMVAR_m
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_braking_force is strengthened to 100
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the RCMTECHTERM_brake_pedal exceeds the threshold value RCMVAR_m
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_brake_pedal
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the threshold value RCMVAR_m
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:exceeds
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: >
+							PredicateFormal: the RCMTECHTERM_brake_pedal > the threshold value RCMVAR_m
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the RCMTECHTERM_braking_force is strengthened to 100
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_braking_force
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 100
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is strengthened
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_braking_force = 100
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-34:]
+		text: if RCMTECHTERM_advancing_vehicle is not recognized, the high beam illumination is restored within 2 seconds.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if RCMTECHTERM_advancing_vehicle is not recognized, the high beam illumination is restored within 2 seconds.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(¬P)] ==> [(F{t=2}(Q))] )
+					MTL-Formula: G( [(¬RCMTECHTERM_advancing_vehicle.crrStatus = recognize)] ==> [(F{t=2}(the high beam illumination.crrStatus = restore))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if RCMTECHTERM_advancing_vehicle is not recognized
+					[2]: the high beam illumination is restored within 2 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if RCMTECHTERM_advancing_vehicle is not recognized
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the high beam illumination is restored
+						SlotType= TimeScope|| Text= within 2 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if RCMTECHTERM_advancing_vehicle is not recognized
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMTECHTERM_advancing_vehicle
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is recognized
+						</Operator>
+						Has valid-time:  false
+						Is negatted: true
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: recognize
+							TechnicalOperator: =
+							PredicateFormal: RCMTECHTERM_advancing_vehicle.crrStatus = recognize
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the high beam illumination is restored
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the high beam illumination
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is restored
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: restore
+							TechnicalOperator: =
+							PredicateFormal: the high beam illumination.crrStatus = restore
+						</FormalSemantic>
+						is repeated = false
+						<PreElapsedTime>
+							TimeType: PreElapsed
+							Value: 2
+							Unit: seconds
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 2
+							</FormalSemantic>
+						<PreElapsedTime>
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-22:]
+		text: if the daytime running light is activated, the low beam headlights are activated after starting the engine if the ignition key is in the ignition lock. when the ambient light is activated, the low beam headlights remain active
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the daytime running light is activated, the low beam headlights are activated after starting the engine if the ignition key is in the ignition lock.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [((R) ==> (Q))] )
+					MTL-Formula: G( [(the ignition key = the ignition lock)] ==> [((start(the engine)) ==> (the low beam headlights.crrStatus = activate))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the daytime running light is activated
+					[2]: the low beam headlights are activated
+					[3]: after starting the engine
+					[4]: if the ignition key is in the ignition lock
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the daytime running light is activated
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the low beam headlights are activated
+					C[3]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= after starting the engine
+					C[4]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the ignition key is in the ignition lock
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the ignition key is in the ignition lock
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the ignition key
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the ignition lock
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the ignition key = the ignition lock
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the low beam headlights are activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the low beam headlights
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:are activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: the low beam headlights.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: StartUpPhase
+								<Condition>
+									Keyword: null
+									Text = after starting the engine
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: the engine
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:starting
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										ProcessName: start
+										OperandList: {Arg[1]}
+										PredicateFormal: start(the engine)
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+			<PR>
+				Id: [2]
+				text:  when the ambient light is activated, the low beam headlights remain active.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the ambient light.crrStatus = activate)] ==> [(the low beam headlights = active)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when the ambient light is activated
+					[2]: the low beam headlights remain active
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the ambient light is activated
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the low beam headlights remain active
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when the ambient light is activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the ambient light
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: the ambient light.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the low beam headlights remain active
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the low beam headlights
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: active
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:remain
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the low beam headlights = active
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-32:]
+		text: an overvoltage is present if the voltage in the vehicle electrical system is more than 14.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: an overvoltage is present if the voltage in the vehicle electrical system is more than 14.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the voltage in the vehicle electrical system > 14)] ==> [(an overvoltage = present)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: an overvoltage is present
+					[2]: if the voltage in the vehicle electrical system is more than 14
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= an overvoltage is present
+					C[2]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the voltage in the vehicle electrical system is more than 14
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the voltage in the vehicle electrical system is more than 14
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the voltage in the vehicle electrical system
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 14
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: >
+							PredicateFormal: the voltage in the vehicle electrical system > 14
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = an overvoltage is present
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: an overvoltage
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: present
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: an overvoltage = present
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-20:]
+		text: if flashing cycles exceed 1000, the cumulated deviation must not exceed 5.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if flashing cycles exceed 1000, the cumulated deviation must not exceed 5.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(¬Q)] )
+					MTL-Formula: G( [(flashing cycles > 1000)] ==> [(¬the cumulated deviation > 5)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if flashing cycles exceed 1000
+					[2]: the cumulated deviation must not exceed 5
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if flashing cycles exceed 1000
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the cumulated deviation must not exceed 5
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if flashing cycles exceed 1000
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: flashing cycles
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 1000
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:exceed
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: >
+							PredicateFormal: flashing cycles > 1000
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the cumulated deviation must not exceed 5
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the cumulated deviation
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 5
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:must exceed
+						</Operator>
+						Has valid-time:  false
+						Is negatted: true
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: >
+							PredicateFormal: the cumulated deviation > 5
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-30:]
+		text: if a subvoltage is present, the ambient light should not be available.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if a subvoltage is present, the ambient light should not be available.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(¬Q)] )
+					MTL-Formula: G( [(a subvoltage = present)] ==> [(¬the ambient light = available)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if a subvoltage is present
+					[2]: the ambient light should not be available
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if a subvoltage is present
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the ambient light should not be available
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if a subvoltage is present
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: a subvoltage
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: present
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: a subvoltage = present
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the ambient light should not be available
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the ambient light
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: available
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:should be
+						</Operator>
+						Has valid-time:  false
+						Is negatted: true
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the ambient light = available
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [fa_19:]
+		text:  the cruise control lever activates the cruise control.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  the cruise control lever activates the cruise control.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(activate(the cruise control lever, the cruise control))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the cruise control lever activates the cruise control
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the cruise control lever activates the cruise control
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the cruise control lever activates the cruise control
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the cruise control lever
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the cruise control
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:activates
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: activate
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: activate(the cruise control lever, the cruise control)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [fa_36:]
+		text:  when the pressure on the RCMTECHTERM_gas_pedal decreases below 90, the speed limit is activated.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  when the pressure on the RCMTECHTERM_gas_pedal decreases below 90, the speed limit is activated.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the pressure on the RCMTECHTERM_gas_pedal < 90)] ==> [(the speed limit.crrStatus = activate)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when the pressure on the RCMTECHTERM_gas_pedal decreases below 90
+					[2]: the speed limit is activated
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the pressure on the RCMTECHTERM_gas_pedal decreases below 90
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the speed limit is activated
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when the pressure on the RCMTECHTERM_gas_pedal decreases below 90
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the pressure on the RCMTECHTERM_gas_pedal
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 90
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:decreases
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: <
+							PredicateFormal: the pressure on the RCMTECHTERM_gas_pedal < 90
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the speed limit is activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the speed limit
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: the speed limit.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [fa_5:]
+		text:  if the maximum deceleration is RCMVAL_insufficient_to_stop before a collision with the RCMTECHTERM_vehicle_ahead, the vehicle warns the driver by acoustical signals for 1 seconds every 2 seconds. the maximum deceleration is 5.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  if the maximum deceleration is RCMVAL_insufficient_to_stop before a collision with the RCMTECHTERM_vehicle_ahead, the vehicle warns the driver by acoustical signals for 1 seconds every 2 seconds.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [F(P) ==> (F((Q) || (P) ) U (P))] ==> [(G(F{t=2}(G{t=1}(R))))] )
+					MTL-Formula: G( [F(a collision with the RCMTECHTERM_vehicle_ahead = RCMVAL_True) ==> (F((the maximum deceleration = RCMVAL_insufficient_to_stop) || (a collision with the RCMTECHTERM_vehicle_ahead = RCMVAL_True) ) U (a collision with the RCMTECHTERM_vehicle_ahead = RCMVAL_True))] ==> [(G(F{t=2}(G{t=1}(warn_by(the vehicle, the driver, acoustical signals)))))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the maximum deceleration is RCMVAL_insufficient_to_stop before a collision with the RCMTECHTERM_vehicle_ahead
+					[2]: the vehicle warns the driver by acoustical signals for 1 seconds every 2 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: preScope 
+						SlotType= ConditionalScope|| Text= before a collision with the RCMTECHTERM_vehicle_ahead
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the maximum deceleration is RCMVAL_insufficient_to_stop
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the vehicle warns the driver by acoustical signals
+						SlotType= TimeScope|| Text= every 2 seconds
+						SlotType= TimeScope|| Text= for 1 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the maximum deceleration is RCMVAL_insufficient_to_stop
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the maximum deceleration
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_insufficient_to_stop
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the maximum deceleration = RCMVAL_insufficient_to_stop
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the vehicle warns the driver by acoustical signals
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the vehicle
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the driver
+							</ArgDetails>
+							Arg[2]
+							<ArgDetails>
+								Text: acoustical signals
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:warns
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 1
+							Unit: seconds
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 1
+							</FormalSemantic>
+						<ValidTime>
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: warn_by
+							OperandList: {Arg[1], Arg[2], Arg[3]}
+							PredicateFormal: warn_by(the vehicle, the driver, acoustical signals)
+						</FormalSemantic>
+						is repeated = true
+						<InBetweenTime>
+							TimeType: InBetween
+							Value: 2
+							Unit: seconds
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 2
+							</FormalSemantic>
+						<InBetweenTime>
+					</Action>
+					<RequirementScope>
+						<PreconditionalScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before a collision with the RCMTECHTERM_vehicle_ahead
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: a collision with the RCMTECHTERM_vehicle_ahead
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: RCMVAL_True
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:equals
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0]
+										RHS: Arg[1]
+										TechnicalOperator: =
+										PredicateFormal: a collision with the RCMTECHTERM_vehicle_ahead = RCMVAL_True
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+			<PR>
+				Id: [2]
+				text:  the maximum deceleration is 5.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(the maximum deceleration = 5)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the maximum deceleration is 5
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the maximum deceleration is 5
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the maximum deceleration is 5
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the maximum deceleration
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 5
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the maximum deceleration = 5
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [al_144:]
+		text:  the maximum deviation of the pulse ratio should be below the cognitive threshold of a human observer.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  the maximum deviation of the pulse ratio should be below the cognitive threshold of a human observer.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] )
+					MTL-Formula: G( [(the maximum deviation of the pulse ratio < the cognitive threshold of a human observer)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the maximum deviation of the pulse ratio should be below the cognitive threshold of a human observer
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the maximum deviation of the pulse ratio should be below the cognitive threshold of a human observer
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the maximum deviation of the pulse ratio should be below the cognitive threshold of a human observer
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the maximum deviation of the pulse ratio
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the cognitive threshold of a human observer
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:should be
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: <
+							PredicateFormal: the maximum deviation of the pulse ratio < the cognitive threshold of a human observer
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [fa_32:]
+		text:  if the speed limit function is activated, the current speed must not exceed the RCMTECHTERM_set_speed_limit.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  if the speed limit function is activated, the current speed must not exceed the RCMTECHTERM_set_speed_limit.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(¬Q)] )
+					MTL-Formula: G( [(the speed limit function.crrStatus = activate)] ==> [(¬the current speed > the RCMTECHTERM_set_speed_limit)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the speed limit function is activated
+					[2]: the current speed must not exceed the RCMTECHTERM_set_speed_limit
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the speed limit function is activated
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the current speed must not exceed the RCMTECHTERM_set_speed_limit
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the speed limit function is activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the speed limit function
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: the speed limit function.crrStatus = activate
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the current speed must not exceed the RCMTECHTERM_set_speed_limit
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the current speed
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the RCMTECHTERM_set_speed_limit
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:must exceed
+						</Operator>
+						Has valid-time:  false
+						Is negatted: true
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: >
+							PredicateFormal: the current speed > the RCMTECHTERM_set_speed_limit
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [fa_86:]
+		text:  when the velocity window is below 20, the distance to the RCMTECHTERM_vehicle_ahead shall be calculated.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  when the velocity window is below 20, the distance to the RCMTECHTERM_vehicle_ahead shall be calculated.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the velocity window < 20)] ==> [(the distance to the RCMTECHTERM_vehicle_ahead.crrStatus = calculate)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when the velocity window is below 20
+					[2]: the distance to the RCMTECHTERM_vehicle_ahead shall be calculated
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the velocity window is below 20
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the distance to the RCMTECHTERM_vehicle_ahead shall be calculated
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when the velocity window is below 20
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the velocity window
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: 20
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: <
+							PredicateFormal: the velocity window < 20
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the distance to the RCMTECHTERM_vehicle_ahead shall be calculated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the distance to the RCMTECHTERM_vehicle_ahead
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be calculated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: calculate
+							TechnicalOperator: =
+							PredicateFormal: the distance to the RCMTECHTERM_vehicle_ahead.crrStatus = calculate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-19:]
+		text: if RCMTECHTERM_tip_blinking was activated shortly before the RCMTECHTERM_hazard_warning_light_switch is deactivated, it shall not be activated while the deactivation of the RCMTECHTERM_hazard_warning_light_switch.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if RCMTECHTERM_tip_blinking was activated shortly before the RCMTECHTERM_hazard_warning_light_switch is deactivated, it shall not be activated while the deactivation of the RCMTECHTERM_hazard_warning_light_switch.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [F(P) ==> (F((Q) || (P) ) U (P))] ==> [G( (((T)) ∧ ¬ ((¬S)) ∧ F((¬S))) ==> (F((¬R) || ((¬S)) ) U ((¬S))) )] )
+					MTL-Formula: G( [F(the RCMTECHTERM_hazard_warning_light_switch.crrStatus = deactivate) ==> (F((RCMTECHTERM_tip_blinking.crrStatus = activate) || (the RCMTECHTERM_hazard_warning_light_switch.crrStatus = deactivate) ) U (the RCMTECHTERM_hazard_warning_light_switch.crrStatus = deactivate))] ==> [G( (((the deactivation of the RCMTECHTERM_hazard_warning_light_switch = RCMVAL_True)) ∧ ¬ ((¬the deactivation of the RCMTECHTERM_hazard_warning_light_switch = RCMVAL_True)) ∧ F((¬the deactivation of the RCMTECHTERM_hazard_warning_light_switch = RCMVAL_True))) ==> (F((¬it.crrStatus = activate) || ((¬the deactivation of the RCMTECHTERM_hazard_warning_light_switch = RCMVAL_True)) ) U ((¬the deactivation of the RCMTECHTERM_hazard_warning_light_switch = RCMVAL_True))) )] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if RCMTECHTERM_tip_blinking was activated shortly
+					[2]: before the RCMTECHTERM_hazard_warning_light_switch is deactivated
+					[3]: it shall not be activated while the deactivation of the RCMTECHTERM_hazard_warning_light_switch
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if RCMTECHTERM_tip_blinking was activated
+					C[2]==>	Type: preScope 
+						SlotType= ConditionalScope|| Text= before the RCMTECHTERM_hazard_warning_light_switch is deactivated
+					C[3]==>	Type: act 
+						SlotType= MainSlot|| Text= it shall not be activated
+					C[3]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= while the deactivation of the RCMTECHTERM_hazard_warning_light_switch
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if RCMTECHTERM_tip_blinking was activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: RCMTECHTERM_tip_blinking
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:was activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: RCMTECHTERM_tip_blinking.crrStatus = activate
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = it shall not be activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: it
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: true
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: it.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<LogicalRelation>
+								relation: AND
+							</LogicalRelation>
+								<ConditionalScope>
+									scope phase: StartUpPhase
+									<Condition>
+										Keyword: after
+										Text = while the deactivation of the RCMTECHTERM_hazard_warning_light_switch
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: the deactivation of the RCMTECHTERM_hazard_warning_light_switch
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Text: RCMVAL_True
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:equals
+										</Operator>
+										Has valid-time:  false
+										Is negatted: false
+										<FormalSemantic>
+											LHS: Arg[0]
+											RHS: Arg[1]
+											TechnicalOperator: =
+											PredicateFormal: the deactivation of the RCMTECHTERM_hazard_warning_light_switch = RCMVAL_True
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+								<ConditionalScope>
+									scope phase: EndUpPhase
+									<Condition>
+										Keyword: until
+										Text = while the deactivation of the RCMTECHTERM_hazard_warning_light_switch
+										<Operands>
+											Arg[0]
+											<ArgDetails>
+												Text: the deactivation of the RCMTECHTERM_hazard_warning_light_switch
+											</ArgDetails>
+											Arg[1]
+											<ArgDetails>
+												Text: RCMVAL_True
+											</ArgDetails>
+										</Operands>
+										<Operator>
+											relation:equals
+										</Operator>
+										Has valid-time:  false
+										Is negatted: true
+										<FormalSemantic>
+											LHS: Arg[0]
+											RHS: Arg[1]
+											TechnicalOperator: =
+											PredicateFormal: the deactivation of the RCMTECHTERM_hazard_warning_light_switch = RCMVAL_True
+										</FormalSemantic>
+									</Condition>
+								</ConditionalScope>
+						</ActionScope>
+						<PreconditionalScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before the RCMTECHTERM_hazard_warning_light_switch is deactivated
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: the RCMTECHTERM_hazard_warning_light_switch
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is deactivated
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0].crrStatus
+										RHS: deactivate
+										TechnicalOperator: =
+										PredicateFormal: the RCMTECHTERM_hazard_warning_light_switch.crrStatus = deactivate
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</PreconditionalScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-29:]
+		text: if a subvoltage is present, the adaptive RCMTECHTERM_high_beam_headlight should not be available.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if a subvoltage is present, the adaptive RCMTECHTERM_high_beam_headlight should not be available.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(¬Q)] )
+					MTL-Formula: G( [(a subvoltage = present)] ==> [(¬the adaptive RCMTECHTERM_high_beam_headlight = available)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if a subvoltage is present
+					[2]: the adaptive RCMTECHTERM_high_beam_headlight should not be available
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if a subvoltage is present
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the adaptive RCMTECHTERM_high_beam_headlight should not be available
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if a subvoltage is present
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: a subvoltage
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: present
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: a subvoltage = present
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the adaptive RCMTECHTERM_high_beam_headlight should not be available
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the adaptive RCMTECHTERM_high_beam_headlight
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: available
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:should be
+						</Operator>
+						Has valid-time:  false
+						Is negatted: true
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the adaptive RCMTECHTERM_high_beam_headlight = available
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-17:]
+		text:  if  an emergency situation, the RCMTECHTERM_hazard_warning_light_switch is active before the car battery is empty.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  if  an emergency situation, the RCMTECHTERM_hazard_warning_light_switch is active before the car battery is empty.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [F(Q) ==> (F((P) || (Q) ) U (Q))] )
+					MTL-Formula: G( [F(the car battery = empty) ==> (F((the RCMTECHTERM_hazard_warning_light_switch = active) || (the car battery = empty) ) U (the car battery = empty))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if an emergency situation
+					[2]: the RCMTECHTERM_hazard_warning_light_switch is active before the car battery is empty
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_hazard_warning_light_switch is active
+					C[2]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= before the car battery is empty
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Action>
+						Text = the RCMTECHTERM_hazard_warning_light_switch is active
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_hazard_warning_light_switch
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: active
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_hazard_warning_light_switch = active
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before the car battery is empty
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: the car battery
+										</ArgDetails>
+										Arg[1]
+										<ArgDetails>
+											Text: empty
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0]
+										RHS: Arg[1]
+										TechnicalOperator: =
+										PredicateFormal: the car battery = empty
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-27:]
+		text: if the camera recognizes the lights of an RCMTECHTERM_advancing_vehicle, the RCMTECHTERM_high_beam_headlight that is activated is reduced to low beam headlight within 5 seconds.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the camera recognizes the lights of an RCMTECHTERM_advancing_vehicle, the RCMTECHTERM_high_beam_headlight that is activated is reduced to low beam headlight within 5 seconds.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(F{t=5}(Q))] )
+					MTL-Formula: G( [(recognize(the camera, the lights of an RCMTECHTERM_advancing_vehicle))] ==> [(F{t=5}(the RCMTECHTERM_high_beam_headlight = low beam headlight))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the camera recognizes the lights of an RCMTECHTERM_advancing_vehicle
+					[2]: the RCMTECHTERM_high_beam_headlight that is activated is reduced to low beam headlight within 5 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the camera recognizes the lights of an RCMTECHTERM_advancing_vehicle
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_high_beam_headlight is reduced to low beam headlight
+						SlotType= HiddenConstraint|| Text= the RCMTECHTERM_high_beam_headlight that is activated
+						SlotType= TimeScope|| Text= within 5 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the camera recognizes the lights of an RCMTECHTERM_advancing_vehicle
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the camera
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the lights of an RCMTECHTERM_advancing_vehicle
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:recognizes
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: recognize
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: recognize(the camera, the lights of an RCMTECHTERM_advancing_vehicle)
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the RCMTECHTERM_high_beam_headlight is reduced to low beam headlight
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_high_beam_headlight
+							</ArgDetails>
+							<HiddenConstraint>
+							<Condition>
+								Keyword: null
+								Text = null
+								<Operands>
+									Arg[0]
+									<ArgDetails>
+										Text: the RCMTECHTERM_high_beam_headlight
+									</ArgDetails>
+								</Operands>
+								<Operator>
+									relation:is activated
+								</Operator>
+								Has valid-time:  false
+								Is negatted: false
+								<FormalSemantic>
+									LHS: Arg[0].crrStatus
+									RHS: activate
+									TechnicalOperator: =
+									PredicateFormal: the RCMTECHTERM_high_beam_headlight.crrStatus = activate
+								</FormalSemantic>
+							</Condition>
+							</HiddenConstraint>
+							Arg[1]
+							<ArgDetails>
+								Text: low beam headlight
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is reduced
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_high_beam_headlight = low beam headlight
+						</FormalSemantic>
+						is repeated = false
+						<PreElapsedTime>
+							TimeType: PreElapsed
+							Value: 5
+							Unit: seconds
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 5
+							</FormalSemantic>
+						<PreElapsedTime>
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-25:]
+		text: if the darkness switch is activated, the RCMTECHTERM_cornering_light is not activated.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the darkness switch is activated, the RCMTECHTERM_cornering_light is not activated.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(¬Q)] )
+					MTL-Formula: G( [(the darkness switch.crrStatus = activate)] ==> [(¬the RCMTECHTERM_cornering_light.crrStatus = activate)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the darkness switch is activated
+					[2]: the RCMTECHTERM_cornering_light is not activated
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the darkness switch is activated
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_cornering_light is not activated
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the darkness switch is activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the darkness switch
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: the darkness switch.crrStatus = activate
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the RCMTECHTERM_cornering_light is not activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_cornering_light
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: true
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_cornering_light.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-35:]
+		text:  if  the RCMTECHTERM_pitman_arm is pulled, the RCMTECHTERM_high_beam_headlight is activated.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  if  the RCMTECHTERM_pitman_arm is pulled, the RCMTECHTERM_high_beam_headlight is activated.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the RCMTECHTERM_pitman_arm.crrStatus = pull)] ==> [(the RCMTECHTERM_high_beam_headlight.crrStatus = activate)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the RCMTECHTERM_pitman_arm is pulled
+					[2]: the RCMTECHTERM_high_beam_headlight is activated
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the RCMTECHTERM_pitman_arm is pulled
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_high_beam_headlight is activated
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the RCMTECHTERM_pitman_arm is pulled
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_pitman_arm
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is pulled
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: pull
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_pitman_arm.crrStatus = pull
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the RCMTECHTERM_high_beam_headlight is activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_high_beam_headlight
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_high_beam_headlight.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-23:]
+		text: if the light rotary switch is RCMVAL_automatic, the low beam headlights are activated for at least 3 seconds when the exterior brightness is lower than a threshold RCMVAR_s1. if the exterior brightness exceeds a threshold RCMVAR_s2 that exceeds RCMVAR_s1, the low beam headlights are deactivated for at least 3 seconds.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the light rotary switch is RCMVAL_automatic, the low beam headlights are activated for at least 3 seconds when the exterior brightness is lower than a threshold RCMVAR_s1.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [([(P)] ==> [(Q)])] ==> [(G{t>=3}(R))] )
+					MTL-Formula: G( [([(the exterior brightness < a threshold RCMVAR_s1)] ==> [(the light rotary switch = RCMVAL_automatic)])] ==> [(G{t>=3}(the low beam headlights.crrStatus = activate))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the light rotary switch is RCMVAL_automatic
+					[2]: the low beam headlights are activated for at least 3 seconds
+					[3]: when the exterior brightness is lower than a threshold RCMVAR_s1
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the light rotary switch is RCMVAL_automatic
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the low beam headlights are activated
+						SlotType= TimeScope|| Text= for at  least 3 seconds
+					C[3]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the exterior brightness is lower than a threshold RCMVAR_s1
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the light rotary switch is RCMVAL_automatic
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the light rotary switch
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_automatic
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the light rotary switch = RCMVAL_automatic
+						</FormalSemantic>
+					</Condition>
+					<Trigger>
+						Keyword: when
+						Text = when the exterior brightness is lower than a threshold RCMVAR_s1
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the exterior brightness
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: a threshold RCMVAR_s1
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: <
+							PredicateFormal: the exterior brightness < a threshold RCMVAR_s1
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the low beam headlights are activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the low beam headlights
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:are activated
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 3
+							Unit: seconds
+							QPRelation: at  least
+						<FormalSemantic>
+							TechnicalOperator: >=
+							Value: 3
+							</FormalSemantic>
+						<ValidTime>
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: the low beam headlights.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+			<PR>
+				Id: [2]
+				text:  if the exterior brightness exceeds a threshold RCMVAR_s2 that exceeds RCMVAR_s1, the low beam headlights are deactivated for at least 3 seconds.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(G{t>=3}(Q))] )
+					MTL-Formula: G( [(the exterior brightness > a threshold RCMVAR_s2)] ==> [(G{t>=3}(the low beam headlights.crrStatus = deactivate))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if the exterior brightness exceeds a threshold RCMVAR_s2 that exceeds RCMVAR_s1
+					[2]: the low beam headlights are deactivated for at least 3 seconds
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if the exterior brightness exceeds a threshold RCMVAR_s2
+						SlotType= HiddenConstraint|| Text= a threshold RCMVAR_s2 that exceeds RCMVAR_s1
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the low beam headlights are deactivated
+						SlotType= TimeScope|| Text= for at  least 3 seconds
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if the exterior brightness exceeds a threshold RCMVAR_s2
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the exterior brightness
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: a threshold RCMVAR_s2
+							</ArgDetails>
+							<HiddenConstraint>
+							<Condition>
+								Keyword: null
+								Text = null
+								<Operands>
+									Arg[0]
+									<ArgDetails>
+										Text: a threshold RCMVAR_s2
+									</ArgDetails>
+									Arg[1]
+									<ArgDetails>
+										Text: RCMVAR_s1
+									</ArgDetails>
+								</Operands>
+								<Operator>
+									relation:exceeds
+								</Operator>
+								Has valid-time:  false
+								Is negatted: false
+								<FormalSemantic>
+									LHS: Arg[0]
+									RHS: Arg[1]
+									TechnicalOperator: >
+									PredicateFormal: a threshold RCMVAR_s2 > RCMVAR_s1
+								</FormalSemantic>
+							</Condition>
+							</HiddenConstraint>
+						</Operands>
+						<Operator>
+							relation:exceeds
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: >
+							PredicateFormal: the exterior brightness > a threshold RCMVAR_s2
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the low beam headlights are deactivated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the low beam headlights
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:are deactivated
+						</Operator>
+						Has valid-time:  true
+						<ValidTime>
+							TimeType: Scope
+							Value: 3
+							Unit: seconds
+							QPRelation: at  least
+						<FormalSemantic>
+							TechnicalOperator: >=
+							Value: 3
+							</FormalSemantic>
+						<ValidTime>
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: deactivate
+							TechnicalOperator: =
+							PredicateFormal: the low beam headlights.crrStatus = deactivate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-33:]
+		text: if an overvoltage is present, the headlight must be activated.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if an overvoltage is present, the headlight must be activated.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(an overvoltage = present)] ==> [(the headlight.crrStatus = activate)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if an overvoltage is present
+					[2]: the headlight must be activated
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if an overvoltage is present
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the headlight must be activated
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if an overvoltage is present
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: an overvoltage
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: present
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: an overvoltage = present
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the headlight must be activated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the headlight
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:must be activated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: activate
+							TechnicalOperator: =
+							PredicateFormal: the headlight.crrStatus = activate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-21:]
+		text: the driver activates the low beam headlights when turning the light rotary switch to RCMVAL_exterior_lights_on.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the driver activates the low beam headlights when turning the light rotary switch to RCMVAL_exterior_lights_on.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the light rotary switch = RCMVAL_exterior_lights_on)] ==> [(activate(the driver, the low beam headlights))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the driver activates the low beam headlights
+					[2]: when turning the light rotary switch to RCMVAL_exterior_lights_on
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the driver activates the low beam headlights
+					C[2]==>	Type: trig 
+						SlotType= MainSlot|| Text= when turning the light rotary switch to RCMVAL_exterior_lights_on
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when turning the light rotary switch to RCMVAL_exterior_lights_on
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the light rotary switch
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_exterior_lights_on
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:turning
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the light rotary switch = RCMVAL_exterior_lights_on
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the driver activates the low beam headlights
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the driver
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: the low beam headlights
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:activates
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							ProcessName: activate
+							OperandList: {Arg[1], Arg[2]}
+							PredicateFormal: activate(the driver, the low beam headlights)
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-31:]
+		text: if a subvoltage is present, the RCMTECHTERM_cornering_light should not be available.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if a subvoltage is present, the RCMTECHTERM_cornering_light should not be available.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(¬Q)] )
+					MTL-Formula: G( [(a subvoltage = present)] ==> [(¬the RCMTECHTERM_cornering_light = available)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if a subvoltage is present
+					[2]: the RCMTECHTERM_cornering_light should not be available
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if a subvoltage is present
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the RCMTECHTERM_cornering_light should not be available
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if a subvoltage is present
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: a subvoltage
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: present
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: a subvoltage = present
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the RCMTECHTERM_cornering_light should not be available
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMTECHTERM_cornering_light
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: available
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:should be
+						</Operator>
+						Has valid-time:  false
+						Is negatted: true
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the RCMTECHTERM_cornering_light = available
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+</SucceededRequirement>
+</log>

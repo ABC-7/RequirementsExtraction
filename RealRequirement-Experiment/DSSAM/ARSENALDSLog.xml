@@ -1,0 +1,1268 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+File Measures: 
+	Number of req in file = 20
+	Number of succeded requirements = 20
+	Number of failed requirements = 0
+<FailedRequirement>
+</FailedRequirement>
+<SucceededRequirement>
+	<Requirement>
+		ID: [TempReqId-2:]
+		text: if the regulator mode equals RCMVAL_init , the output regulator status shall be set to RCMVAL_init .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator mode equals RCMVAL_init , the output regulator status shall be set to RCMVAL_init .
+				<ExtractedComponents>
+					[1]: if the regulator mode equals RCMVAL_init
+					[2]: the output regulator status shall be set to RCMVAL_init
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the regulator mode equals RCMVAL_init
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the output regulator status shall be set to RCMVAL_init
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the regulator mode equals RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the output regulator status shall be set to RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the output regulator status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-1:]
+		text: if the regulator mode equals RCMVAL_init , the output regulator status shall be set to RCMVAL_init .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator mode equals RCMVAL_init , the output regulator status shall be set to RCMVAL_init .
+				<ExtractedComponents>
+					[1]: if the regulator mode equals RCMVAL_init
+					[2]: the output regulator status shall be set to RCMVAL_init
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the regulator mode equals RCMVAL_init
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the output regulator status shall be set to RCMVAL_init
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the regulator mode equals RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the output regulator status shall be set to RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the output regulator status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-19:]
+		text: when the reset equals RCMVAL_true , the regulator mode shall be set to RCMVAL_init .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when the reset equals RCMVAL_true , the regulator mode shall be set to RCMVAL_init .
+				<ExtractedComponents>
+					[1]: when the reset equals RCMVAL_true
+					[2]: the regulator mode shall be set to RCMVAL_init
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when the reset equals RCMVAL_true
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the regulator mode shall be set to RCMVAL_init
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when the reset equals RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the reset
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the regulator mode shall be set to RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-18:]
+		text: if the monitor mode equals RCMVAL_failed , the regulator mode shall never be set to RCMVAL_normal .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the monitor mode equals RCMVAL_failed , the regulator mode shall never be set to RCMVAL_normal .
+				<ExtractedComponents>
+					[1]: if the monitor mode equals RCMVAL_failed
+					[2]: the regulator mode shall never be set to RCMVAL_normal
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the monitor mode equals RCMVAL_failed
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the regulator mode shall never be set to RCMVAL_normal
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the monitor mode equals RCMVAL_failed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the monitor mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_failed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the regulator mode shall never be set to RCMVAL_normal
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_normal
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall never be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-17:]
+		text: if the regulator mode equals RCMVAL_failed , the regulator mode shall never be set to RCMVAL_normal .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator mode equals RCMVAL_failed , the regulator mode shall never be set to RCMVAL_normal .
+				<ExtractedComponents>
+					[1]: if the regulator mode equals RCMVAL_failed
+					[2]: the regulator mode shall never be set to RCMVAL_normal
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the regulator mode equals RCMVAL_failed
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the regulator mode shall never be set to RCMVAL_normal
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the regulator mode equals RCMVAL_failed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_failed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the regulator mode shall never be set to RCMVAL_normal
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_normal
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall never be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-16:]
+		text: if the monitor status equals RCMVAL_false , the monitor init timeout shall be set to RCMVAL_true .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the monitor status equals RCMVAL_false , the monitor init timeout shall be set to RCMVAL_true .
+				<ExtractedComponents>
+					[1]: if the monitor status equals RCMVAL_false
+					[2]: the monitor init timeout shall be set to RCMVAL_true
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the monitor status equals RCMVAL_false
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the monitor init timeout shall be set to RCMVAL_true
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the monitor status equals RCMVAL_false
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the monitor status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_false
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the monitor init timeout shall be set to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the monitor init timeout
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-15:]
+		text: if the monitor status equals RCMVAL_true , the monitor init timeout shall be set to RCMVAL_false .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the monitor status equals RCMVAL_true , the monitor init timeout shall be set to RCMVAL_false .
+				<ExtractedComponents>
+					[1]: if the monitor status equals RCMVAL_true
+					[2]: the monitor init timeout shall be set to RCMVAL_false
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the monitor status equals RCMVAL_true
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the monitor init timeout shall be set to RCMVAL_false
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the monitor status equals RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the monitor status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the monitor init timeout shall be set to RCMVAL_false
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the monitor init timeout
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_false
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-14:]
+		text: the monitor mode shall be initialized to RCMVAL_init .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the monitor mode shall be initialized to RCMVAL_init .
+				<ExtractedComponents>
+					[1]: the monitor mode shall be initialized to RCMVAL_init
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: FactualRule 
+						SlotType= MainSlot|| Text= the monitor mode shall be initialized to RCMVAL_init
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the monitor mode shall be initialized to RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the monitor mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be initialized to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-13:]
+		text: if the regulator status equals RCMVAL_false , the regulator init timeout shall be set to RCMVAL_true .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator status equals RCMVAL_false , the regulator init timeout shall be set to RCMVAL_true .
+				<ExtractedComponents>
+					[1]: if the regulator status equals RCMVAL_false
+					[2]: the regulator init timeout shall be set to RCMVAL_true
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the regulator status equals RCMVAL_false
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the regulator init timeout shall be set to RCMVAL_true
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the regulator status equals RCMVAL_false
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the regulator status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_false
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the regulator init timeout shall be set to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the regulator init timeout
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-12:]
+		text: if the regulator status equals RCMVAL_true , the regulator init timeout shall be set to RCMVAL_false .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator status equals RCMVAL_true , the regulator init timeout shall be set to RCMVAL_false .
+				<ExtractedComponents>
+					[1]: if the regulator status equals RCMVAL_true
+					[2]: the regulator init timeout shall be set to RCMVAL_false
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the regulator status equals RCMVAL_true
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the regulator init timeout shall be set to RCMVAL_false
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the regulator status equals RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the regulator status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the regulator init timeout shall be set to RCMVAL_false
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the regulator init timeout
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_false
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-11:]
+		text: the regulator mode shall be initialized to RCMVAL_init .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the regulator mode shall be initialized to RCMVAL_init .
+				<ExtractedComponents>
+					[1]: the regulator mode shall be initialized to RCMVAL_init
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: FactualRule 
+						SlotType= MainSlot|| Text= the regulator mode shall be initialized to RCMVAL_init
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the regulator mode shall be initialized to RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be initialized to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-10:]
+		text: the manage monitor interface mode shall be set to the monitor mode .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: the manage monitor interface mode shall be set to the monitor mode .
+				<ExtractedComponents>
+					[1]: the manage monitor interface mode shall be set to the monitor mode
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: FactualRule 
+						SlotType= MainSlot|| Text= the manage monitor interface mode shall be set to the monitor mode
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Action>
+						Text = the manage monitor interface mode shall be set to the monitor mode
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the manage monitor interface mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: the monitor mode
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-20:]
+		text: when the regulator mode equals RCMVAL_init , the reset shall be set to RCMVAL_true .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: when the regulator mode equals RCMVAL_init , the reset shall be set to RCMVAL_true .
+				<ExtractedComponents>
+					[1]: when the regulator mode equals RCMVAL_init
+					[2]: the reset shall be set to RCMVAL_true
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when the regulator mode equals RCMVAL_init
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the reset shall be set to RCMVAL_true
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when the regulator mode equals RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the reset shall be set to RCMVAL_true
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the reset
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_true
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-4:]
+		text: if the regulator mode equals RCMVAL_failed, when the signal is RCMVAL_ok, the output regulator status shall be set to RCMVAL_failed .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator mode equals RCMVAL_failed, when the signal is RCMVAL_ok, the output regulator status shall be set to RCMVAL_failed .
+				<ExtractedComponents>
+					[1]: if the regulator mode equals RCMVAL_failed
+					[2]: when the signal is RCMVAL_ok
+					[3]: the output regulator status shall be set to RCMVAL_failed
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the regulator mode equals RCMVAL_failed
+					C[2]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when the signal is RCMVAL_ok
+					C[3]==>	Type: Action 
+						SlotType= MainSlot|| Text= the output regulator status shall be set to RCMVAL_failed
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the regulator mode equals RCMVAL_failed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_failed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Trigger>
+						Keyword: when
+						Text = when the signal is RCMVAL_ok
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the signal
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_ok
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the output regulator status shall be set to RCMVAL_failed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the output regulator status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_failed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-3:]
+		text: if the regulator mode equals RCMVAL_normal , the output regulator status shall be set to RCMVAL_status_on .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator mode equals RCMVAL_normal , the output regulator status shall be set to RCMVAL_status_on .
+				<ExtractedComponents>
+					[1]: if the regulator mode equals RCMVAL_normal
+					[2]: the output regulator status shall be set to RCMVAL_status_on
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the regulator mode equals RCMVAL_normal
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the output regulator status shall be set to RCMVAL_status_on
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the regulator mode equals RCMVAL_normal
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_normal
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the output regulator status shall be set to RCMVAL_status_on
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the output regulator status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_status_on
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-6:]
+		text: if the manage monitor interface mode equals RCMVAL_init , the output monitor status shall be set to RCMVAL_init .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the manage monitor interface mode equals RCMVAL_init , the output monitor status shall be set to RCMVAL_init .
+				<ExtractedComponents>
+					[1]: if the manage monitor interface mode equals RCMVAL_init
+					[2]: the output monitor status shall be set to RCMVAL_init
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the manage monitor interface mode equals RCMVAL_init
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the output monitor status shall be set to RCMVAL_init
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the manage monitor interface mode equals RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the manage monitor interface mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the output monitor status shall be set to RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the output monitor status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-5:]
+		text: if the regulator mode equals RCMVAL_failed , the heat control shall be set to RCMVAL_control_off .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the regulator mode equals RCMVAL_failed , the heat control shall be set to RCMVAL_control_off .
+				<ExtractedComponents>
+					[1]: if the regulator mode equals RCMVAL_failed
+					[2]: the heat control shall be set to RCMVAL_control_off
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the regulator mode equals RCMVAL_failed
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the heat control shall be set to RCMVAL_control_off
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the regulator mode equals RCMVAL_failed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the regulator mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_failed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the heat control shall be set to RCMVAL_control_off
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the heat control
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_control_off
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-8:]
+		text: if the manage monitor interface mode equals RCMVAL_failed , the output monitor status shall be set to RCMVAL_failed .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the manage monitor interface mode equals RCMVAL_failed , the output monitor status shall be set to RCMVAL_failed .
+				<ExtractedComponents>
+					[1]: if the manage monitor interface mode equals RCMVAL_failed
+					[2]: the output monitor status shall be set to RCMVAL_failed
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the manage monitor interface mode equals RCMVAL_failed
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the output monitor status shall be set to RCMVAL_failed
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the manage monitor interface mode equals RCMVAL_failed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the manage monitor interface mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_failed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the output monitor status shall be set to RCMVAL_failed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the output monitor status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_failed
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-7:]
+		text: if the manage monitor interface mode equals RCMVAL_normal , the output monitor status shall be set to RCMVAL_status_on .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the manage monitor interface mode equals RCMVAL_normal , the output monitor status shall be set to RCMVAL_status_on .
+				<ExtractedComponents>
+					[1]: if the manage monitor interface mode equals RCMVAL_normal
+					[2]: the output monitor status shall be set to RCMVAL_status_on
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the manage monitor interface mode equals RCMVAL_normal
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the output monitor status shall be set to RCMVAL_status_on
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the manage monitor interface mode equals RCMVAL_normal
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the manage monitor interface mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_normal
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the output monitor status shall be set to RCMVAL_status_on
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the output monitor status
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_status_on
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [TempReqId-9:]
+		text: if the monitor mode equals RCMVAL_init , the alarm control shall be set to RCMVAL_control_off .
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text: if the monitor mode equals RCMVAL_init , the alarm control shall be set to RCMVAL_control_off .
+				<ExtractedComponents>
+					[1]: if the monitor mode equals RCMVAL_init
+					[2]: the alarm control shall be set to RCMVAL_control_off
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if the monitor mode equals RCMVAL_init
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the alarm control shall be set to RCMVAL_control_off
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if the monitor mode equals RCMVAL_init
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the monitor mode
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_init
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:equals
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the alarm control shall be set to RCMVAL_control_off
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the alarm control
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_control_off
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:shall be set to
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+</SucceededRequirement>
+</log>

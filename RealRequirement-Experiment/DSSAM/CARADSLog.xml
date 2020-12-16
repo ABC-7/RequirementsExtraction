@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+File Measures: 
+	Number of req in file = 8
+	Number of succeded requirements = 8
+	Number of failed requirements = 0
+<FailedRequirement>
+</FailedRequirement>
+<SucceededRequirement>
+	<Requirement>
+		ID: [req_49:]
+		text:  when a start_auto_control_button is enabled, the start_auto_control_button is enabled before it is pressed.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  when a start_auto_control_button is enabled, the start_auto_control_button is enabled before it is pressed.
+				<ExtractedComponents>
+					[1]: when a start_auto_control_button is enabled
+					[2]: the start_auto_control_button is enabled
+					[3]: before it is pressed
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when a start_auto_control_button is enabled
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the start_auto_control_button is enabled
+					C[3]==>	Type: ActionScope 
+						SlotType= ConditionalScope|| Text= before it is pressed
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when a start_auto_control_button is enabled
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: a start_auto_control_button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is enabled
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the start_auto_control_button is enabled
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the start_auto_control_button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is enabled
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before it is pressed
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Mentioned text: it
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is pressed
+									</Operator>
+									Has scope:  false
+									Is negatted = false
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_48c1:]
+		text:  when termiante_auto_control_button is selected, a confirmation button is available.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  when termiante_auto_control_button is selected, a confirmation button is available.
+				<ExtractedComponents>
+					[1]: when termiante_auto_control_button is selected
+					[2]: a confirmation button is available
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when termiante_auto_control_button is selected
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= a confirmation button is available
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when termiante_auto_control_button is selected
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: termiante_auto_control_button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is selected
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = a confirmation button is available
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: a confirmation button
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: available
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_08:]
+		text:  if air_ok signal is low, auto_control_mode is terminated within 3 sec.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  if air_ok signal is low, auto_control_mode is terminated within 3 sec.
+				<ExtractedComponents>
+					[1]: if air_ok signal is low
+					[2]: auto_control_mode is terminated within 3 sec
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if air_ok signal is low
+					C[2]==>	Type: ActionScope 
+						SlotType= TimeScope|| Text= within 3 sec
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= auto_control_mode is terminated
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if air_ok signal is low
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: air_ok signal
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: low
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = auto_control_mode is terminated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: auto_control_mode
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is terminated
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<PreElapsedTime>
+								TimeType = PreElapsed
+								Value = 3
+								Unit = sec
+								QPRelation = equal
+							</PreElapsedTime>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_28:]
+		text:  if a valid blood_pressure is unavailable after at least 180 sec, manual_mode should be triggered.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  if a valid blood_pressure is unavailable after at least 180 sec, manual_mode should be triggered.
+				<ExtractedComponents>
+					[1]: if a valid blood_pressure is unavailable after at least 180 sec
+					[2]: manual_mode should be triggered
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: ActionScope 
+						SlotType= TimeScope|| Text= after at least 180 sec
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if a valid blood_pressure is unavailable
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= manual_mode should be triggered
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if a valid blood_pressure is unavailable
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: a valid blood_pressure
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: unavailable
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = manual_mode should be triggered
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: manual_mode
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:should be triggered
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+						<ActionScope>
+							<PreElapsedTime>
+								TimeType = null
+								Value = 180
+								Unit = sec
+								QPRelation = QP at least
+							</PreElapsedTime>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_17c3:]
+		text:  if alarm_reset_button is pressed, the alarm is disabled.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  if alarm_reset_button is pressed, the alarm is disabled.
+				<ExtractedComponents>
+					[1]: if alarm_reset_button is pressed
+					[2]: the alarm is disabled
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Condition 
+						SlotType= MainSlot|| Text= if alarm_reset_button is pressed
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the alarm is disabled
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Condition>
+						Keyword: if
+						Text = if alarm_reset_button is pressed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: alarm_reset_button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is pressed
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Condition>
+					<Action>
+						Text = the alarm is disabled
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the alarm
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is disabled
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_01:]
+		text:  the cara will be operational when the RCMVAR_lstat is RCMVAL_poweredon.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  the cara will be operational when the RCMVAR_lstat is RCMVAL_poweredon.
+				<ExtractedComponents>
+					[1]: the cara will be operational
+					[2]: when the RCMVAR_lstat is RCMVAL_poweredon
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Action 
+						SlotType= MainSlot|| Text= the cara will be operational
+					C[2]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when the RCMVAR_lstat is RCMVAL_poweredon
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when the RCMVAR_lstat is RCMVAL_poweredon
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the RCMVAR_lstat
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: RCMVAL_poweredon
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the cara will be operational
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the cara
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: operational
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:will be
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_17c1:]
+		text:  when auto_control_mode is running, the cuff will be inflated.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  when auto_control_mode is running, the cuff will be inflated.
+				<ExtractedComponents>
+					[1]: when auto_control_mode is running
+					[2]: the cuff will be inflated
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when auto_control_mode is running
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= the cuff will be inflated
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when auto_control_mode is running
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: auto_control_mode
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is running
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = the cuff will be inflated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: the cuff
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:will be inflated
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_34:]
+		text:  when auto_control_mode is running, terminate_auto_control_button should be available.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  when auto_control_mode is running, terminate_auto_control_button should be available.
+				<ExtractedComponents>
+					[1]: when auto_control_mode is running
+					[2]: terminate_auto_control_button should be available
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: Trigger 
+						SlotType= MainSlot|| Text= when auto_control_mode is running
+					C[2]==>	Type: Action 
+						SlotType= MainSlot|| Text= terminate_auto_control_button should be available
+				</ClassifiedComponents>
+				<RCMDetails>
+					<Trigger>
+						Keyword: when
+						Text = when auto_control_mode is running
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: auto_control_mode
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is running
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+					</Trigger>
+					<Action>
+						Text = terminate_auto_control_button should be available
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Mentioned text: terminate_auto_control_button
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Mentioned text: available
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:should be
+						</Operator>
+						Has scope:  false
+						Is negatted = false
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						Activation Moede: G
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+</SucceededRequirement>
+</log>

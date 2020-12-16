@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+File Measures: 
+	Number of req in file = 8
+	Number of prim req in file = 8
+<FailedRequirement>
+</FailedRequirement>
+<SucceededRequirement>
+	<Requirement>
+		ID: [req_49:]
+		text:  when a start_auto_control_button is enabled, the start_auto_control_button is enabled before it is pressed.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  when a start_auto_control_button is enabled, the start_auto_control_button is enabled before it is pressed.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [F(R) ==> (F((Q) || (R) ) U (R))] )
+					MTL-Formula: G( [(a start_auto_control_button.crrStatus = enabled)] ==> [F(it.crrStatus = pressed) ==> (F((the start_auto_control_button.crrStatus = enabled) || (it.crrStatus = pressed) ) U (it.crrStatus = pressed))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when a start_auto_control_button is enabled
+					[2]: the start_auto_control_button is enabled
+					[3]: before it is pressed
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when a start_auto_control_button is enabled
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the start_auto_control_button is enabled
+					C[3]==>	Type: actScope 
+						SlotType= ConditionalScope|| Text= before it is pressed
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when a start_auto_control_button is enabled
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: a start_auto_control_button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is enabled
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: enable
+							TechnicalOperator: =
+							PredicateFormal: a start_auto_control_button.crrStatus = enabled
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the start_auto_control_button is enabled
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the start_auto_control_button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is enabled
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: enable
+							TechnicalOperator: =
+							PredicateFormal: the start_auto_control_button.crrStatus = enabled
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+						<ActionScope>
+							<ConditionalScope>
+								scope phase: EndUpPhase
+								<Condition>
+									Keyword: null
+									Text = before it is pressed
+									<Operands>
+										Arg[0]
+										<ArgDetails>
+											Text: it
+										</ArgDetails>
+									</Operands>
+									<Operator>
+										relation:is pressed
+									</Operator>
+									Has valid-time:  false
+									Is negatted: false
+									<FormalSemantic>
+										LHS: Arg[0].crrStatus
+										RHS: press
+										TechnicalOperator: =
+										PredicateFormal: it.crrStatus = pressed
+									</FormalSemantic>
+								</Condition>
+							</ConditionalScope>
+						</ActionScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_48c1:]
+		text:  when termiante_auto_control_button is selected, a confirmation button is available.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  when termiante_auto_control_button is selected, a confirmation button is available.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(termiante_auto_control_button.crrStatus = selected)] ==> [(a confirmation button = available)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when termiante_auto_control_button is selected
+					[2]: a confirmation button is available
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when termiante_auto_control_button is selected
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= a confirmation button is available
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when termiante_auto_control_button is selected
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: termiante_auto_control_button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is selected
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: select
+							TechnicalOperator: =
+							PredicateFormal: termiante_auto_control_button.crrStatus = selected
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = a confirmation button is available
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: a confirmation button
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: available
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: a confirmation button = available
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_08:]
+		text:  if air_ok signal is low, auto_control_mode is terminated within 3 sec.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  if air_ok signal is low, auto_control_mode is terminated within 3 sec.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(F{t=3}(Q))] )
+					MTL-Formula: G( [(air_ok signal = low)] ==> [(F{t=3}(auto_control_mode.crrStatus = terminated))] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if air_ok signal is low
+					[2]: auto_control_mode is terminated within 3 sec
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if air_ok signal is low
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= auto_control_mode is terminated
+						SlotType= TimeScope|| Text= within 3 sec
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if air_ok signal is low
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: air_ok signal
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: low
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: air_ok signal = low
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = auto_control_mode is terminated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: auto_control_mode
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is terminated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: terminate
+							TechnicalOperator: =
+							PredicateFormal: auto_control_mode.crrStatus = terminated
+						</FormalSemantic>
+						is repeated = false
+						<PreElapsedTime>
+							TimeType: PreElapsed
+							Value: 3
+							Unit: sec
+							QPRelation: null
+						<FormalSemantic>
+							TechnicalOperator: =
+							Value: 3
+							</FormalSemantic>
+						<PreElapsedTime>
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_28:]
+		text:  if a valid blood_pressure is unavailable after at least 180 sec, manual_mode should be triggered.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  if a valid blood_pressure is unavailable after at least 180 sec, manual_mode should be triggered.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(F{t>=180}(P))] ==> [(Q)] )
+					MTL-Formula: G( [(F{t>=180}(a valid blood_pressure = unavailable))] ==> [(manual_mode.crrStatus = triggered)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if a valid blood_pressure is unavailable after at least 180 sec
+					[2]: manual_mode should be triggered
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if a valid blood_pressure is unavailable
+						SlotType= TimeScope|| Text= after at  least 180 sec
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= manual_mode should be triggered
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if a valid blood_pressure is unavailable
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: a valid blood_pressure
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: unavailable
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: a valid blood_pressure = unavailable
+						</FormalSemantic>
+						<PreElapsedTime>
+							TimeType: PreElapsed
+							Value: 180
+							Unit: sec
+							QPRelation: at  least
+						<FormalSemantic>
+							TechnicalOperator: >=
+							Value: 180
+							</FormalSemantic>
+						<PreElapsedTime>
+					</Condition>
+					<Action>
+						Text = manual_mode should be triggered
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: manual_mode
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:should be triggered
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: trigger
+							TechnicalOperator: =
+							PredicateFormal: manual_mode.crrStatus = triggered
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_17c3:]
+		text:  if alarm_reset_button is pressed, the alarm is disabled.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  if alarm_reset_button is pressed, the alarm is disabled.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(alarm_reset_button.crrStatus = pressed)] ==> [(the alarm.crrStatus = disabled)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: if alarm_reset_button is pressed
+					[2]: the alarm is disabled
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: cond 
+						SlotType= MainSlot|| Text= if alarm_reset_button is pressed
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the alarm is disabled
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Condition>
+						Keyword: if
+						Text = if alarm_reset_button is pressed
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: alarm_reset_button
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is pressed
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: press
+							TechnicalOperator: =
+							PredicateFormal: alarm_reset_button.crrStatus = pressed
+						</FormalSemantic>
+					</Condition>
+					<Action>
+						Text = the alarm is disabled
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the alarm
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is disabled
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: disable
+							TechnicalOperator: =
+							PredicateFormal: the alarm.crrStatus = disabled
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_01:]
+		text:  the cara will be operational when the RCMVAR_lstat is RCMVAL_poweredon.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  the cara will be operational when the RCMVAR_lstat is RCMVAL_poweredon.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(the RCMVAR_lstat = RCMVAL_poweredon)] ==> [(the cara = operational)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: the cara will be operational when the RCMVAR_lstat is RCMVAL_poweredon
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: act 
+						SlotType= MainSlot|| Text= the cara will be operational
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when the RCMVAR_lstat is RCMVAL_poweredon
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when the RCMVAR_lstat is RCMVAL_poweredon
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the RCMVAR_lstat
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: RCMVAL_poweredon
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the RCMVAR_lstat = RCMVAL_poweredon
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the cara will be operational
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the cara
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: operational
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:will be
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: the cara = operational
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_17c1:]
+		text:  when auto_control_mode is running, the cuff will be inflated.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  when auto_control_mode is running, the cuff will be inflated.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(auto_control_mode.crrStatus = running)] ==> [(the cuff.crrStatus = inflate)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when auto_control_mode is running
+					[2]: the cuff will be inflated
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when auto_control_mode is running
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= the cuff will be inflated
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when auto_control_mode is running
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: auto_control_mode
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is running
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: run
+							TechnicalOperator: =
+							PredicateFormal: auto_control_mode.crrStatus = running
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = the cuff will be inflated
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: the cuff
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:will be inflated
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: inflate
+							TechnicalOperator: =
+							PredicateFormal: the cuff.crrStatus = inflate
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+	<Requirement>
+		ID: [req_34:]
+		text:  when auto_control_mode is running, terminate_auto_control_button should be available.
+
+		<PrimitiveReq>
+			<PR>
+				Id: [1]
+				text:  when auto_control_mode is running, terminate_auto_control_button should be available.
+				<Formal-Representation>
+					MTL-AbbrevatedFormula: G( [(P)] ==> [(Q)] )
+					MTL-Formula: G( [(auto_control_mode.crrStatus = running)] ==> [(terminate_auto_control_button = available)] )
+				</Formal-Representation>
+				<ExtractedComponents>
+					[1]: when auto_control_mode is running
+					[2]: terminate_auto_control_button should be available
+				</ExtractedComponents>
+				<ClassifiedComponents>
+					C[1]==>	Type: trig 
+						SlotType= MainSlot|| Text= when auto_control_mode is running
+					C[2]==>	Type: act 
+						SlotType= MainSlot|| Text= terminate_auto_control_button should be available
+				</ClassifiedComponents>
+				<RCMDetails>
+					
+					<Trigger>
+						Keyword: when
+						Text = when auto_control_mode is running
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: auto_control_mode
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:is running
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0].crrStatus
+							RHS: run
+							TechnicalOperator: =
+							PredicateFormal: auto_control_mode.crrStatus = running
+						</FormalSemantic>
+						is repeated = false
+					</Trigger>
+					<Action>
+						Text = terminate_auto_control_button should be available
+						<Operands>
+							Arg[0]
+							<ArgDetails>
+								Text: terminate_auto_control_button
+							</ArgDetails>
+							Arg[1]
+							<ArgDetails>
+								Text: available
+							</ArgDetails>
+						</Operands>
+						<Operator>
+							relation:should be
+						</Operator>
+						Has valid-time:  false
+						Is negatted: false
+						<FormalSemantic>
+							LHS: Arg[0]
+							RHS: Arg[1]
+							TechnicalOperator: =
+							PredicateFormal: terminate_auto_control_button = available
+						</FormalSemantic>
+						is repeated = false
+					</Action>
+					<RequirementScope>
+					</RequirementScope>
+				</RCMDetails>
+			</PR>
+		</PrimitiveReq>
+	</Requirement>
+
+</SucceededRequirement>
+</log>
